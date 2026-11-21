@@ -135,6 +135,8 @@ td.pos{color:var(--violet);font-weight:700}
 .cap-big small{display:block;font:700 11px/1.2 var(--text);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 .cap-big::after{content:"";position:absolute;right:-15px;top:50%;margin-top:-11px;border-style:solid;border-width:11px 0 11px 13px;border-color:transparent transparent transparent var(--ink)}
 .top-lbl .c{font-size:clamp(11px,1.3vw,13px)!important}
+.top-lbl .c.zero{display:inline-block;margin-top:9px;background:var(--paper);color:var(--ink);font:900 clamp(18px,2.6vw,30px)/1 var(--disp);font-size:clamp(18px,2.6vw,30px)!important;padding:9px 13px 7px!important;border-radius:12px;box-shadow:0 0 0 3px var(--ink),-4px 5px 0 var(--ink)}
+.top-lbl .c.zero small{display:block;font:700 10px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .multi{position:absolute;left:var(--L);right:var(--R);border-top:2px dashed rgba(70,50,181,.45)}
 .multi span{position:absolute;left:0;top:-24px;font:700 11px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--violet);background:var(--cream);padding:4px 6px}
 .ground{position:absolute;left:0;right:0;background:var(--gold);color:var(--ink)}
@@ -190,7 +192,8 @@ td.pos{color:var(--violet);font-weight:700}
   .brand img{width:46px;height:46px}
   .top-lbl .n{display:none}
   .top-lbl .v{font-size:11.5px}
-  .top-lbl .c:not(.pos){display:none}
+  .top-lbl .c.zero{font-size:13px!important;padding:5px 4px 4px!important;border-radius:8px;box-shadow:0 0 0 2px var(--ink),-2px 3px 0 var(--ink)}
+  .top-lbl .c.zero small{font-size:7px;letter-spacing:0;margin-top:2px}
   .cap-big{font-size:19px;padding:9px 10px 8px;right:calc(100% + 12px);box-shadow:0 0 0 2px var(--ink),-4px 5px 0 var(--ink)}
   .cap-big small{font-size:8.5px;letter-spacing:.06em}
   .top-lbl .c{font-size:9.5px;padding:3px 5px}
@@ -430,7 +433,7 @@ function layout(){
 
   bars.innerHTML=ROWS.map(r=>{const hn=r.now*ppe,hc=r.diff*ppe,h=hn+hc;
     const hat=r.diff>0?`<div class="hat"><div class="top"></div><div class="crown" style="height:${Math.max(8,hc-30)}px"></div><div class="band"></div><div class="brim"></div></div>`:'';
-    const capLbl=r.diff>0?'':`<div class="c">+0 € s kapico</div>`;
+    const capLbl=r.diff>0?'':`<div class="c zero">+0 €<small>s kapico</small></div>`;
     const big=r.diff>0?`<div class="cap-big" style="bottom:${hn+hc*0.55}px">+${eur(r.diff)}<small>na mesec s kapico</small></div>`:'';
     return `<div class="col${r.hi?' hi':''}" style="--h:${h}px">${hat}<div class="seg-now" style="height:${hn}px"></div>${big}
       ${r.hi?'':`<div class="top-lbl"><div class="n">${r.short}</div><div class="v">${eur(r.now)}</div>${capLbl}</div>`}</div>`}).join('');
