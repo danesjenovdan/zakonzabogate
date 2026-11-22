@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Poišči Brodnjakovo kapico — Zakon za bogate</title>
 <meta name="description" content="Interaktivna primerjava neto plač: minimalna, povprečna, medicinska sestra, sodnik, predsednik DZ, direktor in Blaž Brodnjak — zdaj in z razvojno kapico iz interventnega zakona.">
+<!-- Plausible: naloži se samo na zakonzabogate.si (ne na github.io ali localhost) -->
+<script>
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
+if (/(^|\.)zakonzabogate\.si$/.test(location.hostname)) {
+  var ps = document.createElement('script');
+  ps.defer = true;
+  ps.setAttribute('data-domain', 'zakonzabogate.si');
+  ps.src = 'https://plausible.lb.djnd.si/js/script.file-downloads.outbound-links.pageview-props.tagged-events.js';
+  document.head.appendChild(ps);
+}
+</script>
 <link rel="icon" href="assets/logo.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zakon za bogate">
@@ -351,7 +362,7 @@ td.pos{color:var(--violet);font-weight:700}
         <p class="disp vote">Na referendumu glasuj <em>PROTI</em></p>
         <div class="cta-btns">
           <div class="share-wrap">
-            <button class="btn share" type="button" id="share"><b>↗</b><span id="shareTxt">Povej naprej</span></button>
+            <button class="btn share plausible-event-name=Povej+naprej" type="button" id="share"><b>↗</b><span id="shareTxt">Povej naprej</span></button>
             <div class="copied" id="copied" role="status" aria-live="polite"></div>
           </div>
           <a class="btn morelink" href="https://protiunicevanju.si/" target="_blank" rel="noopener"><b class="pu"><img src="assets/protiunicevanju.png" alt=""></b>Več o zakonu</a>
