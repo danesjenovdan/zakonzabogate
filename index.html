@@ -232,19 +232,15 @@ td.pos{color:var(--violet);font-weight:700}
 .summit{position:absolute;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 40px));text-align:center}
 .frame .phat{position:absolute;left:50%;top:0;width:78%;z-index:3;transform-origin:50% 92%;margin-left:-37%;translate:0 -46%;animation:hatTip 3.4s ease-in-out infinite;filter:drop-shadow(-4px 5px 0 rgba(30,22,56,.35))}
 .frame .phat svg{display:block;width:100%;height:auto}
-.trophy{position:relative;width:max-content;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(60px,8vw,110px) 10px}
-.rays-bg{position:absolute;left:50%;top:50%;width:clamp(360px,46vw,520px);height:auto;aspect-ratio:1;margin:calc(clamp(360px,46vw,520px) / -2) 0 0 calc(clamp(360px,46vw,520px) / -2);z-index:0;animation:raySpin 60s linear infinite, rayIn 1.2s cubic-bezier(.2,.9,.3,1) both;pointer-events:none}
-.wreath{position:absolute;left:50%;bottom:-4%;width:clamp(340px,42vw,480px);height:auto;translate:-50% 0;z-index:0;pointer-events:none;filter:drop-shadow(-5px 6px 0 rgba(30,22,56,.35));animation:rayIn 1s cubic-bezier(.2,.9,.3,1) both}
+.trophy{--rd:clamp(360px,44vw,500px);position:relative;width:max-content;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(60px,8vw,110px) 10px}
+.rays-bg{position:absolute;left:50%;top:50%;width:var(--rd);height:auto;aspect-ratio:1;margin:calc(var(--rd) / -2) 0 0 calc(var(--rd) / -2);z-index:0;animation:raySpin 60s linear infinite, rayIn 1.2s cubic-bezier(.2,.9,.3,1) both;pointer-events:none}
+.wreath{position:absolute;left:50%;top:50%;width:calc(var(--rd) * 1.08);height:auto;z-index:0;pointer-events:none;filter:drop-shadow(-5px 6px 0 rgba(30,22,56,.35));animation:rayIn 1s cubic-bezier(.2,.9,.3,1) both}
+.wreath.wl{translate:calc(-50% - var(--rd) * .2) -50%;clip-path:inset(0 50% 0 0)}
+.wreath.wr{translate:calc(-50% + var(--rd) * .2) -50%;clip-path:inset(0 0 0 50%)}
 @keyframes raySpin{to{rotate:360deg}}
 @keyframes rayIn{from{scale:.4;opacity:0}to{scale:1;opacity:1}}
 .trophy .frame{z-index:1}
-.spk{position:absolute;font-style:normal;color:var(--gold);font-size:30px;line-height:1;-webkit-text-stroke:1.5px var(--ink);animation:spk 2.6s ease-in-out infinite;z-index:2}
-.spk.k1{left:12%;top:-6%;font-size:34px}
-.spk.k2{right:10%;top:4%;animation-delay:.7s}
-.spk.k3{left:4%;top:52%;font-size:22px;animation-delay:1.3s}
-.spk.k4{right:2%;top:60%;font-size:26px;animation-delay:1.9s}
-@keyframes spk{0%,100%{transform:scale(.7) rotate(0);opacity:.55}50%{transform:scale(1.15) rotate(20deg);opacity:1}}
-@media (prefers-reduced-motion:reduce){.spk,.frame .phat,.kc-ico .ahat,.rays-bg{animation:none}}
+@media (prefers-reduced-motion:reduce){.frame .phat,.kc-ico .ahat,.rays-bg{animation:none}}
 @keyframes hatTip{0%,100%{transform:rotate(-9deg) translateY(0)}45%{transform:rotate(-4deg) translateY(-7px)}60%{transform:rotate(-5deg) translateY(-5px)}}
 .start .row>.vidcol{flex:none}
 .vidcol{flex:none;width:min(420px,42%);display:flex;flex-direction:column;align-items:flex-end;gap:16px}
@@ -291,6 +287,7 @@ td.pos{color:var(--violet);font-weight:700}
   :root{--L:50px;--R:8px}
   .ruler{width:36px;left:8px}
   .cards,.method{grid-template-columns:1fr}
+  .trophy{--rd:250px}
   .rrow{grid-template-columns:40px 1fr auto;gap:10px}
   .rrow .dots{display:none}
   .rcpt .stamp{display:none}
@@ -641,7 +638,7 @@ function layout(){
     PROMPTS.filter(q=>q.v<BRO.cap-4000).map(q=>`<div class="prompt" style="bottom:${q.v*ppe}px"><i>${q.i}</i>${q.t}</div>`).join('');
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
-     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><img class="wreath" src="assets/lovorike.svg" alt="" aria-hidden="true"><i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
+     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><img class="wreath wl" src="assets/lovorike.svg" alt="" aria-hidden="true"><img class="wreath wr" src="assets/lovorike.svg" alt="" aria-hidden="true"><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Čestitke, našli ste njegovo kapico!</div>
      <div class="nums">
