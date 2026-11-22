@@ -580,10 +580,11 @@ $('cnames').innerHTML=COST.map(c=>`<div><span class="d">${c.d}</span><span class
 $('cicons').innerHTML=COST.map(c=>`<div><span class="ico">${CICO[c.ico]}</span></div>`).join('');
 
 
+let cPPM=0, cPlotH=0;
 function costLayout(){
   const H=Math.max(innerHeight,400), mobile=innerWidth<760;
   const ppm=H*(mobile?0.17:0.15)/100, G=mobile?100:112, HEAD=mobile?190:210;
-  const plotH=1200*ppm+HEAD;
+  const plotH=1200*ppm+HEAD; cPPM=ppm; cPlotH=plotH;
   $('cplot').style.height=plotH+'px';
   const g=$('cground'); g.style.top=plotH+'px'; g.style.height=G+'px';
   $('cworld').style.height=(plotH+G)+'px';
@@ -684,6 +685,15 @@ function onScroll(){
     const ih=ic.offsetHeight, rest=groundTop-36;              // izhodiščni zgornji rob ikone
     const stop=groundTop-r.now*ppe+12;                         // tik pod vrhom neto plače (pod kapico)
     const want=Math.min(rest, viewBottom-ih-28);               // nalepljena na dno zaslona
+    const top=Math.max(Math.min(stop,rest), want);
+    ic.style.transform=top<rest?`translateY(${(top-rest).toFixed(1)}px)`:'';
+  });
+  // enako za graf stroškov na vrhu
+  const cGround=$('cworld').getBoundingClientRect().top+y+cPlotH;
+  document.querySelectorAll('#cicons .ico').forEach((ic,i)=>{
+    const c=COST[i]; if(!c) return;
+    const ih=ic.offsetHeight, rest=cGround-36, stop=cGround-c.v*cPPM+12;
+    const want=Math.min(rest, viewBottom-ih-28);
     const top=Math.max(Math.min(stop,rest), want);
     ic.style.transform=top<rest?`translateY(${(top-rest).toFixed(1)}px)`:'';
   });
