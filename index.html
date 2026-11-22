@@ -68,7 +68,11 @@ body{background:var(--cream);color:var(--ink);font-family:var(--text);font-size:
 .kc .v .vhat{display:block;width:46px;height:46px;margin:0 0 8px -2px;animation:hatTip 3.4s ease-in-out infinite;transform-origin:50% 90%}
 .kc .v .vhat svg{width:100%;height:100%;display:block}
 .kc-ico{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.kc-ico span{width:46px;height:46px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 0 0 3px var(--ink);overflow:hidden}
+.kc-ico{position:relative}
+.kc-ico.wear{margin-top:30px}
+.kc-ico .ahat{position:absolute;left:3px;top:-24px;width:50px;height:50px;z-index:2;animation:hatTip 3.4s ease-in-out infinite;transform-origin:50% 90%}
+.kc-ico .ahat svg{width:100%;height:100%;display:block}
+.kc-ico span{width:56px;height:56px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 0 0 3px var(--ink);overflow:hidden}
 .kc-ico span svg{width:62%;height:62%}
 .kc-ico span.photo{background:var(--gold)}
 .kc-ico span.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
@@ -125,6 +129,23 @@ td.pos{color:var(--violet);font-weight:700}
 .btn.morelink b.pu{background:var(--paper);width:44px;height:44px;padding:2px}
 .btn.morelink b.pu img{width:100%;height:100%;display:block}
 .cta-in img.anim-logo{width:clamp(200px,26vw,320px);height:auto;aspect-ratio:1;flex:none;overflow:visible}
+/* ---------- kaj bi dobili ---------- */
+.buy{background:var(--paper);padding:clamp(56px,8vw,96px) 0}
+.buy h2{font-size:clamp(32px,5.4vw,62px);line-height:.95}
+.buy h2 em{font-style:normal;color:var(--coral)}
+.buy-sub{font-size:clamp(17px,1.8vw,20px);margin:12px 0 30px;color:#3d3456}
+.buyrows{display:grid;gap:26px}
+.brow{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:22px;align-items:center;padding-top:22px;border-top:2px dashed rgba(30,22,56,.2)}
+.brow .n{font:900 clamp(44px,6vw,72px)/.9 var(--disp)}
+.brow .n small{font-size:.42em;margin-left:4px}
+.brow .t{font:600 16px/1.3 var(--text);margin-top:6px}
+.bicons{display:flex;flex-wrap:wrap;gap:8px}
+.bicons span{width:48px;height:48px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 3px var(--ink);display:grid;place-items:center;overflow:hidden;position:relative}
+.bicons span svg{width:64%;height:64%}
+.bicons span.part{background:transparent;box-shadow:none}
+.bicons span.part i{position:absolute;inset:0;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 3px var(--ink);display:grid;place-items:center;overflow:hidden}
+.bicons span.part i svg{width:64%;height:64%}
+.buy-note{margin-top:26px;font-size:14px;color:var(--muted)}
 /* ---------- stroški (navpično) ---------- */
 .cost{position:relative}
 .bars.six,.names.six,.icons.six{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -187,12 +208,24 @@ td.pos{color:var(--violet);font-weight:700}
 .names .m{display:none}
 .names small{display:block;font-size:12px;font-weight:400;text-transform:none;letter-spacing:0;color:#5a4a1c;margin-top:3px}
 .summit{position:absolute;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 40px));text-align:center}
-.frame .phat{position:absolute;left:50%;top:0;width:56%;z-index:3;transform-origin:50% 92%;margin-left:-26%;translate:0 -40%;animation:hatTip 3.4s ease-in-out infinite;filter:drop-shadow(-4px 5px 0 rgba(30,22,56,.35))}
+.frame .phat{position:absolute;left:50%;top:0;width:78%;z-index:3;transform-origin:50% 92%;margin-left:-37%;translate:0 -46%;animation:hatTip 3.4s ease-in-out infinite;filter:drop-shadow(-4px 5px 0 rgba(30,22,56,.35))}
 .frame .phat svg{display:block;width:100%;height:auto}
+.trophy{position:relative;width:max-content;margin:0 auto;padding:0 clamp(86px,11vw,140px)}
+.laurel{position:absolute;bottom:-18px;width:clamp(104px,13vw,160px);height:auto;z-index:0}
+.laurel.l{left:0}
+.laurel.r{right:0;transform:scaleX(-1)}
+.trophy .frame{z-index:1}
+.spk{position:absolute;font-style:normal;color:var(--gold);font-size:30px;line-height:1;-webkit-text-stroke:1.5px var(--ink);animation:spk 2.6s ease-in-out infinite;z-index:2}
+.spk.k1{left:12%;top:-6%;font-size:34px}
+.spk.k2{right:10%;top:4%;animation-delay:.7s}
+.spk.k3{left:4%;top:52%;font-size:22px;animation-delay:1.3s}
+.spk.k4{right:2%;top:60%;font-size:26px;animation-delay:1.9s}
+@keyframes spk{0%,100%{transform:scale(.7) rotate(0);opacity:.55}50%{transform:scale(1.15) rotate(20deg);opacity:1}}
+@media (prefers-reduced-motion:reduce){.spk,.frame .phat,.kc-ico .ahat{animation:none}}
 @keyframes hatTip{0%,100%{transform:rotate(-9deg) translateY(0)}45%{transform:rotate(-4deg) translateY(-7px)}60%{transform:rotate(-5deg) translateY(-5px)}}
 .start .row>.vidcol{flex:none}
 .vidcol{flex:none;width:min(420px,42%);display:flex;flex-direction:column;align-items:flex-end;gap:16px}
-.vidbox{position:relative;width:100%;border-radius:16px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 4px var(--ink),-8px 10px 0 var(--ink);transform:rotate(1.5deg)}
+.vidbox{cursor:pointer;position:relative;width:100%;border-radius:16px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 4px var(--ink),-8px 10px 0 var(--ink);transform:rotate(1.5deg)}
 .vidbox .sub{position:absolute;left:8%;right:8%;bottom:14%;text-align:center;pointer-events:none}
 .vidbox .sub span{background:var(--ink);color:var(--paper);font:900 clamp(13px,1.5vw,17px)/1.3 var(--disp);text-transform:uppercase;padding:2px 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .bvid::cue{opacity:0;color:transparent;background:transparent}
@@ -236,6 +269,8 @@ td.pos{color:var(--violet);font-weight:700}
   .ruler{width:36px;left:8px}
   .cards,.method{grid-template-columns:1fr}
   .cta-in{flex-direction:column-reverse;align-items:flex-start}
+  .brow{grid-template-columns:1fr;gap:12px}
+  .bicons span{width:36px;height:36px}
   .claim-row{flex-direction:column;align-items:flex-start;gap:16px}
   .cta-in img.anim-logo{width:170px}
   .hud .pill{display:none}
@@ -303,6 +338,16 @@ td.pos{color:var(--violet);font-weight:700}
   </div>
 </section>
 
+<!-- ============ KAJ BI DOBILI ZA 1,2 MRD ============ -->
+<section class="buy" id="kupimo">
+  <div class="wrap">
+    <h2 class="disp">Za <em>1,2 milijarde €</em> bi lahko imeli …</h2>
+    <p class="buy-sub">Toliko nas bo stal celoten zakon za bogate. Isti denar, drugače porabljen:</p>
+    <div class="buyrows" id="buyrows"></div>
+    <p class="buy-note">Izračun: 1,2 mrd € deljeno z zneski iz primerjave spodaj (kosila, stanovanja in vrtci na leto; klinika enkratno).</p>
+  </div>
+</section>
+
 <!-- ============ STROŠKI: navpični graf (čisto na vrhu) ============ -->
 <section class="cost" id="stroski" aria-label="Koliko nas bo stala kapica — scrollaj navzgor">
   <div class="world" id="cworld">
@@ -331,10 +376,10 @@ td.pos{color:var(--violet);font-weight:700}
       <button class="btn up up-here" type="button" data-up><b>↑</b>Premikaj se gor</button>
     </div>
     <div class="cards">
-      <div class="kc c1"><div class="kc-ico" data-icons="helmet,person,cross,gavel"></div><div class="k">Minimalna, povprečna, sestra, sodnik</div><div class="v disp">+0&nbsp;€</div><p>Vse štiri plače so pod mejo 7.500 € bruto, zato jim kapica ne prinese ničesar.</p></div>
-      <div class="kc c2"><div class="kc-ico" data-icons="photoZ"></div><div class="k">Predsednik DZ</div><div class="v disp" data-k="pdz-m"></div><p data-k="pdz-y"></p></div>
-      <div class="kc c4"><div class="kc-ico" data-icons="case"></div><div class="k">Direktor s 14.000 € bruto</div><div class="v disp" data-k="dir-m"></div><p data-k="dir-y"></p></div>
-      <div class="kc c3"><div class="kc-ico" data-icons="photo"></div><div class="k">Blaž Brodnjak</div><div class="v disp" data-k="bro-m"></div><p data-k="bro-y"></p></div>
+      <div class="kc c1"><div class="kc-ico" data-icons="person"></div><div class="k">Minimalna, povprečna, sestra, sodnik</div><div class="v disp">+0&nbsp;€</div><p>Vse štiri plače so pod mejo 7.500 € bruto, zato jim kapica ne prinese ničesar.</p></div>
+      <div class="kc c2 hatted"><div class="kc-ico" data-icons="photoZ"></div><div class="k">Predsednik DZ</div><div class="v disp" data-k="pdz-m"></div><p data-k="pdz-y"></p></div>
+      <div class="kc c2 hatted"><div class="kc-ico" data-icons="case"></div><div class="k">Direktor s 14.000 € bruto</div><div class="v disp" data-k="dir-m"></div><p data-k="dir-y"></p></div>
+      <div class="kc c2 hatted"><div class="kc-ico" data-icons="photo"></div><div class="k">Blaž Brodnjak</div><div class="v disp" data-k="bro-m"></div><p data-k="bro-y"></p></div>
     </div>
 
     <h2 class="disp big-claim claim2">Kapico dobi samo <em>13.000 posameznikov</em>.</h2>
@@ -405,6 +450,7 @@ td.pos{color:var(--violet);font-weight:700}
         <p>Interventni zakon uvaja <b>razvojno kapico</b>: od dela bruto plače nad 7.500&nbsp;€ se ne bi več plačevali prispevki. Kdo jo dobi? Zgoraj so neto plače — Brodnjakova je tako visoka, da moraš plezati.</p>
       </div>
       <div class="vidcol">
+        <button class="btn up" id="goUp" type="button"><b>↑</b>Premikaj gor</button>
         <div class="vidbox">
           <video class="bvid" id="bvid" src="assets/brodnjak-video.mp4" poster="assets/brodnjak-video-poster.jpg" muted loop playsinline preload="auto">
             <track kind="subtitles" srclang="sl" label="Slovenščina" src="assets/brodnjak-video.vtt" default>
@@ -412,7 +458,6 @@ td.pos{color:var(--violet);font-weight:700}
           <div class="sub" id="vsub" aria-hidden="true"></div>
           <button class="snd" id="snd" type="button" aria-pressed="false">🔇 Vklopi zvok</button>
         </div>
-        <button class="btn up" id="goUp" type="button"><b>↑</b>Premikaj gor</button>
       </div>
     </div>
   </div>
@@ -460,9 +505,9 @@ const n1=v=>v.toLocaleString('sl-SI',{minimumFractionDigits:1,maximumFractionDig
 // ---------- številke na vrhu ----------
 const set=(k,h)=>document.querySelectorAll(`[data-k="${k}"]`).forEach(e=>e.innerHTML=h);
 const VHAT='<i class="vhat"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="9" rx="11" ry="3" fill="#2E2935"/><path d="M13 9h22l-1.5 23h-19z" fill="#141118"/><rect x="14" y="26" width="20" height="6" fill="#4A4352"/><rect x="4" y="32" width="40" height="6" rx="3" fill="#141118"/></svg></i>';
-const PDZ=ROWS[4]; set('pdz-m',VHAT+'+'+eur(PDZ.diff)); set('pdz-y',`na mesec, ${eur(PDZ.diff*12)} na leto.`);
-set('dir-m',VHAT+'+'+eur(DIR.diff)); set('dir-y',`na mesec, ${eur(DIR.diff*12)} na leto — samo zaradi kapice.`);
-set('bro-m',VHAT+'+'+eur(BRO.diff)); set('bro-y',`na mesec, ${eur(BRO.diff*12)} na leto. Samo razlika je ${n1(BRO.diff/MIN)} minimalne neto plače.`);
+const PDZ=ROWS[4]; set('pdz-m','+'+eur(PDZ.diff)); set('pdz-y',`na mesec, ${eur(PDZ.diff*12)} na leto.`);
+set('dir-m','+'+eur(DIR.diff)); set('dir-y',`na mesec, ${eur(DIR.diff*12)} na leto — samo zaradi kapice.`);
+set('bro-m','+'+eur(BRO.diff)); set('bro-y',`na mesec, ${eur(BRO.diff*12)} na leto. Samo razlika je ${n1(BRO.diff/MIN)} minimalne neto plače.`);
 if(document.querySelector('#tbl'))document.querySelector('#tbl tbody').innerHTML=ROWS.map(r=>`<tr${r.hi?' class="hi"':''}><td><b>${r.name}</b><br><small style="color:var(--muted)">${r.src}</small></td><td>${eur(r.gross)}</td><td>${eur(r.now)}</td><td><b>${eur(r.cap)}</b></td><td class="${r.diff>0?'pos':''}">+${eur(r.diff)}</td><td class="${r.diff>0?'pos':''}">+${eur(r.diff*12)}</td></tr>`).join('');
 
 // ---------- graf ----------
@@ -470,7 +515,8 @@ const $=id=>document.getElementById(id);
 const climb=$('vzpon'), world=$('world'), plot=$('plot'), bars=$('bars'), ruler=$('ruler'), lines=$('lines'), ground=$('ground'), sumW=$('summitWrap');
 const hud=$('hud'), altV=$('altV'), altX=$('altX');
 $('names').innerHTML=ROWS.map(r=>`<div><span class="d">${r.short}</span><span class="m">${r.m}</span><small>${eur(r.gross)} bruto</small></div>`).join('');
-document.querySelectorAll('[data-icons]').forEach(el=>{el.innerHTML=el.dataset.icons.split(',').map(k=>k==='photo'?'<span class="photo"><img src="'+PHOTO+'" alt="Blaž Brodnjak"></span>':k==='photoZ'?'<span class="photo"><img src="'+PHOTO_Z+'" alt="Zoran Stevanović"></span>':`<span>${ICONS[k]}</span>`).join('')});
+document.querySelectorAll('.kc.hatted .kc-ico').forEach(el=>el.classList.add('wear'));
+document.querySelectorAll('[data-icons]').forEach(el=>{el.innerHTML=el.dataset.icons.split(',').map(k=>k==='photo'?'<span class="photo"><img src="'+PHOTO+'" alt="Blaž Brodnjak"></span>':k==='photoZ'?'<span class="photo"><img src="'+PHOTO_Z+'" alt="Zoran Stevanović"></span>':`<span>${ICONS[k]}</span>`).join('')+(el.classList.contains('wear')?VHAT.replace('class="vhat"','class="ahat"'):'')});
 $('icons').innerHTML=ROWS.map(r=>`<div><span class="ico${r.ico.startsWith('photo')?' photo':''}" title="${r.name}">${r.ico==='photo'?'<img src="'+PHOTO+'" alt="">':r.ico==='photoZ'?'<img src="'+PHOTO_Z+'" alt="">':ICONS[r.ico]}</span></div>`).join('');
 
 // ---------- STROŠKI: navpični graf ----------
@@ -494,6 +540,18 @@ const COST=[
 const mio=v=>v>=1000?(v/1000).toLocaleString('sl-SI',{maximumFractionDigits:1})+' mrd €':v+' mio €';
 $('cnames').innerHTML=COST.map(c=>`<div><span class="d">${c.d}</span><span class="m">${c.m}</span><small>${c.sub}</small></div>`).join('');
 $('cicons').innerHTML=COST.map(c=>`<div><span class="ico">${CICO[c.ico]}</span></div>`).join('');
+
+// ---------- kaj bi dobili za 1,2 mrd ----------
+const BUY=[
+  {ico:'lunch', v:77,  t:'let brezplačnih kosil za vse osnovnošolce'},
+  {ico:'home',  v:100, t:'let državne gradnje stanovanj'},
+  {ico:'hosp',  v:156, t:'novih infekcijskih klinik v Ljubljani'},
+  {ico:'kid',   v:170, t:'let brezplačnih vrtcev za vse otroke'},
+];
+$('buyrows').innerHTML=BUY.map(b=>{const n=1200/b.v, full=Math.floor(n), frac=n-full;
+  let ic=''; for(let i=0;i<full;i++) ic+=`<span>${CICO[b.ico]}</span>`;
+  if(frac>0.05) ic+=`<span class="part" title="${Math.round(frac*100)} %"><i style="clip-path:inset(0 ${(100-frac*100).toFixed(0)}% 0 0)">${CICO[b.ico]}</i></span>`;
+  return `<div class="brow"><div><div class="n">${n.toLocaleString("sl-SI",{maximumFractionDigits:1})}</div><div class="t">${b.t}</div></div><div class="bicons">${ic}</div></div>`}).join('');
 function costLayout(){
   const H=Math.max(innerHeight,400), mobile=innerWidth<760;
   const ppm=H*(mobile?0.17:0.15)/100, G=mobile?100:112, HEAD=mobile?190:210;
@@ -513,7 +571,9 @@ function setupVideo(){
   const v=document.getElementById('bvid'), b=document.getElementById('snd'), sub=document.getElementById('vsub');
   if(!v) return;
   const lab=()=>{b.setAttribute('aria-pressed',String(!v.muted));b.textContent=v.muted?'🔇 Vklopi zvok':'🔊 Izklopi zvok';};
-  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); lab();});
+  const toggle=e=>{e.stopPropagation(); v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); lab();};
+  b.addEventListener('click',toggle);
+  v.closest('.vidbox').addEventListener('click',toggle);
   // podnapisi: izpis iz <track> v lastnem slogu
   const tr=v.textTracks&&v.textTracks[0];
   if(tr){ tr.mode='hidden'; tr.addEventListener('cuechange',()=>{const c=tr.activeCues&&tr.activeCues[0]; sub.innerHTML=c?'<span>'+c.text.split(String.fromCharCode(10)).join('<br>')+'</span>':'';}); }
@@ -522,6 +582,17 @@ function setupVideo(){
   } else v.play().catch(()=>{});
 }
 setupVideo();
+
+// lovorova veja (zlata), za vrh
+function LAUREL(side){
+  const P=t=>{const x=(1-t)*(1-t)*96+2*(1-t)*t*14+t*t*70, y=(1-t)*(1-t)*250+2*(1-t)*t*170+t*t*18; return [x,y];};
+  let leaves='';
+  for(let i=1;i<=9;i++){const t=i/10.2,[x,y]=P(t),[x2,y2]=P(t+.01),a=Math.atan2(y2-y,x2-x)*180/Math.PI;
+    leaves+=`<ellipse cx="${x-9}" cy="${y}" rx="17" ry="7" transform="rotate(${a-55} ${x} ${y})" fill="#EDB92E" stroke="#1E1638" stroke-width="2.5"/>`;
+    leaves+=`<ellipse cx="${x+9}" cy="${y}" rx="17" ry="7" transform="rotate(${a+55} ${x} ${y})" fill="#F2C64A" stroke="#1E1638" stroke-width="2.5"/>`;}
+  const [tx,ty]=P(1);
+  return `<svg class="laurel ${side}" viewBox="0 0 130 270" aria-hidden="true"><path d="M96 250 Q14 170 70 18" fill="none" stroke="#1E1638" stroke-width="5" stroke-linecap="round"/>${leaves}<ellipse cx="${tx}" cy="${ty-6}" rx="8" ry="15" fill="#EDB92E" stroke="#1E1638" stroke-width="2.5"/></svg>`;
+}
 
 let ppe=0, G=0, plotH=0;
 
@@ -568,7 +639,7 @@ function layout(){
     PROMPTS.filter(q=>q.v<BRO.cap-4000).map(q=>`<div class="prompt" style="bottom:${q.v*ppe}px"><i>${q.i}</i>${q.t}</div>`).join('');
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
-     <div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div>
+     <div class="trophy">${LAUREL("l")}${LAUREL("r")}<i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Čestitke, našli ste njegovo kapico!</div>
      <div class="nums">
