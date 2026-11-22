@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+  <title>Cilinder</title>
+  <!-- krajci: zadnji del -->
+  <ellipse cx="110" cy="134" rx="102" ry="20" fill="#141118"/>
+  <ellipse cx="110" cy="129" rx="78" ry="11" fill="#2A2530"/>
+  <!-- krona (rahlo razširjena navzgor) -->
+  <path d="M52 22 C80 14 140 14 168 22 L156 128 C130 136 90 136 64 128 Z" fill="#141118"/>
+  <!-- sijaj -->
+  <path d="M72 34 L66 96" stroke="#3A3442" stroke-width="9" stroke-linecap="round"/>
+  <path d="M86 32 L83 60" stroke="#3A3442" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <!-- vrh -->
+  <ellipse cx="110" cy="22" rx="58" ry="12" fill="#2E2935"/>
+  <ellipse cx="110" cy="21" rx="50" ry="8" fill="#3A3442" opacity=".55"/>
+  <!-- trak -->
+  <path d="M61 100 C88 108 132 108 159 100 L156.6 124 C130 132 90 132 63.4 124 Z" fill="#E5603A"/>
+  <path d="M61 100 C88 108 132 108 159 100 L158.6 104 C132 112 88 112 61.4 104 Z" fill="#F07A55"/>
+  <!-- krajci: sprednji zavihek -->
+  <path d="M8 130 C14 152 60 160 110 160 C160 160 206 152 212 130 C196 144 160 149 110 149 C60 149 24 144 8 130 Z" fill="#141118"/>
+</svg>
