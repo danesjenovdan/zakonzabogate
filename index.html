@@ -330,7 +330,7 @@ td.pos{color:var(--violet);font-weight:700}
           <li>Dohodnina po letni lestvici za 2026 s splošno olajšavo 5.551,93 € (in dodatno splošno olajšavo za nižje dohodke), za samsko osebo brez otrok, deljeno z 12. Regres, božičnica in povračila niso upoštevani.</li>
           <li>Razvojna kapica (ZIURS): prispevki zaposlenega se obračunajo največ od 7.500 € bruto na mesec. Nižji prispevki povečajo davčno osnovo, zato je pri višjih plačah polovica prihranka obdavčena s 50 % dohodnine.</li>
           <li>Preverba: povprečna plača po našem izračunu da 1.728 € neto, SURS za junij 2026 navaja 1.723 € neto. Za 10.000 € bruto kapica prinese 3.465 € neto na leto — enako kot izračun, ki ga navaja Forbes Slovenija.</li>
-          <li>Blaž Brodnjak: upoštevana je osnovna plača z regresom za leto 2025 (762.443 € bruto na leto), deljena z 12. Brez nagrad. Z nagradami je leta 2025 prejel 1.797.887 € bruto, v povprečju 149.823 € na mesec.</li>
+          <li>Blaž Brodnjak: leta 2025 je prejel 1.797.887 € bruto (osnovna plača, regres in nagrade), v povprečju 149.824 € bruto na mesec. Njegove neto prejemke Finance ocenjujejo na približno 710.000 € na leto, torej okoli 59.167 € na mesec (povzeto v Večeru; medijska ocena, ne uradno izplačilo). Dodatek s kapico je izračunan za povprečni mesečni bruto znesek; pri nagradah, izplačanih v enem mesecu, bi bil učinek kapice lahko še večji.</li>
           <li>Predsednik DZ: 67. plačni razred, 8.900,43 € bruto od 1. 4. 2026 (vrednost plačnega razreda). Zaradi postopnega dviga plač je Zoran Stevanović za maj 2026 dejansko prejel 7.343,43 € bruto osnovne plače.</li>
         </ul>
       </div>
@@ -342,6 +342,7 @@ td.pos{color:var(--violet);font-weight:700}
           <li><a href="https://javnipodatki.si/place/diplomirana-medicinska-sestra">Diplomirana medicinska sestra, povprečje avgust 2026 — javnipodatki.si</a></li>
           <li><a href="https://netteblog.com/placni-razredi-javni-sektor/">Plačna lestvica od 1. 4. 2026 (52. razred) — netteblog.com</a>; <a href="http://www.sodni-svet.si/doc/Zahteva_ZSTSPJS.pdf">uvrstitev okrožnega sodnika — Sodni svet</a></li>
           <li><a href="https://javnipodatki.si/place-funkcionarjev/predsednik-drzavnega-zbora">Plača predsednika DZ, 67. razred — javnipodatki.si</a>, <a href="https://siol.net/novice/slovenija/znano-je-koliko-zasluzita-stevanovic-in-jansa-kaj-pa-poslanec-ki-ne-placuje-svojih-delavcev-694896">izplačilo za maj — Siol</a>; fotografija: Vlada RS, Wikimedia Commons (javna last)</li>
+          <li><a href="https://vecer.com/slovenija/uprava-nlb-z-visjimi-prejemki-blaz-brodnjak-zasluzil-18-milijona-evrov-bruto-10411504">Prejemki Blaža Brodnjaka 2025 — Večer</a>; ocena neto prejemkov — Finance (povzeto v Večeru)</li>
           <li><a href="https://forbes.n1info.si/posel/nlb-lani-s-pol-milijarde-evrov-dobicka-vodstvu-visji-prejemki-koliko-so-dobili/">Prejemki uprave NLB 2025 — Forbes Slovenija</a>, <a href="https://reporter.si/clanek/slovenija/blaz-brodnjak-nlb-placa-2025-nagrada-1891839">Reporter</a></li>
           <li><a href="https://www.racunovodstvo.net/zakonodaja/predpis/14411/pravilnik-o-dolocitvi-usklajenih-zneskov-olajsav-enacbe-za-dolocitev-olajsave-in-lestvice-za-odmero-dohodnine-za-leto-2026">Lestvica dohodnine 2026</a>, <a href="https://zavezanec.zzzs.si/prispevki-za-obvezno-zdravstveno-zavarovanje/obvezni-zdravstveni-prispevek/">OZP 2026 — ZZZS</a></li>
           <li><a href="https://forbes.n1info.si/novice/kdo-pridobi-in-kdo-izgubi-z-interventnim-zakonom-o-katerem-bomo-glasovali-na-referendumu/">Kdo pridobi z interventnim zakonom — Forbes Slovenija</a>, <a href="https://www.spnomad.si/objave/razvojna-kapica-2026-prispevki-7500-eur">SP Nomad</a></li>
@@ -401,7 +402,7 @@ const ROWS=[
   {name:'Okrožni sodnik', short:'Sodnik', m:'Sodnik', gross:5712.85, src:'52. plačni razred', ico:'gavel'},
   {name:'Predsednik Državnega zbora', short:'Predsednik DZ', m:'Pred. DZ', gross:8900.43, src:'67. plačni razred, od 1. 4. 2026', ico:'photoZ'},
   {name:'Direktor', short:'Direktor', m:'Direktor', gross:14000, src:'primer', ico:'case'},
-  {name:'Blaž Brodnjak, predsednik uprave NLB', short:'Brodnjak', m:'Brodnjak', gross:762443/12, src:'osnovna plača 2025 z regresom', hi:true, ico:'photo'},
+  {name:'Blaž Brodnjak, predsednik uprave NLB', short:'Brodnjak', m:'Brodnjak', gross:1797887/12, netEst:710000/12, src:'povprečje 2025 z nagradami', hi:true, ico:'photo'},
 ];
 const ICONS={
   helmet:'<svg viewBox="0 0 48 48"><path d="M8 32a16 16 0 0 1 32 0z" fill="#1E1638"/><rect x="22" y="12" width="4" height="12" rx="2" fill="#EDB92E"/><rect x="4" y="32" width="40" height="6" rx="3" fill="#1E1638"/></svg>',
@@ -421,7 +422,9 @@ const tax=b=>{if(b<=0)return 0;for(const[lo,hi,f,r]of BR)if(b<=hi)return f+(b-lo
 function net(g,cap){const A=g*12,base=cap?Math.min(g,cap):g,c=base*12*RATE;
   const add=A<=17766.18?Math.max(0,20832.39-1.17259*A):0;
   return (A-c-tax(A-c-GEN-add))/12-OZP;}
-ROWS.forEach(r=>{r.now=net(r.gross);r.cap=net(r.gross,CAP);r.diff=r.cap-r.now;});
+ROWS.forEach(r=>{r.now=net(r.gross);r.cap=net(r.gross,CAP);r.diff=r.cap-r.now;
+  if(r.netEst){r.now=r.netEst;r.cap=r.netEst+r.diff;}  // neto zdaj: ocena Financ (povzeto v Večeru)
+});
 const AVG=ROWS[1].now, MIN=ROWS[0].now, DIR=ROWS[5], BRO=ROWS[6];
 const eur=v=>String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
 const n1=v=>v.toLocaleString('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1});
@@ -513,7 +516,7 @@ function layout(){
   let rh='';const step=mobile?2000:1000;
   for(let v=step;v*ppe<plotH-HEAD+200;v+=step){const k=v%5000===0;rh+=`<div class="${k?'k':''}" style="bottom:${v*ppe}px">${k||!mobile?(v/1000)+'k':''}</div>`}
   ruler.innerHTML=rh;
-  lines.innerHTML=[5,10,15].map(k=>`<div class="multi" style="bottom:${k*AVG*ppe}px"><span>${k}× povprečna neto plača</span></div>`).join('');
+  lines.innerHTML=[5,10,20,30,40].map(k=>`<div class="multi" style="bottom:${k*AVG*ppe}px"><span>${k}× povprečna neto plača</span></div>`).join('');
 
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
