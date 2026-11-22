@@ -240,10 +240,10 @@ td.pos{color:var(--violet);font-weight:700}
 .ico svg{width:62%;height:62%}
 .ico.photo{background:var(--gold)}
 .ico.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
-.names{top:40px}
-.names div{text-align:center;font:700 clamp(11px,1.35vw,14px)/1.2 var(--text);text-transform:uppercase;letter-spacing:.04em;overflow-wrap:anywhere}
+.names{top:40px;z-index:6}
+.names div{text-align:center;font:700 clamp(11px,1.35vw,14px)/1.2 var(--text);text-transform:uppercase;letter-spacing:.04em;overflow-wrap:anywhere;background:var(--paper);border-radius:10px;padding:7px 4px 6px;box-shadow:0 0 0 2px var(--ink),-3px 4px 0 var(--ink);will-change:transform;align-self:start}
 .names .m{display:none}
-.names small{display:block;font-size:12px;font-weight:400;text-transform:none;letter-spacing:0;color:#5a4a1c;margin-top:3px}
+.names small{display:block;font-size:12px;font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted);margin-top:3px}
 .summit{position:absolute;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 40px));text-align:center}
 .frame .phat{position:absolute;left:50%;top:0;width:78%;z-index:3;transform-origin:50% 92%;margin-left:-37%;translate:0 -46%;animation:hatTip 3.4s ease-in-out infinite;filter:drop-shadow(-4px 5px 0 rgba(30,22,56,.35))}
 .frame .phat svg{display:block;width:100%;height:auto}
@@ -323,9 +323,9 @@ td.pos{color:var(--violet);font-weight:700}
   .cap-big{font-size:19px;padding:9px 10px 8px;right:calc(100% + 12px);box-shadow:0 0 0 2px var(--ink),-4px 5px 0 var(--ink)}
   .cap-big small{font-size:10px;letter-spacing:.04em}
   .top-lbl .c{font-size:11px;padding:3px 5px}
-  .names div{font-size:12.5px;letter-spacing:-.01em;text-transform:none;overflow-wrap:normal}
+  .names div{font-size:11px;line-height:1.15;letter-spacing:-.02em;text-transform:none;overflow-wrap:normal;hyphens:manual;padding:5px 1px 4px;border-radius:8px;box-shadow:0 0 0 1.5px var(--ink),-2px 3px 0 var(--ink)}
   .names .d{display:none} .names .m{display:inline}
-  .names small{font-size:11px;line-height:1.2}
+  .names small{font-size:10px;line-height:1.15;letter-spacing:-.02em}
   .ico{box-shadow:0 0 0 3px var(--ink)}
   .nums{grid-template-columns:1fr;gap:8px}
   .nums .arr{display:none}
@@ -493,13 +493,13 @@ if('scrollRestoration' in history) history.scrollRestoration='manual';
 
 // ---------- podatki (bruto na mesec, 2026) ----------
 const ROWS=[
-  {name:'Minimalna plača', short:'Minimalna', m:'Min.', gross:1481.88, src:'gov.si, 2026', ico:'helmet'},
+  {name:'Minimalna plača', short:'Minimalna plača', m:'Mini&shy;malna plača', gross:1481.88, src:'gov.si, 2026', ico:'helmet'},
   {name:'Povprečna plača', short:'Povprečna', m:'Povpr.', gross:2751.37, src:'SURS, junij 2026', ico:'person'},
   {name:'Diplomirana medicinska sestra', short:'Med. sestra', m:'Sestra', gross:2940, src:'povprečje, avgust 2026', ico:'cross'},
   {name:'Okrožni sodnik', short:'Sodnik', m:'Sodnik', gross:5712.85, src:'52. plačni razred', ico:'gavel'},
   {name:'Predsednik Državnega zbora', short:'Predsednik DZ', m:'Pred. DZ', gross:8900.43, src:'67. plačni razred, od 1. 4. 2026', ico:'photoZ'},
   {name:'Direktor', short:'Direktor', m:'Direkt.', gross:14000, src:'primer', ico:'case'},
-  {name:'Blaž Brodnjak, predsednik uprave NLB', short:'Brodnjak', m:'Brodnjak', gross:1797887/12, netEst:710000/12, src:'povprečje 2025 z nagradami', hi:true, ico:'photo'},
+  {name:'Blaž Brodnjak, predsednik uprave NLB', short:'Blaž Brodnjak', m:'Blaž Brod&shy;njak', gross:1797887/12, netEst:710000/12, src:'povprečje 2025 z nagradami', hi:true, ico:'photo'},
 ];
 const ICONS={
   helmet:'<svg viewBox="0 0 48 48"><path d="M8 32a16 16 0 0 1 32 0z" fill="#1E1638"/><rect x="22" y="12" width="4" height="12" rx="2" fill="#EDB92E"/><rect x="4" y="32" width="40" height="6" rx="3" fill="#1E1638"/></svg>',
@@ -676,14 +676,16 @@ function onScroll(){
   altV.innerHTML=eur(Math.round(alt/100)*100).replace(' €','<small> €</small>');
   const k=alt/AVG; altX.textContent=k>=1.5?`${n1(k)}× povprečna neto plača`:'';
   hud.classList.toggle('off', y < climb.offsetTop - 40);   // na vrhu strani (tabela) višinomer skrij
-  // ikone se med drsenjem prilepijo na spodnji rob zaslona in plezajo do začetka kapice (vrha neto plače)
-  const viewBottom=y+H, icons=document.querySelectorAll('#icons .ico');
+  // ikone in imena se med drsenjem prilepijo na dno zaslona
+  const viewBottom=y+H, icons=document.querySelectorAll('#icons .ico'), nameEls=document.querySelectorAll('#names > div');
+  const minD=(climb.offsetTop+260)-groundTop;                  // imena se ustavijo pri vrhu grafa
+  let nh=0; nameEls.forEach(n=>{nh=Math.max(nh,n.offsetHeight)});
+  const d=Math.max(minD, Math.min(0,(viewBottom-12)-(groundTop+40+nh)));   // zamik pasu imen (najvišja ploščica mora biti vidna)
+  nameEls.forEach(n=>{n.style.transform=d<0?`translateY(${d.toFixed(1)}px)`:'';});
   icons.forEach((ic,i)=>{
     const r=BARS[i]; if(!r) return;
-    const ih=ic.offsetHeight, rest=groundTop-36;              // izhodiščni zgornji rob ikone
-    const stop=groundTop-r.now*ppe+12;                         // tik pod vrhom neto plače (pod kapico)
-    const want=Math.min(rest, viewBottom-ih-28);               // nalepljena na dno zaslona
-    const top=Math.max(Math.min(stop,rest), want);
+    const rest=groundTop-36, stop=groundTop-r.now*ppe+12;     // ikona: do začetka kapice
+    const top=Math.max(Math.min(stop,rest), rest+d);
     ic.style.transform=top<rest?`translateY(${(top-rest).toFixed(1)}px)`:'';
   });
 }
