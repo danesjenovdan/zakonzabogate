@@ -6,6 +6,20 @@
 <title>Poišči Brodnjakovo kapico — Zakon za bogate</title>
 <meta name="description" content="Interaktivna primerjava neto plač: minimalna, povprečna, medicinska sestra, sodnik, predsednik DZ, direktor in Blaž Brodnjak — zdaj in z razvojno kapico iz interventnega zakona.">
 <link rel="icon" href="assets/logo.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zakon za bogate">
+<meta property="og:title" content="Poišči Brodnjakovo kapico">
+<meta property="og:description" content="Razvojna kapica: Brodnjaku +16.438 € neto na mesec, vsem ostalim 265 milijonov manj v javni blagajni. Vsako leto. Referendum 6. decembra — glasuj PROTI.">
+<meta property="og:url" content="https://tadejstrok.github.io/zakonzabogate/">
+<meta property="og:image" content="https://tadejstrok.github.io/zakonzabogate/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Poišči Brodnjakovo kapico: +16.438 € neto na mesec z razvojno kapico">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Poišči Brodnjakovo kapico">
+<meta name="twitter:description" content="Razvojna kapica: Brodnjaku +16.438 € neto na mesec, vsem ostalim 265 milijonov manj. Referendum 6. decembra — glasuj PROTI.">
+<meta name="twitter:image" content="https://tadejstrok.github.io/zakonzabogate/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500..900&family=Rubik:wght@400..800&display=swap&subset=latin-ext" rel="stylesheet">
@@ -129,24 +143,6 @@ td.pos{color:var(--violet);font-weight:700}
 .btn.morelink b.pu{background:var(--paper);width:44px;height:44px;padding:2px}
 .btn.morelink b.pu img{width:100%;height:100%;display:block}
 .cta-in img.anim-logo{width:clamp(200px,26vw,320px);height:auto;aspect-ratio:1;flex:none;overflow:visible}
-/* ---------- delež BDP / proračuna ---------- */
-.buy{background:var(--paper);padding:clamp(56px,8vw,96px) 0}
-.buy h2{font-size:clamp(32px,5.4vw,62px);line-height:.95}
-.buy h2 em{font-style:normal;color:var(--coral)}
-.buy-sub{font-size:clamp(17px,1.8vw,20px);margin:12px 0 34px;color:#3d3456}
-.buy-sub b{font-weight:700}
-.share-rows{display:grid;gap:38px}
-.srow .head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
-.srow .pct{font:900 clamp(56px,9vw,112px)/.85 var(--disp);color:var(--coral)}
-.srow .lbl{font:900 clamp(20px,2.6vw,30px)/1.05 var(--disp);text-transform:uppercase;max-width:22ch}
-.srow .lbl small{display:block;font:500 15px/1.35 var(--text);text-transform:none;color:var(--muted);margin-top:6px}
-.sbar{position:relative;height:46px;margin-top:18px;background:repeating-linear-gradient(-45deg,#EAE0C8 0 8px,#E2D6BA 8px 16px);border-radius:10px;box-shadow:inset 0 0 0 3px var(--ink);overflow:hidden;display:flex}
-.sbar i{display:block;height:100%}
-.sbar i.k{background:var(--hat)}
-.sbar i.z{background:var(--coral);box-shadow:inset -3px 0 0 var(--ink)}
-.sbar-l{display:flex;justify-content:space-between;font:600 13px/1.3 var(--text);color:var(--muted);margin-top:8px}
-.sbar-l b{color:var(--ink)}
-.buy-note{margin-top:30px;font-size:14px;color:var(--muted)}
 /* ---------- stroški (navpično) ---------- */
 .cost{position:relative}
 .bars.six,.names.six,.icons.six{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -172,7 +168,7 @@ td.pos{color:var(--violet);font-weight:700}
 .rrow .av .clip{position:absolute;inset:0;border-radius:50%;overflow:hidden;display:grid;place-items:center}
 .rrow .av svg{width:62%;height:62%}
 .rrow .av img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
-.rrow .av .h{position:absolute;left:4px;top:-19px;width:32px;height:32px;animation:hatTip 3.4s ease-in-out infinite;transform-origin:50% 90%}
+.rrow .av .h{position:absolute;left:4px;top:-19px;width:32px;height:32px;transform:rotate(-8deg);transform-origin:50% 90%}
 .rrow .av .h svg{width:100%;height:100%}
 .rrow .nm{font:700 16px/1.2 var(--text)}
 .rrow .nm small{display:block;font:500 13px/1.2 var(--text);color:var(--muted)}
@@ -238,6 +234,7 @@ td.pos{color:var(--violet);font-weight:700}
 .frame .phat svg{display:block;width:100%;height:auto}
 .trophy{position:relative;width:max-content;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(60px,8vw,110px) 10px}
 .rays-bg{position:absolute;left:50%;top:50%;width:clamp(360px,46vw,520px);height:auto;aspect-ratio:1;margin:calc(clamp(360px,46vw,520px) / -2) 0 0 calc(clamp(360px,46vw,520px) / -2);z-index:0;animation:raySpin 60s linear infinite, rayIn 1.2s cubic-bezier(.2,.9,.3,1) both;pointer-events:none}
+.wreath{position:absolute;left:50%;bottom:-4%;width:clamp(340px,42vw,480px);height:auto;translate:-50% 0;z-index:0;pointer-events:none;filter:drop-shadow(-5px 6px 0 rgba(30,22,56,.35));animation:rayIn 1s cubic-bezier(.2,.9,.3,1) both}
 @keyframes raySpin{to{rotate:360deg}}
 @keyframes rayIn{from{scale:.4;opacity:0}to{scale:1;opacity:1}}
 .trophy .frame{z-index:1}
@@ -365,16 +362,6 @@ td.pos{color:var(--violet);font-weight:700}
   </div>
 </section>
 
-<!-- ============ KAJ BI DOBILI ZA 1,2 MRD ============ -->
-<section class="buy" id="kupimo">
-  <div class="wrap">
-    <h2 class="disp">Koliko je <em>1,2 milijarde €</em>?</h2>
-    <p class="buy-sub">Toliko nas bo stal celoten zakon za bogate. Od tega <b>265 milijonov €</b> samo razvojna kapica.</p>
-    <div class="share-rows" id="shareRows"></div>
-    <p class="buy-note">BDP 2025: 70,5 mrd € (SURS, prva ocena). Državni proračun 2026 po rebalansu: 18,8 mrd € odhodkov (Ministrstvo za finance).</p>
-  </div>
-</section>
-
 <!-- ============ STROŠKI: navpični graf (čisto na vrhu) ============ -->
 <section class="cost" id="stroski" aria-label="Koliko nas bo stala kapica — scrollaj navzgor">
   <div class="world" id="cworld">
@@ -427,6 +414,7 @@ td.pos{color:var(--violet);font-weight:700}
           <li><a href="https://javnipodatki.si/place/diplomirana-medicinska-sestra">Diplomirana medicinska sestra, povprečje avgust 2026 — javnipodatki.si</a></li>
           <li><a href="https://netteblog.com/placni-razredi-javni-sektor/">Plačna lestvica od 1. 4. 2026 (52. razred) — netteblog.com</a>; <a href="http://www.sodni-svet.si/doc/Zahteva_ZSTSPJS.pdf">uvrstitev okrožnega sodnika — Sodni svet</a></li>
           <li><a href="https://javnipodatki.si/place-funkcionarjev/predsednik-drzavnega-zbora">Plača predsednika DZ, 67. razred — javnipodatki.si</a>, <a href="https://siol.net/novice/slovenija/znano-je-koliko-zasluzita-stevanovic-in-jansa-kaj-pa-poslanec-ki-ne-placuje-svojih-delavcev-694896">izplačilo za maj — Siol</a>; fotografija: Vlada RS, Wikimedia Commons (javna last)</li>
+          <li>Lovorov venec: dalovar, <a href="https://commons.wikimedia.org/wiki/File:Greek_Roman_Laurel_wreath_vector.svg">Wikimedia Commons</a> (CC0)</li>
           <li><a href="https://vecer.com/slovenija/uprava-nlb-z-visjimi-prejemki-blaz-brodnjak-zasluzil-18-milijona-evrov-bruto-10411504">Prejemki Blaža Brodnjaka 2025 — Večer</a>; ocena neto prejemkov — Finance (povzeto v Večeru)</li>
           <li><a href="https://forbes.n1info.si/posel/nlb-lani-s-pol-milijarde-evrov-dobicka-vodstvu-visji-prejemki-koliko-so-dobili/">Prejemki uprave NLB 2025 — Forbes Slovenija</a>, <a href="https://reporter.si/clanek/slovenija/blaz-brodnjak-nlb-placa-2025-nagrada-1891839">Reporter</a></li>
           <li><a href="https://www.racunovodstvo.net/zakonodaja/predpis/14411/pravilnik-o-dolocitvi-usklajenih-zneskov-olajsav-enacbe-za-dolocitev-olajsave-in-lestvice-za-odmero-dohodnine-za-leto-2026">Lestvica dohodnine 2026</a>, <a href="https://zavezanec.zzzs.si/prispevki-za-obvezno-zdravstveno-zavarovanje/obvezni-zdravstveni-prispevek/">OZP 2026 — ZZZS</a></li>
@@ -575,17 +563,7 @@ const mio=v=>v>=1000?(v/1000).toLocaleString('sl-SI',{maximumFractionDigits:1})+
 $('cnames').innerHTML=COST.map(c=>`<div><span class="d">${c.d}</span><span class="m">${c.m}</span><small>${c.sub}</small></div>`).join('');
 $('cicons').innerHTML=COST.map(c=>`<div><span class="ico">${CICO[c.ico]}</span></div>`).join('');
 
-// ---------- delež BDP in proračuna ----------
-const LAW=1200, KAP=265, GDP=70486, BUDGET=18800;
-const pct=v=>v.toLocaleString('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1})+' %';
-const SHARE=[
-  {base:BUDGET, lbl:'celotnega državnega proračuna', sub:`Skoraj vsak ${Math.round(BUDGET/LAW)}. evro, ki ga država porabi v enem letu (18,8 mrd €).`, bl:'Državni proračun 2026: 18,8 mrd €'},
-  {base:GDP, lbl:'vsega, kar Slovenija ustvari v enem letu (BDP)', sub:'Bruto domači proizvod 2025: 70,5 mrd €.', bl:'BDP 2025: 70,5 mrd €'},
-];
-$('shareRows').innerHTML=SHARE.map(r=>{const p=LAW/r.base*100, pk=KAP/r.base*100;
-  return `<div class="srow"><div class="head"><div class="pct">${pct(p)}</div><div class="lbl">${r.lbl}<small>${r.sub}</small></div></div>
-  <div class="sbar" role="img" aria-label="${pct(p)} od ${r.bl}"><i class="k" style="width:${pk}%"></i><i class="z" style="width:${p-pk}%"></i></div>
-  <div class="sbar-l"><span><b>Kapica ${pct(pk)}</b> · ostali zakon ${pct(p-pk)}</span><span>${r.bl}</span></div></div>`}).join('');
+
 function costLayout(){
   const H=Math.max(innerHeight,400), mobile=innerWidth<760;
   const ppm=H*(mobile?0.17:0.15)/100, G=mobile?100:112, HEAD=mobile?190:210;
@@ -663,7 +641,7 @@ function layout(){
     PROMPTS.filter(q=>q.v<BRO.cap-4000).map(q=>`<div class="prompt" style="bottom:${q.v*ppe}px"><i>${q.i}</i>${q.t}</div>`).join('');
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
-     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
+     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><img class="wreath" src="assets/lovorike.svg" alt="" aria-hidden="true"><i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Čestitke, našli ste njegovo kapico!</div>
      <div class="nums">

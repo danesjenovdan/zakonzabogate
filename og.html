@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>OG slika — Zakon za bogate</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700..900&family=Rubik:wght@500..800&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+/* Predloga za og.png (1200 × 630). Izvoz: headless Chrome, glej README. */
+:root{--cream:#F3EAD3;--paper:#FBF6E8;--ink:#1E1638;--violet:#4632B5;--gold:#EDB92E;--coral:#E5603A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1200px;height:630px;overflow:hidden;background:var(--cream);font-family:'Rubik',sans-serif;color:var(--ink)}
+.c{position:relative;width:1200px;height:630px;overflow:hidden}
+.grain{position:absolute;inset:0;opacity:.14;mix-blend-mode:multiply;z-index:20;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+.left{position:absolute;left:64px;top:54px;width:620px}
+.tag{display:inline-block;position:relative;background:var(--violet);color:var(--paper);font:900 22px/1 'Archivo';text-transform:uppercase;padding:13px 24px 11px 44px;transform:rotate(-4deg);clip-path:polygon(20px 0,100% 0,100% 100%,20px 100%,0 50%)}
+.tag::before{content:"";position:absolute;left:15px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:var(--gold)}
+h1{font:900 78px/.92 'Archivo';text-transform:uppercase;margin-top:28px;letter-spacing:-.005em}
+h1 em{font-style:normal;color:var(--coral)}
+.gain{display:inline-flex;align-items:baseline;gap:12px;margin-top:26px;background:var(--gold);border-radius:18px;padding:16px 22px 12px;box-shadow:0 0 0 4px var(--ink),-8px 9px 0 var(--ink)}
+.gain b{font:900 58px/1 'Archivo'}
+.gain span{font:700 20px/1.2 'Rubik'}
+.foot{position:absolute;left:64px;bottom:44px;font:800 22px/1 'Rubik';letter-spacing:.06em;text-transform:uppercase}
+.foot em{font-style:normal;background:var(--coral);color:var(--paper);padding:6px 10px 4px;margin-left:6px}
+.right{position:absolute;right:40px;top:50%;width:480px;height:480px;transform:translateY(-50%)}
+.rays{position:absolute;inset:0;width:100%}
+.wreath{position:absolute;left:50%;bottom:6px;width:430px;translate:-50% 0}
+.frame{position:absolute;left:50%;top:92px;width:210px;aspect-ratio:4/5;translate:-50% 0;background:var(--paper);padding:9px;border-radius:12px;box-shadow:0 0 0 4px var(--ink),-9px 11px 0 var(--ink);transform:rotate(-3deg)}
+.frame img.p{width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:6px;display:block}
+.hat{position:absolute;left:50%;top:0;width:78%;translate:-50% -46%;transform:rotate(-8deg);transform-origin:50% 92%}
+.logo{position:absolute;right:28px;top:22px;width:120px;transform:rotate(8deg);z-index:5}
+</style>
+</head>
+<body>
+<div class="c">
+  <div class="left">
+    <span class="tag">Interventni zakon · razvojna kapica</span>
+    <h1>Poišči<br>Brodnjakovo<br><em>kapico</em></h1>
+    <div class="gain"><b>+16.438&nbsp;€</b><span>neto na mesec<br>z razvojno kapico</span></div>
+  </div>
+  <div class="foot">Referendum 6. decembra · glasuj<em>PROTI</em></div>
+  <div class="right">
+    <img class="rays" src="assets/rays.svg" alt="">
+    <img class="wreath" src="assets/lovorike.svg" alt="">
+    <div class="frame">
+      <svg class="hat" viewBox="0 0 200 160"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg>
+      <img class="p" src="assets/brodnjak-glava.jpg" alt="">
+    </div>
+  </div>
+  <img class="logo" src="assets/logo.svg" alt="">
+  <div class="grain"></div>
+</div>
+</body>
+</html>
