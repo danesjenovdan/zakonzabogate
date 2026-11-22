@@ -199,7 +199,7 @@ td.pos{color:var(--violet);font-weight:700}
 .ruler{position:absolute;left:20px;top:0;bottom:0;width:60px}
 .ruler div{position:absolute;left:0;right:0;border-top:1px solid rgba(30,22,56,.25);font:600 12px/1 var(--text);color:var(--muted);padding-top:3px}
 .ruler div.k{border-top:2px solid var(--ink);color:var(--ink);font-weight:700}
-.bars,.names{position:absolute;left:var(--L);right:var(--R);display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(5px,1.6vw,18px)}
+.bars,.names{position:absolute;left:var(--L);right:var(--R);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(5px,1.6vw,18px)}
 .bars{top:0;bottom:0;align-items:end}
 .col{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
 .seg-now{width:100%;background:var(--violet);border-radius:8px 8px 0 0}
@@ -233,7 +233,7 @@ td.pos{color:var(--violet);font-weight:700}
 .multi span{position:absolute;left:0;top:-26px;font:700 12.5px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--violet);background:var(--cream);padding:4px 6px}
 .ground{position:absolute;left:0;right:0;background:var(--gold);color:var(--ink)}
 .ground>.wrap{height:100%}
-.icons{position:absolute;left:var(--L);right:var(--R);top:-26px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(5px,1.6vw,18px);z-index:3}
+.icons{position:absolute;left:var(--L);right:var(--R);top:-26px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(5px,1.6vw,18px);z-index:3}
 .icons div{display:flex;justify-content:center}
 .ico{width:clamp(40px,5.4vw,56px);height:clamp(40px,5.4vw,56px);border-radius:50%;background:var(--paper);box-shadow:0 0 0 4px var(--ink);display:grid;place-items:center;overflow:hidden}
 .ico svg{width:62%;height:62%}
@@ -298,7 +298,8 @@ td.pos{color:var(--violet);font-weight:700}
 
 @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){
-  :root{--L:50px;--R:8px}
+  :root{--L:46px;--R:6px}
+  .bars,.names,.icons{gap:4px}
   .ruler{width:36px;left:8px}
   .cards,.method{grid-template-columns:1fr}
   .trophy{--rd:250px}
@@ -306,23 +307,24 @@ td.pos{color:var(--violet);font-weight:700}
   .rrow .dots{display:none}
   .rcpt .stamp{display:none}
   .cta-in{flex-direction:column-reverse;align-items:flex-start}
+  .cta-in img.anim-logo{align-self:center}
   .claim-row{flex-direction:column;align-items:flex-start;gap:16px}
-  .cta-in img.anim-logo{width:170px}
+  .cta-in img.anim-logo{width:min(240px,64vw)}
   .hud .pill{display:none}
   .brand img{width:46px;height:46px}
   .top-lbl .n{display:none}
   .mile span{font-size:11px;padding:6px 8px;max-width:70%}
   .mile span b{font-size:14px}
   .prompt{font-size:26px;right:calc(var(--R) + 16%)}
-  .top-lbl .v{font-size:11.5px}
+  .top-lbl .v{font-size:14px}
   .top-lbl .c.zero{font-size:13px!important;padding:5px 4px 4px!important;border-radius:8px;box-shadow:0 0 0 2px var(--ink),-2px 3px 0 var(--ink)}
   .top-lbl .c.zero small{font-size:9px;letter-spacing:0;margin-top:2px}
   .cap-big{font-size:19px;padding:9px 10px 8px;right:calc(100% + 12px);box-shadow:0 0 0 2px var(--ink),-4px 5px 0 var(--ink)}
   .cap-big small{font-size:10px;letter-spacing:.04em}
   .top-lbl .c{font-size:11px;padding:3px 5px}
-  .names div{font-size:11px;letter-spacing:0;text-transform:none;overflow-wrap:normal}
+  .names div{font-size:12.5px;letter-spacing:-.01em;text-transform:none;overflow-wrap:normal}
   .names .d{display:none} .names .m{display:inline}
-  .names small{font-size:9.5px}
+  .names small{font-size:11px;line-height:1.2}
   .ico{box-shadow:0 0 0 3px var(--ink)}
   .nums{grid-template-columns:1fr;gap:8px}
   .nums .arr{display:none}
@@ -495,7 +497,7 @@ const ROWS=[
   {name:'Diplomirana medicinska sestra', short:'Med. sestra', m:'Sestra', gross:2940, src:'povprečje, avgust 2026', ico:'cross'},
   {name:'Okrožni sodnik', short:'Sodnik', m:'Sodnik', gross:5712.85, src:'52. plačni razred', ico:'gavel'},
   {name:'Predsednik Državnega zbora', short:'Predsednik DZ', m:'Pred. DZ', gross:8900.43, src:'67. plačni razred, od 1. 4. 2026', ico:'photoZ'},
-  {name:'Direktor', short:'Direktor', m:'Direktor', gross:14000, src:'primer', ico:'case'},
+  {name:'Direktor', short:'Direktor', m:'Direkt.', gross:14000, src:'primer', ico:'case'},
   {name:'Blaž Brodnjak, predsednik uprave NLB', short:'Brodnjak', m:'Brodnjak', gross:1797887/12, netEst:710000/12, src:'povprečje 2025 z nagradami', hi:true, ico:'photo'},
 ];
 const ICONS={
@@ -535,7 +537,8 @@ if(document.querySelector('#tbl'))document.querySelector('#tbl tbody').innerHTML
 const $=id=>document.getElementById(id);
 const climb=$('vzpon'), world=$('world'), plot=$('plot'), bars=$('bars'), ruler=$('ruler'), lines=$('lines'), ground=$('ground'), sumW=$('summitWrap');
 const hud=$('hud'), altV=$('altV'), altX=$('altX');
-$('names').innerHTML=ROWS.map(r=>`<div><span class="d">${r.short}</span><span class="m">${r.m}</span><small>${eur(r.gross)} bruto</small></div>`).join('');
+const BARS=ROWS.filter((r,i)=>i!==1);
+$('names').innerHTML=BARS.map(r=>`<div><span class="d">${r.short}</span><span class="m">${r.m}</span><small>${eur(r.gross)} bruto</small></div>`).join('');
 // ---------- račun: kdo dobi kapico ----------
 (function(){
   const HAT=VHAT.replace('<i class="vhat">','').replace('</i>','');
@@ -550,7 +553,7 @@ $('names').innerHTML=ROWS.map(r=>`<div><span class="d">${r.short}</span><span cl
 })();
 document.querySelectorAll('.kc.hatted .kc-ico').forEach(el=>el.classList.add('wear'));
 document.querySelectorAll('[data-icons]').forEach(el=>{el.innerHTML=el.dataset.icons.split(',').map(k=>k==='photo'?'<span class="photo"><img src="'+PHOTO+'" alt="Blaž Brodnjak"></span>':k==='photoZ'?'<span class="photo"><img src="'+PHOTO_Z+'" alt="Zoran Stevanović"></span>':`<span>${ICONS[k]}</span>`).join('')+(el.classList.contains('wear')?VHAT.replace('class="vhat"','class="ahat"'):'')});
-$('icons').innerHTML=ROWS.map(r=>`<div><span class="ico${r.ico.startsWith('photo')?' photo':''}" title="${r.name}">${r.ico==='photo'?'<img src="'+PHOTO+'" alt="">':r.ico==='photoZ'?'<img src="'+PHOTO_Z+'" alt="">':ICONS[r.ico]}</span></div>`).join('');
+$('icons').innerHTML=BARS.map(r=>`<div><span class="ico${r.ico.startsWith('photo')?' photo':''}" title="${r.name}">${r.ico==='photo'?'<img src="'+PHOTO+'" alt="">':r.ico==='photoZ'?'<img src="'+PHOTO_Z+'" alt="">':ICONS[r.ico]}</span></div>`).join('');
 
 // ---------- STROŠKI: navpični graf ----------
 const HAT_ICO='<svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="11" ry="3" fill="#2E2935"/><path d="M13 10h22l-1.5 22h-19z" fill="#141118"/><rect x="14" y="27" width="20" height="5" fill="#4A4352"/><rect x="5" y="32" width="38" height="5" rx="2.5" fill="#141118"/></svg>';
@@ -620,7 +623,7 @@ function layout(){
   ground.style.top=plotH+'px'; ground.style.height=G+'px';
   world.style.height=(plotH+G)+'px';
 
-  bars.innerHTML=ROWS.map(r=>{const hn=r.now*ppe,hc=r.diff*ppe,h=hn+hc;
+  bars.innerHTML=BARS.map(r=>{const hn=r.now*ppe,hc=r.diff*ppe,h=hn+hc;
     const hat=r.diff>0?`<div class="hat"><div class="top"></div><div class="crown" style="height:${Math.max(8,hc-30)}px"></div><div class="band"></div><div class="brim"></div></div>`:'';
     const capLbl=r.diff>0?'':`<div class="c zero">+0 €<small>s kapico</small></div>`;
     const big=r.diff>0?`<div class="cap-big" style="bottom:${hn+hc*0.55}px">+${eur(r.diff)}<small>na mesec s kapico</small></div>`:'';
