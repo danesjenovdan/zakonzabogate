@@ -129,23 +129,24 @@ td.pos{color:var(--violet);font-weight:700}
 .btn.morelink b.pu{background:var(--paper);width:44px;height:44px;padding:2px}
 .btn.morelink b.pu img{width:100%;height:100%;display:block}
 .cta-in img.anim-logo{width:clamp(200px,26vw,320px);height:auto;aspect-ratio:1;flex:none;overflow:visible}
-/* ---------- kaj bi dobili ---------- */
+/* ---------- delež BDP / proračuna ---------- */
 .buy{background:var(--paper);padding:clamp(56px,8vw,96px) 0}
 .buy h2{font-size:clamp(32px,5.4vw,62px);line-height:.95}
 .buy h2 em{font-style:normal;color:var(--coral)}
-.buy-sub{font-size:clamp(17px,1.8vw,20px);margin:12px 0 30px;color:#3d3456}
-.buyrows{display:grid;gap:26px}
-.brow{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:22px;align-items:center;padding-top:22px;border-top:2px dashed rgba(30,22,56,.2)}
-.brow .n{font:900 clamp(44px,6vw,72px)/.9 var(--disp)}
-.brow .n small{font-size:.42em;margin-left:4px}
-.brow .t{font:600 16px/1.3 var(--text);margin-top:6px}
-.bicons{display:flex;flex-wrap:wrap;gap:8px}
-.bicons span{width:48px;height:48px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 3px var(--ink);display:grid;place-items:center;overflow:hidden;position:relative}
-.bicons span svg{width:64%;height:64%}
-.bicons span.part{background:transparent;box-shadow:none}
-.bicons span.part i{position:absolute;inset:0;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 3px var(--ink);display:grid;place-items:center;overflow:hidden}
-.bicons span.part i svg{width:64%;height:64%}
-.buy-note{margin-top:26px;font-size:14px;color:var(--muted)}
+.buy-sub{font-size:clamp(17px,1.8vw,20px);margin:12px 0 34px;color:#3d3456}
+.buy-sub b{font-weight:700}
+.share-rows{display:grid;gap:38px}
+.srow .head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.srow .pct{font:900 clamp(56px,9vw,112px)/.85 var(--disp);color:var(--coral)}
+.srow .lbl{font:900 clamp(20px,2.6vw,30px)/1.05 var(--disp);text-transform:uppercase;max-width:22ch}
+.srow .lbl small{display:block;font:500 15px/1.35 var(--text);text-transform:none;color:var(--muted);margin-top:6px}
+.sbar{position:relative;height:46px;margin-top:18px;background:repeating-linear-gradient(-45deg,#EAE0C8 0 8px,#E2D6BA 8px 16px);border-radius:10px;box-shadow:inset 0 0 0 3px var(--ink);overflow:hidden;display:flex}
+.sbar i{display:block;height:100%}
+.sbar i.k{background:var(--hat)}
+.sbar i.z{background:var(--coral);box-shadow:inset -3px 0 0 var(--ink)}
+.sbar-l{display:flex;justify-content:space-between;font:600 13px/1.3 var(--text);color:var(--muted);margin-top:8px}
+.sbar-l b{color:var(--ink)}
+.buy-note{margin-top:30px;font-size:14px;color:var(--muted)}
 /* ---------- stroški (navpično) ---------- */
 .cost{position:relative}
 .bars.six,.names.six,.icons.six{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -158,6 +159,31 @@ td.pos{color:var(--violet);font-weight:700}
 .cband h2{font-size:clamp(30px,5vw,56px);line-height:.92;margin-top:12px}
 .cband h2 em{font-style:normal;color:var(--coral)}
 .cband .tag{font-size:13px}
+/* ---------- račun: kdo dobi kapico ---------- */
+.rcpt-wrap{display:flex;justify-content:center;margin:10px 0 0}
+.rcpt{position:relative;width:min(680px,100%);background:var(--paper);padding:30px clamp(18px,4vw,40px) 46px;transform:rotate(-1deg);
+  box-shadow:0 0 0 3px var(--ink),-10px 12px 0 var(--ink);
+  -webkit-mask:radial-gradient(circle at 10px 100%,transparent 9px,#000 9.5px) -10px 0/20px 100% repeat-x;mask:radial-gradient(circle at 10px 100%,transparent 9px,#000 9.5px) -10px 0/20px 100% repeat-x}
+.rcpt .rh{text-align:center;border-bottom:2px dashed var(--ink);padding-bottom:14px;margin-bottom:8px}
+.rcpt .rh b{display:block;font:900 clamp(26px,3.6vw,38px)/1 var(--disp);text-transform:uppercase}
+.rcpt .rh span{display:block;font:600 13px/1.3 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.rrow{display:grid;grid-template-columns:44px auto 1fr auto;gap:12px;align-items:center;padding:10px 0}
+.rrow .av{position:relative;width:40px;height:40px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 2.5px var(--ink);display:grid;place-items:center;overflow:visible}
+.rrow .av .clip{position:absolute;inset:0;border-radius:50%;overflow:hidden;display:grid;place-items:center}
+.rrow .av svg{width:62%;height:62%}
+.rrow .av img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
+.rrow .av .h{position:absolute;left:4px;top:-19px;width:32px;height:32px;animation:hatTip 3.4s ease-in-out infinite;transform-origin:50% 90%}
+.rrow .av .h svg{width:100%;height:100%}
+.rrow .nm{font:700 16px/1.2 var(--text)}
+.rrow .nm small{display:block;font:500 13px/1.2 var(--text);color:var(--muted)}
+.rrow .dots{border-bottom:2px dotted rgba(30,22,56,.35);transform:translateY(4px)}
+.rrow .am{font:900 clamp(22px,2.8vw,30px)/1 var(--disp);text-align:right;white-space:nowrap}
+.rrow .am small{display:block;font:600 12px/1.2 var(--text);color:var(--muted);margin-top:3px}
+.rrow.zero .am{color:#9a91ad}
+.rrow.top .am{color:var(--coral);font-size:clamp(28px,3.8vw,40px)}
+.rcpt .rt{border-top:2px dashed var(--ink);margin-top:8px;padding-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;font:700 15px/1.3 var(--text)}
+.rcpt .rt b{font:900 clamp(22px,3vw,30px)/1 var(--disp);white-space:nowrap}
+.rcpt .stamp{position:absolute;right:clamp(10px,3vw,26px);top:18px;transform:rotate(12deg);border:3px solid var(--coral);color:var(--coral);font:900 18px/1 var(--disp);text-transform:uppercase;padding:8px 10px;border-radius:6px;outline:1.5px solid var(--coral);outline-offset:3px;opacity:.9}
 /* ---------- graf ---------- */
 .climb{position:relative}
 .world{position:relative}
@@ -210,10 +236,10 @@ td.pos{color:var(--violet);font-weight:700}
 .summit{position:absolute;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 40px));text-align:center}
 .frame .phat{position:absolute;left:50%;top:0;width:78%;z-index:3;transform-origin:50% 92%;margin-left:-37%;translate:0 -46%;animation:hatTip 3.4s ease-in-out infinite;filter:drop-shadow(-4px 5px 0 rgba(30,22,56,.35))}
 .frame .phat svg{display:block;width:100%;height:auto}
-.trophy{position:relative;width:max-content;margin:0 auto;padding:0 clamp(86px,11vw,140px)}
-.laurel{position:absolute;bottom:-18px;width:clamp(104px,13vw,160px);height:auto;z-index:0}
-.laurel.l{left:0}
-.laurel.r{right:0;transform:scaleX(-1)}
+.trophy{position:relative;width:max-content;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(60px,8vw,110px) 10px}
+.rays-bg{position:absolute;left:50%;top:50%;width:clamp(360px,46vw,520px);height:auto;aspect-ratio:1;margin:calc(clamp(360px,46vw,520px) / -2) 0 0 calc(clamp(360px,46vw,520px) / -2);z-index:0;animation:raySpin 60s linear infinite, rayIn 1.2s cubic-bezier(.2,.9,.3,1) both;pointer-events:none}
+@keyframes raySpin{to{rotate:360deg}}
+@keyframes rayIn{from{scale:.4;opacity:0}to{scale:1;opacity:1}}
 .trophy .frame{z-index:1}
 .spk{position:absolute;font-style:normal;color:var(--gold);font-size:30px;line-height:1;-webkit-text-stroke:1.5px var(--ink);animation:spk 2.6s ease-in-out infinite;z-index:2}
 .spk.k1{left:12%;top:-6%;font-size:34px}
@@ -221,7 +247,7 @@ td.pos{color:var(--violet);font-weight:700}
 .spk.k3{left:4%;top:52%;font-size:22px;animation-delay:1.3s}
 .spk.k4{right:2%;top:60%;font-size:26px;animation-delay:1.9s}
 @keyframes spk{0%,100%{transform:scale(.7) rotate(0);opacity:.55}50%{transform:scale(1.15) rotate(20deg);opacity:1}}
-@media (prefers-reduced-motion:reduce){.spk,.frame .phat,.kc-ico .ahat{animation:none}}
+@media (prefers-reduced-motion:reduce){.spk,.frame .phat,.kc-ico .ahat,.rays-bg{animation:none}}
 @keyframes hatTip{0%,100%{transform:rotate(-9deg) translateY(0)}45%{transform:rotate(-4deg) translateY(-7px)}60%{transform:rotate(-5deg) translateY(-5px)}}
 .start .row>.vidcol{flex:none}
 .vidcol{flex:none;width:min(420px,42%);display:flex;flex-direction:column;align-items:flex-end;gap:16px}
@@ -268,9 +294,10 @@ td.pos{color:var(--violet);font-weight:700}
   :root{--L:50px;--R:8px}
   .ruler{width:36px;left:8px}
   .cards,.method{grid-template-columns:1fr}
+  .rrow{grid-template-columns:40px 1fr auto;gap:10px}
+  .rrow .dots{display:none}
+  .rcpt .stamp{display:none}
   .cta-in{flex-direction:column-reverse;align-items:flex-start}
-  .brow{grid-template-columns:1fr;gap:12px}
-  .bicons span{width:36px;height:36px}
   .claim-row{flex-direction:column;align-items:flex-start;gap:16px}
   .cta-in img.anim-logo{width:170px}
   .hud .pill{display:none}
@@ -341,10 +368,10 @@ td.pos{color:var(--violet);font-weight:700}
 <!-- ============ KAJ BI DOBILI ZA 1,2 MRD ============ -->
 <section class="buy" id="kupimo">
   <div class="wrap">
-    <h2 class="disp">Za <em>1,2 milijarde €</em> bi lahko imeli …</h2>
-    <p class="buy-sub">Toliko nas bo stal celoten zakon za bogate. Isti denar, drugače porabljen:</p>
-    <div class="buyrows" id="buyrows"></div>
-    <p class="buy-note">Izračun: 1,2 mrd € deljeno z zneski iz primerjave spodaj (kosila, stanovanja in vrtci na leto; klinika enkratno).</p>
+    <h2 class="disp">Koliko je <em>1,2 milijarde €</em>?</h2>
+    <p class="buy-sub">Toliko nas bo stal celoten zakon za bogate. Od tega <b>265 milijonov €</b> samo razvojna kapica.</p>
+    <div class="share-rows" id="shareRows"></div>
+    <p class="buy-note">BDP 2025: 70,5 mrd € (SURS, prva ocena). Državni proračun 2026 po rebalansu: 18,8 mrd € odhodkov (Ministrstvo za finance).</p>
   </div>
 </section>
 
@@ -375,12 +402,7 @@ td.pos{color:var(--violet);font-weight:700}
       <h2 class="disp big-claim">Vsi ostali dobimo <em>265 milijonov manj</em> v javno blagajno. Vsako leto.</h2>
       <button class="btn up up-here" type="button" data-up><b>↑</b>Premikaj se gor</button>
     </div>
-    <div class="cards">
-      <div class="kc c1"><div class="kc-ico" data-icons="person"></div><div class="k">Minimalna, povprečna, sestra, sodnik</div><div class="v disp">+0&nbsp;€</div><p>Vse štiri plače so pod mejo 7.500 € bruto, zato jim kapica ne prinese ničesar.</p></div>
-      <div class="kc c2 hatted"><div class="kc-ico" data-icons="photoZ"></div><div class="k">Predsednik DZ</div><div class="v disp" data-k="pdz-m"></div><p data-k="pdz-y"></p></div>
-      <div class="kc c2 hatted"><div class="kc-ico" data-icons="case"></div><div class="k">Direktor s 14.000 € bruto</div><div class="v disp" data-k="dir-m"></div><p data-k="dir-y"></p></div>
-      <div class="kc c2 hatted"><div class="kc-ico" data-icons="photo"></div><div class="k">Blaž Brodnjak</div><div class="v disp" data-k="bro-m"></div><p data-k="bro-y"></p></div>
-    </div>
+    <div class="rcpt-wrap"><div class="rcpt" id="rcpt" role="table" aria-label="Kdo dobi koliko s kapico"></div></div>
 
     <h2 class="disp big-claim claim2">Kapico dobi samo <em>13.000 posameznikov</em>.</h2>
 
@@ -515,6 +537,18 @@ const $=id=>document.getElementById(id);
 const climb=$('vzpon'), world=$('world'), plot=$('plot'), bars=$('bars'), ruler=$('ruler'), lines=$('lines'), ground=$('ground'), sumW=$('summitWrap');
 const hud=$('hud'), altV=$('altV'), altX=$('altX');
 $('names').innerHTML=ROWS.map(r=>`<div><span class="d">${r.short}</span><span class="m">${r.m}</span><small>${eur(r.gross)} bruto</small></div>`).join('');
+// ---------- račun: kdo dobi kapico ----------
+(function(){
+  const HAT=VHAT.replace('<i class="vhat">','').replace('</i>','');
+  const order=[0,1,2,3,4,5,6];
+  const av=r=>r.ico==='photo'?`<img src="${PHOTO}" alt="">`:r.ico==='photoZ'?`<img src="${PHOTO_Z}" alt="">`:ICONS[r.ico];
+  const rows=order.map(i=>{const r=ROWS[i], pos=r.diff>0;
+    return `<div class="rrow${pos?'':' zero'}${r.hi?' top':''}" role="row"><span class="av"><span class="clip">${av(r)}</span>${pos?`<i class="h">${HAT}</i>`:''}</span>
+      <span class="nm" role="cell">${r.name.replace(', predsednik uprave NLB','')}<small>${eur(r.gross)} bruto</small></span><span class="dots"></span>
+      <span class="am" role="cell">+${eur(r.diff)}<small>${pos?eur(r.diff*12)+' na leto':'na mesec'}</small></span></div>`}).join('');
+  $('rcpt').innerHTML=`<div class="rh"><b>Račun za kapico</b><span>Koliko več neto na mesec · razvojna kapica</span></div>${rows}
+    <div class="rt"><span>Plačamo vsi ostali — vsako leto</span><b>265 mio €</b></div><div class="stamp">Plačano? Ne.</div>`;
+})();
 document.querySelectorAll('.kc.hatted .kc-ico').forEach(el=>el.classList.add('wear'));
 document.querySelectorAll('[data-icons]').forEach(el=>{el.innerHTML=el.dataset.icons.split(',').map(k=>k==='photo'?'<span class="photo"><img src="'+PHOTO+'" alt="Blaž Brodnjak"></span>':k==='photoZ'?'<span class="photo"><img src="'+PHOTO_Z+'" alt="Zoran Stevanović"></span>':`<span>${ICONS[k]}</span>`).join('')+(el.classList.contains('wear')?VHAT.replace('class="vhat"','class="ahat"'):'')});
 $('icons').innerHTML=ROWS.map(r=>`<div><span class="ico${r.ico.startsWith('photo')?' photo':''}" title="${r.name}">${r.ico==='photo'?'<img src="'+PHOTO+'" alt="">':r.ico==='photoZ'?'<img src="'+PHOTO_Z+'" alt="">':ICONS[r.ico]}</span></div>`).join('');
@@ -541,17 +575,17 @@ const mio=v=>v>=1000?(v/1000).toLocaleString('sl-SI',{maximumFractionDigits:1})+
 $('cnames').innerHTML=COST.map(c=>`<div><span class="d">${c.d}</span><span class="m">${c.m}</span><small>${c.sub}</small></div>`).join('');
 $('cicons').innerHTML=COST.map(c=>`<div><span class="ico">${CICO[c.ico]}</span></div>`).join('');
 
-// ---------- kaj bi dobili za 1,2 mrd ----------
-const BUY=[
-  {ico:'lunch', v:77,  t:'let brezplačnih kosil za vse osnovnošolce'},
-  {ico:'home',  v:100, t:'let državne gradnje stanovanj'},
-  {ico:'hosp',  v:156, t:'novih infekcijskih klinik v Ljubljani'},
-  {ico:'kid',   v:170, t:'let brezplačnih vrtcev za vse otroke'},
+// ---------- delež BDP in proračuna ----------
+const LAW=1200, KAP=265, GDP=70486, BUDGET=18800;
+const pct=v=>v.toLocaleString('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1})+' %';
+const SHARE=[
+  {base:BUDGET, lbl:'celotnega državnega proračuna', sub:`Skoraj vsak ${Math.round(BUDGET/LAW)}. evro, ki ga država porabi v enem letu (18,8 mrd €).`, bl:'Državni proračun 2026: 18,8 mrd €'},
+  {base:GDP, lbl:'vsega, kar Slovenija ustvari v enem letu (BDP)', sub:'Bruto domači proizvod 2025: 70,5 mrd €.', bl:'BDP 2025: 70,5 mrd €'},
 ];
-$('buyrows').innerHTML=BUY.map(b=>{const n=1200/b.v, full=Math.floor(n), frac=n-full;
-  let ic=''; for(let i=0;i<full;i++) ic+=`<span>${CICO[b.ico]}</span>`;
-  if(frac>0.05) ic+=`<span class="part" title="${Math.round(frac*100)} %"><i style="clip-path:inset(0 ${(100-frac*100).toFixed(0)}% 0 0)">${CICO[b.ico]}</i></span>`;
-  return `<div class="brow"><div><div class="n">${n.toLocaleString("sl-SI",{maximumFractionDigits:1})}</div><div class="t">${b.t}</div></div><div class="bicons">${ic}</div></div>`}).join('');
+$('shareRows').innerHTML=SHARE.map(r=>{const p=LAW/r.base*100, pk=KAP/r.base*100;
+  return `<div class="srow"><div class="head"><div class="pct">${pct(p)}</div><div class="lbl">${r.lbl}<small>${r.sub}</small></div></div>
+  <div class="sbar" role="img" aria-label="${pct(p)} od ${r.bl}"><i class="k" style="width:${pk}%"></i><i class="z" style="width:${p-pk}%"></i></div>
+  <div class="sbar-l"><span><b>Kapica ${pct(pk)}</b> · ostali zakon ${pct(p-pk)}</span><span>${r.bl}</span></div></div>`}).join('');
 function costLayout(){
   const H=Math.max(innerHeight,400), mobile=innerWidth<760;
   const ppm=H*(mobile?0.17:0.15)/100, G=mobile?100:112, HEAD=mobile?190:210;
@@ -583,16 +617,6 @@ function setupVideo(){
 }
 setupVideo();
 
-// lovorova veja (zlata), za vrh
-function LAUREL(side){
-  const P=t=>{const x=(1-t)*(1-t)*96+2*(1-t)*t*14+t*t*70, y=(1-t)*(1-t)*250+2*(1-t)*t*170+t*t*18; return [x,y];};
-  let leaves='';
-  for(let i=1;i<=9;i++){const t=i/10.2,[x,y]=P(t),[x2,y2]=P(t+.01),a=Math.atan2(y2-y,x2-x)*180/Math.PI;
-    leaves+=`<ellipse cx="${x-9}" cy="${y}" rx="17" ry="7" transform="rotate(${a-55} ${x} ${y})" fill="#EDB92E" stroke="#1E1638" stroke-width="2.5"/>`;
-    leaves+=`<ellipse cx="${x+9}" cy="${y}" rx="17" ry="7" transform="rotate(${a+55} ${x} ${y})" fill="#F2C64A" stroke="#1E1638" stroke-width="2.5"/>`;}
-  const [tx,ty]=P(1);
-  return `<svg class="laurel ${side}" viewBox="0 0 130 270" aria-hidden="true"><path d="M96 250 Q14 170 70 18" fill="none" stroke="#1E1638" stroke-width="5" stroke-linecap="round"/>${leaves}<ellipse cx="${tx}" cy="${ty-6}" rx="8" ry="15" fill="#EDB92E" stroke="#1E1638" stroke-width="2.5"/></svg>`;
-}
 
 let ppe=0, G=0, plotH=0;
 
@@ -639,7 +663,7 @@ function layout(){
     PROMPTS.filter(q=>q.v<BRO.cap-4000).map(q=>`<div class="prompt" style="bottom:${q.v*ppe}px"><i>${q.i}</i>${q.t}</div>`).join('');
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
-     <div class="trophy">${LAUREL("l")}${LAUREL("r")}<i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
+     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><i class="spk k1">✦</i><i class="spk k2">✦</i><i class="spk k3">✦</i><i class="spk k4">✦</i><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Čestitke, našli ste njegovo kapico!</div>
      <div class="nums">
