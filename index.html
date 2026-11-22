@@ -179,7 +179,11 @@ td.pos{color:var(--violet);font-weight:700}
 .names div{text-align:center;font:700 clamp(9px,1.25vw,13px)/1.2 var(--text);text-transform:uppercase;letter-spacing:.04em;overflow-wrap:anywhere}
 .names .m{display:none}
 .names small{display:block;font-weight:400;text-transform:none;letter-spacing:0;color:#5a4a1c;margin-top:3px}
-.summit{position:absolute;left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 40px));text-align:center}
+.summit{position:absolute;left:50%;transform:translateX(-50%);width:min(1000px,calc(100% - 40px));text-align:center;display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center}
+.vidbox{position:relative;border-radius:18px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 4px var(--ink),-10px 12px 0 var(--ink);transform:rotate(-1.5deg)}
+.bvid{display:block;width:100%;aspect-ratio:1992/1080;object-fit:cover}
+.snd{position:absolute;right:12px;bottom:12px;border:0;cursor:pointer;background:var(--gold);color:var(--ink);font:700 13px/1 var(--text);padding:10px 14px;border-radius:99px;box-shadow:0 0 0 2px var(--ink)}
+.snd[aria-pressed="true"]{background:var(--paper)}
 .frame{position:relative;width:clamp(170px,22vw,230px);aspect-ratio:4/5;margin:0 auto;background:var(--paper);padding:10px;border-radius:14px;box-shadow:0 0 0 4px var(--ink),-10px 12px 0 var(--ink);transform:rotate(-3deg)}
 .frame .in{position:relative;width:100%;height:100%;border-radius:6px;overflow:hidden;background:var(--gold)}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
@@ -232,6 +236,7 @@ td.pos{color:var(--violet);font-weight:700}
   .names .d{display:none} .names .m{display:inline}
   .names small{font-size:8px}
   .ico{box-shadow:0 0 0 3px var(--ink)}
+  .summit{grid-template-columns:1fr;gap:22px}
   .nums{grid-template-columns:1fr;gap:8px}
   .nums .arr{display:none}
   .start{padding:6px 0 18px}
@@ -471,6 +476,20 @@ function costLayout(){
   $('cruler').innerHTML=rh;
 }
 
+// ---------- Brodnjakov video: predvajaj, ko je viden ----------
+let vidIO=null;
+function setupVideo(){
+  const v=document.getElementById('bvid'), b=document.getElementById('snd');
+  if(!v) return;
+  b.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;v.play().catch(()=>{});}
+    b.setAttribute('aria-pressed',String(!v.muted)); b.textContent=v.muted?'🔇 Vklopi zvok':'🔊 Izklopi zvok';});
+  if(vidIO) vidIO.disconnect();
+  if('IntersectionObserver' in window){
+    vidIO=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) v.play().catch(()=>{}); else v.pause(); }),{threshold:0.5});
+    vidIO.observe(v);
+  }
+}
+
 let ppe=0, G=0, plotH=0;
 
 function layout(){
@@ -478,7 +497,7 @@ function layout(){
   const H=innerHeight, mobile=innerWidth<760;
   G=mobile?100:112;
   ppe=(H*(mobile?0.2:0.17))/1000;
-  const HEAD=mobile?820:720;
+  const HEAD=mobile?1060:760;
   plotH=BRO.cap*ppe+HEAD;
   plot.style.height=plotH+'px';
   ground.style.top=plotH+'px'; ground.style.height=G+'px';
@@ -498,6 +517,11 @@ function layout(){
 
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
+     <div class="vidbox">
+       <video class="bvid" id="bvid" src="assets/brodnjak-video.mp4" poster="assets/brodnjak-video-poster.jpg" muted loop playsinline preload="metadata"></video>
+       <button class="snd" id="snd" type="button" aria-pressed="false">🔇 Vklopi zvok</button>
+     </div>
+     <div class="sinfo">
      <div class="frame"><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Našli ste njegovo kapico!</div>
@@ -507,7 +531,9 @@ function layout(){
        <div class="num cap"><div class="k">S kapico</div><div class="v">${eur(BRO.cap)}</div></div>
      </div>
      <div class="gain">+${eur(BRO.diff)}<small>na mesec več</small></div>
+     </div>
    </div>`;
+  setupVideo();
   onScroll();
 }
 
