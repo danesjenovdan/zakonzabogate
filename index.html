@@ -349,7 +349,9 @@ td.pos{color:var(--violet);font-weight:700}
   .start .row{flex-direction:column;align-items:stretch;gap:12px}
   .start .btn.up{justify-content:center}
   .start p{font-size:16px;line-height:1.4;margin-top:8px}
-  .vidcol{width:100%;align-items:stretch}
+  .vidcol{display:contents}
+  .start .row>.vidcol .vidbox{order:-1;margin-bottom:6px}
+  .start .row>.vidcol #goUp{order:2}
   .vidbox{transform:none}
   .start h1{font-size:30px}
   .start .legend{margin-top:8px;gap:10px}
