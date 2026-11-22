@@ -234,9 +234,9 @@ td.pos{color:var(--violet);font-weight:700}
 .multi span{position:absolute;left:0;top:-26px;font:700 12.5px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--violet);background:var(--cream);padding:4px 6px}
 .ground{position:absolute;left:0;right:0;background:var(--gold);color:var(--ink)}
 .ground>.wrap{height:100%}
-.icons{position:absolute;left:var(--L);right:var(--R);top:-26px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(5px,1.6vw,18px);z-index:3}
+.icons{position:absolute;left:var(--L);right:var(--R);top:-36px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(5px,1.6vw,18px);z-index:3}
 .icons div{display:flex;justify-content:center}
-.ico{width:clamp(40px,5.4vw,56px);height:clamp(40px,5.4vw,56px);border-radius:50%;background:var(--paper);box-shadow:0 0 0 4px var(--ink);display:grid;place-items:center;overflow:hidden}
+.ico{will-change:transform;width:clamp(46px,6.6vw,72px);height:clamp(46px,6.6vw,72px);border-radius:50%;background:var(--paper);box-shadow:0 0 0 4px var(--ink);display:grid;place-items:center;overflow:hidden}
 .ico svg{width:62%;height:62%}
 .ico.photo{background:var(--gold)}
 .ico.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
@@ -676,6 +676,16 @@ function onScroll(){
   altV.innerHTML=eur(Math.round(alt/100)*100).replace(' €','<small> €</small>');
   const k=alt/AVG; altX.textContent=k>=1.5?`${n1(k)}× povprečna neto plača`:'';
   hud.classList.toggle('off', y < climb.offsetTop - 40);   // na vrhu strani (tabela) višinomer skrij
+  // ikone se med drsenjem prilepijo na spodnji rob zaslona in plezajo do začetka kapice (vrha neto plače)
+  const viewBottom=y+H, icons=document.querySelectorAll('#icons .ico');
+  icons.forEach((ic,i)=>{
+    const r=BARS[i]; if(!r) return;
+    const ih=ic.offsetHeight, rest=groundTop-36;              // izhodiščni zgornji rob ikone
+    const stop=groundTop-r.now*ppe+12;                         // tik pod vrhom neto plače (pod kapico)
+    const want=Math.min(rest, viewBottom-ih-28);               // nalepljena na dno zaslona
+    const top=Math.max(Math.min(stop,rest), want);
+    ic.style.transform=top<rest?`translateY(${(top-rest).toFixed(1)}px)`:'';
+  });
 }
 const toBottom=()=>scrollTo(0,document.documentElement.scrollHeight);
 let raf=0;
