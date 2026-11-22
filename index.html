@@ -522,7 +522,7 @@ const toBottom=()=>scrollTo(0,document.documentElement.scrollHeight);
 let raf=0;
 addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;onScroll()})},{passive:true});
 let rw=innerWidth;
-addEventListener('resize',()=>{if(Math.abs(innerWidth-rw)>40){rw=innerWidth;const fb=document.documentElement.scrollHeight-scrollY;layout();scrollTo(0,document.documentElement.scrollHeight-fb);}});
+addEventListener('resize',()=>{if(typeof touched!=='undefined'&&!touched){if(Math.abs(innerWidth-rw)>40){rw=innerWidth;layout();}toBottom();return;}if(Math.abs(innerWidth-rw)>40){rw=innerWidth;const fb=document.documentElement.scrollHeight-scrollY;layout();scrollTo(0,document.documentElement.scrollHeight-fb);}});
 // ---------- Povej naprej ----------
 let shareT=0;
 $('share').addEventListener('click',async()=>{
