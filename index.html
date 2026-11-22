@@ -238,8 +238,8 @@ td.pos{color:var(--violet);font-weight:700}
 .trophy{--rd:clamp(360px,44vw,500px);position:relative;width:max-content;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(60px,8vw,110px) clamp(34px,5vw,56px)}
 .rays-bg{position:absolute;left:50%;top:50%;width:var(--rd);height:auto;aspect-ratio:1;margin:calc(var(--rd) / -2) 0 0 calc(var(--rd) / -2);z-index:0;animation:raySpin 60s linear infinite, rayIn 1.2s cubic-bezier(.2,.9,.3,1) both;pointer-events:none}
 .wreath{position:absolute;left:50%;top:50%;width:calc(var(--rd) * 1.08);height:auto;z-index:0;pointer-events:none;filter:drop-shadow(-5px 6px 0 rgba(30,22,56,.35));animation:rayIn 1s cubic-bezier(.2,.9,.3,1) both}
-.wreath.wl{translate:calc(-50% - var(--rd) * .2) -50%;clip-path:inset(0 50% 0 0)}
-.wreath.wr{translate:calc(-50% + var(--rd) * .2) -50%;clip-path:inset(0 0 0 50%)}
+.wreath.wl{translate:calc(-50% - var(--rd) * .2) -50%}
+.wreath.wr{translate:calc(-50% + var(--rd) * .2) -50%}
 @keyframes raySpin{to{rotate:360deg}}
 @keyframes rayIn{from{scale:.4;opacity:0}to{scale:1;opacity:1}}
 .trophy .frame{z-index:1}
@@ -642,7 +642,7 @@ function layout(){
     PROMPTS.filter(q=>q.v<BRO.cap-4000).map(q=>`<div class="prompt" style="bottom:${q.v*ppe}px"><i>${q.i}</i>${q.t}</div>`).join('');
   sumW.innerHTML=`
    <div class="summit" style="bottom:${BRO.cap*ppe+46}px">
-     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><img class="wreath wl" src="assets/lovorike.svg" alt="" aria-hidden="true"><img class="wreath wr" src="assets/lovorike.svg" alt="" aria-hidden="true"><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
+     <div class="trophy"><img class="rays-bg" src="assets/rays.svg" alt="" aria-hidden="true"><img class="wreath wl" src="assets/lovorike-l.svg" alt="" aria-hidden="true"><img class="wreath wr" src="assets/lovorike-r.svg" alt="" aria-hidden="true"><div class="frame"><div class="phat"><svg viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="22" rx="52" ry="11" fill="#2E2935"/><path d="M48 22h104l-7 98H55z" fill="#141118"/><rect x="53" y="92" width="94" height="22" fill="#E5603A"/><ellipse cx="100" cy="128" rx="96" ry="18" fill="#141118"/><ellipse cx="100" cy="122" rx="62" ry="7" fill="#2E2935"/></svg></div><div class="in"><img src="${PHOTO}" alt="Blaž Brodnjak"></div></div></div>
      <span class="tag gold">Blaž Brodnjak</span>
      <div class="found">Čestitke, našli ste njegovo kapico!</div>
      <div class="nums">
