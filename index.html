@@ -171,7 +171,9 @@ td.pos{color:var(--violet);font-weight:700}
 .btn.share.pop b{animation:sharePop .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes sharePop{0%{transform:scale(.8)}50%{transform:scale(1.25) rotate(12deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.btn.share,.btn.morelink,.btn.share b,.btn.morelink b{transition:none}.btn.share.pop b{animation:none}}
-.cta-in img.anim-logo{width:clamp(200px,26vw,320px);height:auto;aspect-ratio:1;flex:none;overflow:visible}
+.cta-in .anim-logo{position:relative;display:block;width:clamp(200px,26vw,320px);aspect-ratio:1;flex:none}
+/* platno animacije je 2600/1280 večje od logotipa, da se črke ob priletu ne odrežejo */
+.cta-in .anim-img{position:absolute;left:-51.5625%;top:-51.5625%;width:203.125%;height:203.125%;max-width:none;pointer-events:none}
 /* ---------- stroški (navpično) ---------- */
 .cost{position:relative}
 .bars.six,.names.six,.icons.six{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -343,9 +345,9 @@ td.pos{color:var(--violet);font-weight:700}
   .rcpt .stamp{display:none}
   .cta-in{flex-direction:column-reverse;align-items:stretch}
   .cta-btns{grid-template-columns:1fr}
-  .cta-in img.anim-logo{align-self:center}
+  .cta-in .anim-logo{align-self:center}
   .claim-row{flex-direction:column;align-items:flex-start;gap:16px}
-  .cta-in img.anim-logo{width:min(240px,64vw)}
+  .cta-in .anim-logo{width:min(240px,64vw)}
   .hud .pill{display:none}
   .brand img{width:46px;height:46px}
   .top-lbl .n{display:none}
@@ -410,7 +412,7 @@ td.pos{color:var(--violet);font-weight:700}
           <a class="btn morelink" href="https://protiunicevanju.si/" target="_blank" rel="noopener"><b class="pu"><img src="assets/protiunicevanju.png" alt=""></b>Več o zakonu</a>
         </div>
       </div>
-      <img class="anim-logo" data-anim="assets/logo-anim.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Zakon za bogate">
+      <span class="anim-logo"><img class="anim-img" data-anim="assets/logo-anim.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Zakon za bogate"></span>
     </div>
   </div>
 </section>
