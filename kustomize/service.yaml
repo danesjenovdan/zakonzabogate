@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zakonzabogate
+spec:
+  selector:
+    app: zakonzabogate
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
