@@ -317,6 +317,8 @@ td.pos{color:var(--violet);font-weight:700}
   .bars,.names,.icons{gap:4px}
   .ruler{width:36px;left:8px}
   .cards,.method{grid-template-columns:1fr}
+  .ref img{display:none}
+  .data{padding-bottom:16px}
   .trophy{--rd:250px}
   .rrow{grid-template-columns:40px 1fr auto;gap:10px}
   .rrow .dots{display:none}
@@ -638,7 +640,7 @@ function layout(){
   const H=Math.max(innerHeight,400), mobile=innerWidth<760;
   G=mobile?100:112;
   ppe=(H*(mobile?0.2:0.17))/1000;
-  const HEAD=mobile?960:900;
+  const HEAD=mobile?770:900;
   plotH=BRO.cap*ppe+HEAD;
   plot.style.height=plotH+'px';
   ground.style.top=plotH+'px'; ground.style.height=G+'px';
