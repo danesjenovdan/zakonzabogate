@@ -487,7 +487,7 @@ td.pos{color:var(--violet);font-weight:700}
     <div class="row">
       <div>
         <h1 class="disp">Poišči Brodnjakovo<br><em>kapico</em></h1>
-        <p>Interventni zakon uvaja <b>razvojno kapico</b>: od dela bruto plače nad 7.500&nbsp;€ se ne bi več plačevali prispevki. Kdo jo dobi? Zgoraj lahko vidiš prikaz učinka kapice na primerih različnih neto plač.</p>
+        <p>Interventni zakon uvaja <b>razvojno kapico</b>: to pomeni, da posamezniki, ki imajo bruto plačo večjo od 7.500&nbsp;€, nad to mejo ne bi več plačevali prispevkov za pokojninsko in zdravstveno blagajno. To bi povečalo njihove neto plače. Zgoraj si lahko ogledaš za koliko.</p>
       </div>
       <div class="vidcol">
         <button class="btn up" id="goUp" type="button"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5M5 11.5 12 4.5l7 7" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></b>Premikaj se gor</button>
@@ -585,7 +585,7 @@ const CICO={
 };
 const COST=[
   {ico:'lunch', d:'Brezplačna kosila', m:'Kosila', sub:'za vse osnovnošolce', v:77},
-  {ico:'home',  d:'Gradnja stanovanj', m:'Stanov.', sub:'državni denar', v:100},
+  {ico:'home',  d:'Gradnja stanovanj', m:'Stanov.', sub:'državna sredstva', v:100},
   {ico:'hosp',  d:'Infekcijska klinika', m:'Klinika', sub:'v Ljubljani', v:156},
   {ico:'kid',   d:'Brezplačni vrtci', m:'Vrtci', sub:'za vse otroke', v:170},
   {ico:'hat',   d:'Razvojna kapica', m:'Kapica', sub:'vsako leto', v:265, k:'k'},
@@ -728,10 +728,10 @@ $('share').addEventListener('click',async()=>{
     const t=document.createElement('textarea');t.value=url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();
     try{ok=document.execCommand('copy');}catch(_){}t.remove();}
   const c=$('copied');
-  c.innerHTML=ok?'<b>Povezava skopirana</b><span>Deli s prijatelji ali objavi</span>':`<b>Deli s prijatelji ali objavi</b><span>${url}</span>`;
+  c.innerHTML=ok?'<b>Povezava je bila kopirana</b><span>– deli s prijatelji ali objavi.</span>':`<b>Deli s prijatelji ali objavi.</b><span>${url}</span>`;
   c.classList.remove('on'); void c.offsetWidth; c.classList.add('on');
   const sb=$('share'); sb.classList.remove('pop'); void sb.offsetWidth; sb.classList.add('pop');
-  $('shareTxt').textContent=ok?'Skopirano!':'Povej naprej';
+  $('shareTxt').textContent=ok?'Kopirano!':'Povej naprej';
   clearTimeout(shareT); shareT=setTimeout(()=>{c.classList.remove('on');$('shareTxt').textContent='Povej naprej';},4500);
 });
 // ---------- animiran prihod logotipa, ko pride v pogled ----------
