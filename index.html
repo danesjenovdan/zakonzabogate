@@ -171,7 +171,9 @@ td.pos{color:var(--violet);font-weight:700}
 .btn.share.pop b{animation:sharePop .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes sharePop{0%{transform:scale(.8)}50%{transform:scale(1.25) rotate(12deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.btn.share,.btn.morelink,.btn.share b,.btn.morelink b{transition:none}.btn.share.pop b{animation:none}}
-.cta-in img.anim-logo{width:clamp(200px,26vw,320px);height:auto;aspect-ratio:1;flex:none;overflow:visible}
+.cta-in .anim-logo{position:relative;display:block;width:clamp(200px,26vw,320px);aspect-ratio:1;flex:none}
+/* platno animacije je 2600/1280 večje od logotipa, da se črke ob priletu ne odrežejo */
+.cta-in .anim-img{position:absolute;left:-51.5625%;top:-51.5625%;width:203.125%;height:203.125%;max-width:none;pointer-events:none}
 /* ---------- stroški (navpično) ---------- */
 .cost{position:relative}
 .bars.six,.names.six,.icons.six{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -226,7 +228,7 @@ td.pos{color:var(--violet);font-weight:700}
 .hat{position:relative;width:100%;display:flex;flex-direction:column;align-items:center}
 .hat .top{width:66%;height:10px;border-radius:50%;background:#2E2935;margin-bottom:-5px;position:relative;z-index:1}
 .hat .crown{width:66%;background:var(--hat);clip-path:polygon(0 0,100% 0,95% 100%,5% 100%)}
-.hat .band{width:60%;height:14px;background:#4A4352}
+.hat .band{width:60%;height:16px;background:var(--coral);box-shadow:inset 0 4px 0 #F07A55}
 .hat .brim{width:112%;height:11px;border-radius:999px;background:var(--hat);position:relative;z-index:2}
 .top-lbl{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(var(--h) + 10px);text-align:center;width:max-content;max-width:160px}
 .top-lbl .n{font:700 clamp(10px,1.2vw,12px)/1.2 var(--text);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
@@ -343,9 +345,9 @@ td.pos{color:var(--violet);font-weight:700}
   .rcpt .stamp{display:none}
   .cta-in{flex-direction:column-reverse;align-items:stretch}
   .cta-btns{grid-template-columns:1fr}
-  .cta-in img.anim-logo{align-self:center}
+  .cta-in .anim-logo{align-self:center}
   .claim-row{flex-direction:column;align-items:flex-start;gap:16px}
-  .cta-in img.anim-logo{width:min(240px,64vw)}
+  .cta-in .anim-logo{width:min(240px,64vw)}
   .hud .pill{display:none}
   .brand img{width:46px;height:46px}
   .top-lbl .n{display:none}
@@ -410,7 +412,7 @@ td.pos{color:var(--violet);font-weight:700}
           <a class="btn morelink" href="https://protiunicevanju.si/" target="_blank" rel="noopener"><b class="pu"><img src="assets/protiunicevanju.png" alt=""></b>Več o zakonu</a>
         </div>
       </div>
-      <img class="anim-logo" data-anim="assets/logo-anim.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Zakon za bogate">
+      <span class="anim-logo"><img class="anim-img" data-anim="assets/logo-anim.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Zakon za bogate"></span>
     </div>
   </div>
 </section>
@@ -568,7 +570,7 @@ const n1=v=>v.toLocaleString('sl-SI',{minimumFractionDigits:1,maximumFractionDig
 
 // ---------- številke na vrhu ----------
 const set=(k,h)=>document.querySelectorAll(`[data-k="${k}"]`).forEach(e=>e.innerHTML=h);
-const VHAT='<i class="vhat"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="9" rx="11" ry="3" fill="#2E2935"/><path d="M13 9h22l-1.5 23h-19z" fill="#141118"/><rect x="14" y="26" width="20" height="6" fill="#4A4352"/><rect x="4" y="32" width="40" height="6" rx="3" fill="#141118"/></svg></i>';
+const VHAT='<i class="vhat"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="9" rx="11" ry="3" fill="#2E2935"/><path d="M13 9h22l-1.5 23h-19z" fill="#141118"/><rect x="14" y="26" width="20" height="6" fill="#E5603A"/><rect x="4" y="32" width="40" height="6" rx="3" fill="#141118"/></svg></i>';
 const PDZ=ROWS[4]; set('pdz-m','+'+eur(PDZ.diff)); set('pdz-y',`na mesec, ${eur(PDZ.diff*12)} na leto.`);
 set('dir-m','+'+eur(DIR.diff)); set('dir-y',`na mesec, ${eur(DIR.diff*12)} na leto — samo zaradi kapice.`);
 set('bro-m','+'+eur(BRO.diff)); set('bro-y',`na mesec, ${eur(BRO.diff*12)} na leto. Samo razlika je ${n1(BRO.diff/MIN)} minimalne neto plače.`);
@@ -597,7 +599,7 @@ document.querySelectorAll('[data-icons]').forEach(el=>{el.innerHTML=el.dataset.i
 $('icons').innerHTML=BARS.map(r=>`<div><span class="ico${r.ico.startsWith('photo')?' photo':''}" title="${r.name}">${r.ico==='photo'?'<img src="'+PHOTO+'" alt="">':r.ico==='photoZ'?'<img src="'+PHOTO_Z+'" alt="">':ICONS[r.ico]}</span></div>`).join('');
 
 // ---------- STROŠKI: navpični graf ----------
-const HAT_ICO='<svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="11" ry="3" fill="#2E2935"/><path d="M13 10h22l-1.5 22h-19z" fill="#141118"/><rect x="14" y="27" width="20" height="5" fill="#4A4352"/><rect x="5" y="32" width="38" height="5" rx="2.5" fill="#141118"/></svg>';
+const HAT_ICO='<svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="11" ry="3" fill="#2E2935"/><path d="M13 10h22l-1.5 22h-19z" fill="#141118"/><rect x="14" y="27" width="20" height="5" fill="#E5603A"/><rect x="5" y="32" width="38" height="5" rx="2.5" fill="#141118"/></svg>';
 const CICO={
   law:'<svg viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="3" fill="#E5603A"/><g fill="#FBF6E8"><rect x="15" y="13" width="18" height="3" rx="1"/><rect x="15" y="20" width="18" height="3" rx="1"/><rect x="15" y="27" width="12" height="3" rx="1"/></g></svg>',
   kid:'<svg viewBox="0 0 48 48"><rect x="6" y="28" width="14" height="14" rx="2" fill="#E5603A"/><rect x="20" y="28" width="14" height="14" rx="2" fill="#4632B5"/><rect x="13" y="14" width="14" height="14" rx="2" fill="#EDB92E"/><circle cx="38" cy="16" r="6" fill="#1E1638"/></svg>',
