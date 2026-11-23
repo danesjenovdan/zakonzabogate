@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zakonzabogate
+  labels:
+    app: zakonzabogate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zakonzabogate
+  template:
+    metadata:
+      labels:
+        app: zakonzabogate
+    spec:
+      containers:
+        - name: zakonzabogate
+          image: zakonzabogate
+          ports:
+            - containerPort: 80
