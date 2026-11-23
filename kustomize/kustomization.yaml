@@ -8,4 +8,4 @@ resources:
 images:
   - name: zakonzabogate
     newName: rg.fr-par.scw.cloud/djnd/zakonzabogate
-    newTag: '45dda5c8d558c9474d550f87035b5c9584519ed6'
+    newTag: '1fb6cfe97c4cfb317d251ee45fb32350a26c368e'
