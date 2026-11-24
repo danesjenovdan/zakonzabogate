@@ -10,7 +10,23 @@
   <g clip-path="url(#c)" fill="#7458F5">
     <path d="M32 32 L32 2 L40 3Z M32 32 L59 18 L62 26Z M32 32 L58 48 L52 55Z M32 32 L24 61 L16 58Z M32 32 L4 44 L2 36Z M32 32 L8 10 L15 5Z"/>
   </g>
-  <!-- črka Z: črna senca, črna obroba, rumeno polnilo -->
-  <path d="M19 17 H46 V24 L30 41 H46 V48 H17 V41 L33 24 H19 Z" fill="#000" transform="translate(-1.6 2)" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
-  <path d="M19 17 H46 V24 L30 41 H46 V48 H17 V41 L33 24 H19 Z" fill="#FEE701" stroke="#000" stroke-width="3.2" stroke-linejoin="round" paint-order="stroke"/>
+  <!-- cilinder (kapica), rahlo nagnjen -->
+  <g transform="rotate(-10 32 34)">
+    <!-- rumena obroba za berljivost v majhni velikosti -->
+    <g fill="#FEE701" stroke="#FEE701" stroke-width="4.5" stroke-linejoin="round">
+      <path d="M20 16 C25 14 39 14 44 16 L42 41 H22 Z"/>
+      <ellipse cx="32" cy="43" rx="19" ry="4.6"/>
+    </g>
+    <!-- krajci -->
+    <ellipse cx="32" cy="43" rx="19" ry="4.6" fill="#141118"/>
+    <!-- krona -->
+    <path d="M20 16 C25 14 39 14 44 16 L42 41 C37 42.6 27 42.6 22 41 Z" fill="#141118"/>
+    <!-- vrh -->
+    <ellipse cx="32" cy="15.6" rx="12" ry="2.8" fill="#2E2935"/>
+    <!-- trak -->
+    <path d="M21.6 33 C27 34.6 37 34.6 42.4 33 L41.9 39.4 C36.6 41 27.4 41 22.1 39.4 Z" fill="#E5603A"/>
+    <path d="M21.6 33 C27 34.6 37 34.6 42.4 33 L42.3 34.6 C37 36.2 27 36.2 21.7 34.6 Z" fill="#F07A55"/>
+    <!-- sijaj -->
+    <path d="M25 20 L24 30" stroke="#3A3442" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
 </svg>
