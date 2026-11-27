@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>OG slike strani — Zakon za bogate</title>
+<!-- Predloga za OG slike (1200 × 630): ?p=zakon (vstopna stran) | ?p=dvozivka -->
+<link href="assets/css/fonts.css" rel="stylesheet">
+<style>
+:root{--cream:#F3EAD3;--paper:#FBF6E8;--ink:#1E1638;--violet:#4632B5;--lav:#B3A2F0;--gold:#EDB92E;--coral:#E5603A;--pink:#F2D9CF}
+*{box-sizing:border-box;margin:0}
+html,body{width:1200px;height:630px;overflow:hidden;font-family:'Rubik',sans-serif}
+.c{position:relative;width:1200px;height:630px;overflow:hidden}
+.grain{position:absolute;inset:0;opacity:.14;mix-blend-mode:multiply;z-index:20;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+.kt{display:inline-block;transform:rotate(-2deg);filter:drop-shadow(-6px 7px 0 var(--ink))}
+.kt-b{--c:.42em;position:relative;isolation:isolate;background:var(--paper);color:var(--ink);font:900 22px/1 'Archivo';text-transform:uppercase;letter-spacing:.12em;white-space:nowrap;padding:.85em 1.3em .78em;
+  clip-path:polygon(var(--c) 0,calc(100% - var(--c)) 0,100% var(--c),100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,var(--c) 100%,0 calc(100% - var(--c)),0 var(--c))}
+.kt-b::before,.kt-b::after{content:"";position:absolute;z-index:-1;clip-path:polygon(var(--k) 0,calc(100% - var(--k)) 0,100% var(--k),100% calc(100% - var(--k)),calc(100% - var(--k)) 100%,var(--k) 100%,0 calc(100% - var(--k)),0 var(--k))}
+.kt-b::before{inset:6px;--k:calc(var(--c) - 3.5px);background:var(--ink)}
+.kt-b::after{inset:8.5px;--k:calc(var(--c) - 5px);background:var(--paper)}
+h1{font:900 76px/.92 'Archivo';text-transform:uppercase;letter-spacing:-.005em;margin-top:28px}
+h1 em{font-style:normal}
+.sub{font:600 27px/1.3 'Rubik';margin-top:22px;max-width:520px}
+.foot{position:absolute;left:60px;bottom:46px;font:800 22px/1 'Rubik';letter-spacing:.06em;text-transform:uppercase}
+.foot em{font-style:normal;background:var(--coral);color:var(--paper);padding:6px 10px 4px;margin-left:6px}
+.left{position:absolute;left:60px;top:62px;width:600px;z-index:3}
+svg.art{position:absolute;right:0;top:0;width:620px;height:630px}
+
+/* vstopna stran */
+.zakon{background:var(--coral);color:var(--paper)}
+.zakon h1 em{color:var(--gold)}
+.zakon .foot em{background:var(--ink)}
+.zakon .tix{position:absolute;right:50px;top:40px;width:560px;height:520px}
+.tk{position:absolute;width:300px;background:var(--paper);border-radius:22px;overflow:hidden;box-shadow:0 0 0 4px var(--ink),-10px 12px 0 var(--ink)}
+.tk svg{display:block;width:100%;height:auto;border-bottom:4px solid var(--ink)}
+.tk b{display:block;font:900 30px/.95 'Archivo';text-transform:uppercase;color:var(--ink);padding:16px 18px 18px}
+.tk.t1{left:0;top:0;transform:rotate(-5deg)}
+.tk.t2{right:0;top:250px;transform:rotate(4deg)}
+.logo{position:absolute;left:520px;top:30px;width:120px;transform:rotate(8deg);z-index:4}
+
+/* Dvoživka */
+.dvozivka{background:var(--pink);color:var(--ink)}
+.dvozivka h1{font-size:66px}
+.dvozivka h1 em{color:var(--violet)}
+.dvozivka .rcp{position:absolute;left:60px;bottom:110px;background:var(--paper);border-radius:6px;padding:14px 20px;transform:rotate(-1.5deg);box-shadow:0 0 0 4px var(--ink),-8px 9px 0 var(--ink);font:600 22px/1.25 'Rubik';display:flex;gap:18px;align-items:baseline}
+.dvozivka .rcp b{font:900 44px/1 'Archivo'}
+.dvozivka .rcp span{font-size:18px;color:#6b6180;max-width:180px;line-height:1.15}
+.chip{position:absolute;right:28px;top:24px;z-index:4;background:var(--ink);color:var(--paper);border-radius:99px;padding:10px 18px 9px;font:700 16px/1 'Rubik';letter-spacing:.1em;text-transform:uppercase}
+.chip i{font-style:normal;color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="c" id="c"></div>
+<script src="assets/js/druzina.js"></script>
+<script src="assets/js/ljudje.js"></script>
+<script>
+const p=new URLSearchParams(location.search).get('p')||'zakon';
+const c=document.getElementById('c'); c.className='c '+p;
+const STETH=`<path d="M-30 -326 C-56 -300 -60 -250 -36 -226 C-20 -210 6 -214 12 -232 L12 -258" fill="none" stroke="#EDB92E" stroke-width="9" stroke-linecap="round"/><path d="M30 -326 C50 -306 54 -280 40 -262" fill="none" stroke="#EDB92E" stroke-width="9" stroke-linecap="round"/><circle cx="12" cy="-262" r="16" fill="#EDB92E" stroke="#FBF6E8" stroke-width="5"/><rect x="34" y="-214" width="40" height="40" rx="6" fill="#FBF6E8"/><rect x="50" y="-208" width="8" height="28" fill="#E5603A"/><rect x="40" y="-198" width="28" height="8" fill="#E5603A"/>`;
+const HATP=`<path fill="#141118" fill-rule="evenodd" d="M-38 -102 H38 Q44 -102 44 -96 V0 H-44 V-96 Q-44 -102 -38 -102 Z M-86 0 H86 Q94 0 94 8 Q94 16 86 16 H-86 Q-94 16 -94 8 Q-94 0 -86 0 Z"/><rect x="-44" y="-24" width="88" height="12" fill="#E5603A"/>`;
+const CROSS=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-24" y="-24" width="48" height="48" rx="6" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="-6" y="-17" width="12" height="34" fill="#E5603A"/><rect x="-17" y="-6" width="34" height="12" fill="#E5603A"/></g>`;
+const HOUSE=f=>`<g><path d="M-90 0 V-130 L0 -210 L90 -130 V0 Z" fill="${f}" stroke="#1E1638" stroke-width="7" stroke-linejoin="round"/><rect x="-22" y="-74" width="44" height="74" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="-66" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="32" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/></g>`;
+const BOLN=`<g><rect x="-150" y="-260" width="300" height="260" fill="#4632B5" stroke="#1E1638" stroke-width="7"/>${[0,1,2].map(r=>[0,1,2,3].map(cc=>`<rect x="${-122+cc*244/3.6}" y="${-230+r*66}" width="49" height="40" fill="#FBF6E8"/>`).join('')).join('')}<rect x="-34" y="-64" width="68" height="64" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/>${CROSS(0,-300,1.2)}</g>`;
+const KLIN=`<g><rect x="-115" y="-190" width="230" height="190" fill="#EDB92E" stroke="#1E1638" stroke-width="7"/>${[0,1].map(r=>[0,1,2].map(cc=>`<rect x="${-91+cc*182/2.8}" y="${-166+r*62}" width="43" height="38" fill="#FBF6E8"/>`).join('')).join('')}<rect x="-28" y="-58" width="56" height="58" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/>${CROSS(-68,-222,1)}<g transform="translate(28 -214)"><rect x="-5" y="12" width="6" height="14" fill="#1E1638"/><rect x="45" y="12" width="6" height="14" fill="#1E1638"/><rect x="-62" y="-22" width="124" height="36" rx="5" fill="#E5603A" stroke="#1E1638" stroke-width="5"/><text x="0" y="5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="25" letter-spacing="2" fill="#FBF6E8">PRIVAT</text></g></g>`;
+const PILE=()=>{const PX=[-84,-50,-16,18,52,86],H=[3,6,10,12,8,4];let o='';for(const j of [0,5,1,4,2,3])for(let k=0;k<H[j];k++){const x=PX[j]+((j*7+k*13)%5-2)*1.1,y=-7-k*8.2;o+=`<path d="M${x-20} ${y} v7 a20 6.5 0 0 0 40 0 v-7 Z" fill="#D9A21F" stroke="#1E1638" stroke-width="2.6"/><path d="M${x-12} ${y+6} v5 M${x-4} ${y+7} v5 M${x+4} ${y+7} v5 M${x+12} ${y+6} v5" stroke="#9C7212" stroke-width="1.6"/><ellipse cx="${x}" cy="${y}" rx="20" ry="6.5" fill="#F2C64A" stroke="#1E1638" stroke-width="2.6"/>`;if(k===H[j]-1)o+=`<ellipse cx="${x}" cy="${y}" rx="13" ry="4" fill="none" stroke="#C8901A" stroke-width="1.6"/>`;}return o+`<g transform="translate(-112 0) rotate(-12)"><circle cx="0" cy="-26" r="25" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><circle cx="0" cy="-26" r="18" fill="none" stroke="#9C7212" stroke-width="2"/><text x="0" y="-17" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="26" fill="#1E1638">€</text></g>`;};
+const rays=(n,r)=>{let d='';for(let i=0;i<n;i+=2){const a=(i*360/n)*Math.PI/180,b=((i+1)*360/n)*Math.PI/180;d+=`M0 0 L${(Math.cos(a)*r).toFixed(0)} ${(Math.sin(a)*r).toFixed(0)} L${(Math.cos(b)*r).toFixed(0)} ${(Math.sin(b)*r).toFixed(0)}Z`;}return d;};
+
+if(p==='dvozivka'){
+  c.innerHTML=`<div class="grain"></div>
+  <svg class="art" viewBox="0 0 620 630">
+    <g transform="translate(330 560)"><path d="${rays(48,900)}" fill="#ECCBBE"/></g>
+    <g transform="translate(110 560) scale(.95)">${BOLN}</g>
+    <g transform="translate(520 560) scale(.95)">${KLIN}</g>
+    <g transform="translate(492 560) scale(1.12)">${PILE()}</g>
+    <g transform="translate(60 560) scale(.5)">${HOUSE('#B3A2F0')}</g>
+    <g transform="translate(580 560) scale(.46)">${HOUSE('#E5603A')}</g>
+    <g transform="translate(330 566) scale(.98)">${father(pal('sil','#F2D9CF'))}${STETH}</g>
+    <g transform="translate(264 520) scale(.7)"><path d="M-26 -66 V-80 Q-26 -88 -18 -88 H18 Q26 -88 26 -80 V-66" fill="none" stroke="#1E1638" stroke-width="8"/><rect x="-60" y="-66" width="120" height="70" rx="10" fill="#1E1638"/><text x="0" y="-18" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="30" fill="#EDB92E">s.p.</text></g>
+    <rect x="0" y="560" width="620" height="70" fill="#1E1638"/>
+  </svg>
+  <span class="chip">Oseba je izmišljena <i>·</i> ukrepi so resnični</span>
+  <div class="left">
+    <div class="kt"><div class="kt-b">Dame in gospodje</div></div>
+    <h1>Spoznajte<br><em>dr. Dvoživko</em></h1>
+    <p class="sub">Zdravnik, lastnik klinike, najemodajalec in popoldanski s.p. Koliko mu prinese zakon?</p>
+  </div>
+  <div class="rcp"><b>+23.276 €</b><span>več v žepu na leto</span></div>
+  <div class="foot">6. decembra glasuj <em>PROTI</em></div>`;
+} else {
+  const kap=`<svg viewBox="0 0 400 230"><rect width="400" height="230" fill="#4632B5"/><g transform="translate(300 230)"><path d="${rays(48,600)}" fill="#5240C4"/></g>
+    <g fill="#B3A2F0" stroke="#1E1638" stroke-width="4"><rect x="34" y="194" width="34" height="40"/><rect x="82" y="186" width="34" height="48"/><rect x="130" y="176" width="34" height="58"/><rect x="178" y="156" width="34" height="78"/><rect x="226" y="130" width="34" height="104"/></g>
+    <rect x="282" y="-10" width="40" height="244" fill="#EDB92E" stroke="#1E1638" stroke-width="4"/><rect x="274" y="86" width="56" height="5" fill="#1E1638"/>
+    <g transform="translate(302 84) rotate(10) scale(.42)">${HATP}</g></svg>`;
+  const dvo=`<svg viewBox="0 0 400 230"><rect width="400" height="230" fill="#F2D9CF"/><g transform="translate(200 230)"><path d="${rays(48,600)}" fill="#ECCBBE"/></g>
+    <g transform="translate(66 230) scale(.36)">${BOLN}</g><g transform="translate(326 230) scale(.34)">${HOUSE('#EDB92E')}</g><g transform="translate(372 230) scale(.26)">${HOUSE('#B3A2F0')}</g>
+    <g transform="translate(200 232) scale(.42)">${father(pal('sil','#F2D9CF'))}${STETH}</g></svg>`;
+  c.innerHTML=`<div class="grain"></div>
+  <div class="left">
+    <h1>Komu koristi<br>zakon <em>za bogate?</em></h1>
+    <p class="sub">Preveri sam: poišči Brodnjakovo kapico, spoznaj dr. Dvoživko.</p>
+  </div>
+  <div class="tix">
+    <div class="tk t1">${kap}<b>Poišči Brodnjakovo kapico</b></div>
+    <div class="tk t2">${dvo}<b>Spoznajte dr. Dvoživko</b></div>
+  </div>
+  <div class="foot">6. decembra glasuj <em>PROTI</em></div>`;
+}
+</script>
+</body>
+</html>
