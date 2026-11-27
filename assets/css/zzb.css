@@ -1,0 +1,105 @@
+/* Zakon za bogate — skupni slog za vstopno stran in izkušnje (design.md v5 »retro klub») */
+:root{
+  --cream:#F3EAD3; --paper:#FBF6E8; --ink:#1E1638; --muted:#6b6180; --hat:#141118;
+  --violet:#4632B5; --violet-2:#5240C4; --lav:#B3A2F0; --gold:#EDB92E; --gold-2:#F2C64A; --coral:#E5603A;
+  --pink:#F2D9CF; --pink-2:#ECCBBE;
+  --disp:'Archivo',system-ui,sans-serif; --text:'Rubik',system-ui,sans-serif;
+  --maxw:1100px;
+}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:clip}
+body{background:var(--cream);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+.disp{font-family:var(--disp);font-weight:900;text-transform:uppercase;letter-spacing:-.005em;line-height:.95}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;position:relative}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.14;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- kartuša (design.md §5.1) ---------- */
+.kt{display:inline-block;transform:rotate(-2deg);filter:drop-shadow(-5px 6px 0 var(--ink))}
+.kt-b{--c:.42em;position:relative;isolation:isolate;background:var(--paper);color:var(--ink);
+  font:900 15px/1 var(--disp);text-transform:uppercase;letter-spacing:.12em;white-space:nowrap;
+  padding:.85em 1.3em .78em;text-align:center;
+  clip-path:polygon(var(--c) 0,calc(100% - var(--c)) 0,100% var(--c),100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,var(--c) 100%,0 calc(100% - var(--c)),0 var(--c))}
+.kt-b::before,.kt-b::after{content:"";position:absolute;z-index:-1;
+  clip-path:polygon(var(--k) 0,calc(100% - var(--k)) 0,100% var(--k),100% calc(100% - var(--k)),calc(100% - var(--k)) 100%,var(--k) 100%,0 calc(100% - var(--k)),0 var(--k))}
+.kt-b::before{inset:5px;--k:calc(var(--c) - 3px);background:var(--ink)}
+.kt-b::after{inset:7px;--k:calc(var(--c) - 4px);background:var(--paper)}
+.kt-b small{display:block;font:700 .55em/1 var(--text);letter-spacing:.14em;margin-top:.6em;padding-top:.6em;border-top:5px double var(--ink)}
+
+/* ---------- gumbi ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:99px;padding:12px 22px 12px 12px;font:700 14px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:0;
+  transition:transform .28s cubic-bezier(.2,1.6,.4,1),box-shadow .28s cubic-bezier(.2,1.6,.4,1);-webkit-tap-highlight-color:transparent;user-select:none}
+.btn b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;font-size:18px;flex:none;transition:transform .35s cubic-bezier(.2,1.6,.4,1)}
+.btn.share{background:var(--ink);color:var(--paper);box-shadow:-5px 6px 0 rgba(30,22,56,.45)}
+.btn.share b{background:var(--gold);color:var(--ink)}
+.btn.morelink{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--paper),-5px 6px 0 rgba(30,22,56,.35)}
+.btn.morelink b.pu{background:var(--paper);width:44px;height:44px;padding:2px}
+.btn.morelink b.pu img{width:100%;height:100%;display:block}
+.btn.go{background:var(--gold);color:var(--ink);box-shadow:-5px 6px 0 var(--ink)}
+.btn.go b{background:var(--ink);color:var(--gold)}
+.btn:hover{transform:translate(1px,-1px)}
+.btn:active{transform:translate(-5px,6px) scale(.97);transition-duration:.08s;box-shadow:none}
+.btn.morelink:active{box-shadow:inset 0 0 0 2px var(--paper)}
+.btn:active b{transform:rotate(-25deg) scale(.88)}
+.btn.share.pop b{animation:sharePop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes sharePop{0%{transform:scale(.8)}50%{transform:scale(1.25) rotate(12deg)}100%{transform:none}}
+.share-wrap{position:relative;display:flex}
+.copied{position:absolute;left:0;top:calc(100% + 14px);z-index:40;width:max-content;max-width:300px;background:var(--paper);color:var(--ink);border-radius:16px;padding:14px 18px 13px 52px;box-shadow:0 0 0 3px var(--ink),-6px 7px 0 var(--ink);
+  opacity:0;transform:translateY(-8px) scale(.96);transform-origin:20px 0;pointer-events:none;transition:opacity .2s,transform .25s cubic-bezier(.2,1.3,.4,1)}
+.copied::before{content:"✓";position:absolute;left:14px;top:50%;margin-top:-14px;width:28px;height:28px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font:900 16px/1 var(--text)}
+.copied::after{content:"";position:absolute;left:24px;top:-12px;border-style:solid;border-width:0 10px 12px;border-color:transparent transparent var(--ink)}
+.copied.on{opacity:1;transform:none}
+.copied b{display:block;font:900 20px/1.1 var(--disp);text-transform:uppercase}
+.copied span{display:block;font:500 14px/1.3 var(--text);color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.copied.right{left:auto;right:0;transform-origin:calc(100% - 20px) 0}
+.copied.right::after{left:auto;right:24px}
+
+/* ---------- poziv (koralni pas) ---------- */
+.cta-top{background:var(--coral);color:var(--paper);padding:clamp(56px,9vw,100px) 0}
+.cta-in{display:flex;gap:28px;align-items:center;justify-content:space-between}
+.cta-in>div{flex:1;min-width:0}
+.cta-top h1,.cta-top h2{font-size:clamp(34px,6vw,72px);line-height:.95;max-width:16ch}
+.cta-top .vote{font-size:clamp(24px,3.6vw,42px);margin-top:18px}
+.cta-top .vote em{font-style:normal;background:var(--gold);color:var(--ink);padding:2px 12px 0;display:inline-block;transform:rotate(-2deg)}
+.cta-btns{display:grid;grid-template-columns:repeat(2,250px);gap:14px;margin-top:30px}
+.cta-btns .btn{width:100%;justify-content:flex-start}
+.anim-logo{position:relative;display:block;width:clamp(200px,26vw,320px);aspect-ratio:1;flex:none}
+/* platno animacije je 2600/1280 večje od logotipa, da se črke ob priletu ne odrežejo */
+.anim-img{position:absolute;left:-51.5625%;top:-51.5625%;width:203.125%;height:203.125%;max-width:none;pointer-events:none}
+
+/* ---------- zgornja vrstica na podstraneh ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:3px solid var(--ink)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:86px}
+.back{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 14px 10px 10px;border-radius:99px;box-shadow:inset 0 0 0 2px var(--ink)}
+.back b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:15px}
+.back:hover{background:var(--paper)}
+.topbar .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-2deg);display:block;height:62px;transition:transform .3s cubic-bezier(.2,1.6,.4,1)}
+.topbar .logo:hover{transform:translate(-50%,-50%) rotate(-2deg) scale(1.05)}
+.topbar .logo img{height:100%;width:auto;display:block}
+.topbar .btn.share{padding:8px 16px 8px 8px;font-size:12px;box-shadow:-3px 4px 0 rgba(30,22,56,.45)}
+.topbar .btn.share b{width:28px;height:28px;font-size:15px}
+
+/* ---------- referendum (temni pas) ---------- */
+.ref{background:var(--ink);color:var(--paper);border-radius:30px;padding:clamp(26px,4vw,40px) clamp(22px,4vw,40px);display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ref .disp{font-size:clamp(28px,4.4vw,48px)}
+.ref .disp em{font-style:normal;color:var(--gold)}
+.ref p.cta{margin-top:14px;font:900 clamp(20px,2.6vw,28px)/1 var(--disp);text-transform:uppercase;color:var(--gold)}
+.ref p.cta em{font-style:normal;color:var(--paper);background:var(--coral);padding:2px 8px 0}
+.ref>div{flex:1;min-width:260px}
+.foot{padding:28px 0 40px;font-size:13px;color:var(--muted)}
+.foot a{color:var(--violet)}
+
+@media (max-width:720px){
+  .cta-in{flex-direction:column-reverse;align-items:stretch}
+  .cta-btns{grid-template-columns:1fr}
+  .anim-logo{align-self:center;width:min(240px,64vw)}
+  .topbar .wrap{height:70px}
+  .topbar .logo{height:min(54px,calc((100vw - 136px) / 5.4))}
+  .back span{display:none}
+  .back{padding:6px}
+  .topbar .btn.share span{display:none}
+  .topbar .btn.share{padding:6px}
+}
+@media (prefers-reduced-motion:reduce){.btn,.btn b{transition:none}.btn.share.pop b{animation:none}}

@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoznajte dr. Dvoživko — Zakon za bogate</title>
+<meta name="description" content="Zdravnik v javni bolnišnici, lastnik zasebne klinike, najemodajalec in popoldanski s.p. Spoznajte dr. Dvoživko in poglejte, koliko mu prinese interventni zakon. Oseba je izmišljena, ukrepi so resnični.">
+<!-- Plausible: naloži se samo na zakonzabogate.si (ne na github.io ali localhost) -->
+<script>
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
+if (/(^|\.)zakonzabogate\.si$/.test(location.hostname)) {
+  var ps = document.createElement('script');
+  ps.defer = true;
+  ps.setAttribute('data-domain', 'zakonzabogate.si');
+  ps.src = 'https://plausible.lb.djnd.si/js/script.file-downloads.outbound-links.pageview-props.tagged-events.js';
+  document.head.appendChild(ps);
+}
+</script>
+<link rel="icon" href="../assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png?v=2" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zakon za bogate">
+<meta property="og:title" content="Spoznajte dr. Dvoživko">
+<meta property="og:description" content="Zdravnik, lastnik klinike, najemodajalec in popoldanski s.p.: koliko mu prinese interventni zakon? Oseba je izmišljena, ukrepi so resnični. Referendum 6. decembra — glasuj PROTI.">
+<meta property="og:url" content="https://zakonzabogate.si/dvozivka/">
+<meta property="og:image" content="https://zakonzabogate.si/og-dvozivka.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spoznajte dr. Dvoživko: koliko interventni zakon prinese zdravniku z zasebno kliniko, stanovanji in s.p.">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spoznajte dr. Dvoživko">
+<meta name="twitter:description" content="Koliko interventni zakon prinese zdravniku z zasebno kliniko, stanovanji in s.p.? Referendum 6. decembra — glasuj PROTI.">
+<meta name="twitter:image" content="https://zakonzabogate.si/og-dvozivka.png">
+<link href="../assets/css/fonts.css" rel="stylesheet">
+<link href="../assets/css/zzb.css" rel="stylesheet">
+<style>
+body{background:var(--pink)}
+.topbar{background:var(--pink)}
+
+/* ---------- uvod ---------- */
+.intro{padding:clamp(34px,5vw,60px) 0 clamp(22px,3vw,34px)}
+.intro-in{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.intro h1{font-size:clamp(44px,7.4vw,96px);margin-top:18px;line-height:.9}
+.intro h1 em{font-style:normal;color:var(--violet)}
+.intro p{max-width:46ch;font-size:18px;margin-top:18px;color:#3d3456}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border-radius:99px;padding:8px 14px 7px;font:700 12px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase}
+.chip i{font-style:normal;color:var(--gold)}
+
+/* ---------- graditelj ---------- */
+.builder{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(22px,3vw,40px);align-items:start;padding-bottom:clamp(50px,7vw,80px)}
+.stagecol{align-self:stretch;display:flex;flex-direction:column;gap:26px}
+.stickwrap{flex:1}
+.stick{position:sticky;top:102px;display:flex;flex-direction:column;gap:22px}
+.stage{position:relative;background:#F7E4DB;border-radius:28px;box-shadow:0 0 0 3px var(--ink);overflow:hidden;aspect-ratio:800/500}
+.stage{display:flex;flex-direction:column}
+.stage svg{position:relative;flex:1;min-height:0;width:100%;display:block}
+.stage .chip{position:relative;z-index:4;justify-content:center;border-radius:0;font-size:11px;padding:7px 11px 6px}
+/* elementi na odru: priletijo */
+.el{opacity:0;transform:translateY(-60px) scale(.7);transform-box:fill-box;transform-origin:50% 100%;transition:opacity .25s,transform .55s cubic-bezier(.2,1.6,.4,1)}
+.el.on{opacity:1;transform:none}
+.cn{animation:cdrop .42s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes cdrop{0%{transform:translateY(-70px);opacity:0}60%{opacity:1}}
+.dchip{transition:transform .45s cubic-bezier(.2,1.6,.4,1)}
+.dchip.bump{animation:bump .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes bump{40%{transform:scale(1.18) rotate(-3deg)}}
+.dchip,.schip{transform-box:fill-box;transform-origin:50% 100%}
+.sis.wink{animation:wink .7s ease}
+@keyframes wink{30%{transform:translateY(-6px) rotate(-4deg)}60%{transform:translateY(0) rotate(3deg)}}
+
+/* račun */
+.rcpt{position:relative;background:var(--paper);padding:22px clamp(18px,3vw,28px) 20px;transform:rotate(-1deg);box-shadow:0 0 0 3px var(--ink),-9px 11px 0 var(--ink);border-radius:6px}
+.rcpt .rh{text-align:center;border-bottom:2px dashed var(--ink);padding-bottom:10px;margin-bottom:6px}
+.rcpt .rh b{display:block;font:900 clamp(24px,2.8vw,32px)/1 var(--disp);text-transform:uppercase}
+.rcpt .rh span{display:block;font:700 11px/1.3 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin-top:5px}
+.rl{display:flex;align-items:baseline;gap:8px;padding:5px 0;font-size:15.5px;font-weight:500;transition:opacity .3s,color .3s}
+.rl .d{flex:1;border-bottom:2px dotted rgba(30,22,56,.4);transform:translateY(-4px);min-width:16px}
+.rl .n{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rl.off{opacity:.32}
+.rl.off .n{font-weight:500}
+.rl.flash{animation:flash .9s ease}
+@keyframes flash{0%{background:rgba(237,185,46,.7)}100%{background:transparent}}
+.rtot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:8px;padding-top:10px;border-top:3px double var(--ink)}
+.rtot span{font:700 12px/1.25 var(--text);letter-spacing:.1em;text-transform:uppercase;max-width:20ch}
+.rtot b{font:900 clamp(30px,3.6vw,42px)/1 var(--disp);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rtot b small{font-size:.45em}
+.sis{position:relative;display:flex;align-items:center;gap:16px;background:var(--lav);border-radius:22px;padding:12px 20px 12px 14px;transform:rotate(.8deg);box-shadow:0 0 0 3px var(--ink),-7px 8px 0 var(--ink)}
+.sis svg{width:64px;height:auto;flex:none;display:block}
+.sis-t{flex:1;display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:12px}
+.sis-t span{font:900 17px/1.1 var(--disp);text-transform:uppercase}
+.sis-t b{font:900 clamp(30px,3.4vw,40px)/1 var(--disp);white-space:nowrap}
+.sis-t small{grid-column:1/-1;font-size:13.5px;line-height:1.3;color:#2b2350;margin-top:4px}
+.stamp{position:absolute;left:-2%;top:12%;z-index:3;transform:rotate(-12deg) scale(1.4);opacity:0;pointer-events:none;transition:opacity .2s,transform .4s cubic-bezier(.2,1.6,.4,1)}
+.stamp.on{opacity:.95;transform:rotate(-10deg) scale(.6)}
+.stamp svg{display:block}
+
+/* stikala */
+.ctrl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.ctrl-head h2{font:900 clamp(24px,2.6vw,32px)/1 var(--disp);text-transform:uppercase}
+.allbtn{border:0;cursor:pointer;background:transparent;font:700 12px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding:9px 14px;border-radius:99px;box-shadow:inset 0 0 0 2px var(--ink)}
+.allbtn:hover{background:var(--paper)}
+.sw{background:var(--paper);border-radius:22px;box-shadow:0 0 0 3px var(--ink);margin-bottom:16px;transition:box-shadow .3s,transform .3s cubic-bezier(.2,1.5,.4,1)}
+.sw.on{box-shadow:0 0 0 3px var(--ink),-6px 7px 0 var(--ink);transform:translate(2px,-2px)}
+.sw-h{display:grid;grid-template-columns:54px 1fr auto 58px;align-items:center;gap:14px;width:100%;padding:14px 16px;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sw-h .ic{width:54px;height:54px;border-radius:16px;background:var(--cream);display:grid;place-items:center;box-shadow:inset 0 0 0 2px rgba(30,22,56,.15)}
+.sw-h .ic svg{width:46px;height:46px;display:block}
+.sw-h .t b{display:block;font:900 19px/1.05 var(--disp);text-transform:uppercase}
+.sw-h .t small{display:block;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.25}
+.sw-h .val{font:900 18px/1 var(--disp);white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
+.sw.on .sw-h .val{color:var(--violet)}
+.tog{position:relative;width:58px;height:32px;border-radius:99px;background:#d9cfbd;box-shadow:inset 0 0 0 2.5px var(--ink);transition:background .25s}
+.tog::after{content:"";position:absolute;left:4px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 2.5px var(--ink);transition:transform .3s cubic-bezier(.2,1.6,.4,1)}
+.sw.on .tog{background:var(--gold)}
+.sw.on .tog::after{transform:translateX(26px)}
+.sw-h:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:22px}
+.sw-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.sw.on .sw-b{grid-template-rows:1fr}
+.sw-b>div{overflow:hidden}
+.sw-b .in{padding:2px 18px 18px 84px;font-size:15px;color:#3d3456}
+.sw-b .in p+p{margin-top:8px}
+.sw-b .law{display:inline-block;margin-top:10px;font:700 11px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--violet)}
+.rng{margin-top:14px}
+.rng label{display:flex;justify-content:space-between;gap:10px;font:700 12px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.rng label output{font:900 18px/1 var(--disp);letter-spacing:0}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;margin-top:4px;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--violet) var(--p,50%),#ddd2bf var(--p,50%));box-shadow:inset 0 0 0 2px var(--ink)}
+input[type=range]::-moz-range-track{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--violet) var(--p,50%),#ddd2bf var(--p,50%));box-shadow:inset 0 0 0 2px var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px var(--ink),-2px 3px 0 3px var(--ink)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px var(--ink),-2px 3px 0 3px var(--ink)}
+input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2px;border-radius:8px}
+.res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:10px;padding:10px 12px;border-radius:12px;background:#F1E8D2;font-size:14.5px}
+.res b{font:900 20px/1 var(--disp);color:var(--violet);white-space:nowrap}
+.cmp{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-top:12px}
+.cmp>div{background:#F1E8D2;border-radius:12px;padding:10px 12px}
+.cmp>div:last-child{background:var(--gold)}
+.cmp span{display:block;font:700 11px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cmp>div:last-child span{color:var(--ink)}
+.cmp b{display:block;font:900 22px/1.1 var(--disp);margin-top:4px;font-variant-numeric:tabular-nums}
+.cmp small{display:block;font-size:12.5px;color:#3d3456}
+.cmp i{font:900 22px/1 var(--disp);font-style:normal}
+.sw-b .in .stat{margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--ink);color:var(--paper);font-size:14.5px}
+.stat b{color:var(--gold)}
+.dest-l{margin-top:14px;font:700 12px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.dest{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.dest button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px 9px;border:0;border-radius:14px;background:#F1E8D2;color:var(--ink);cursor:pointer;font:700 12px/1.1 var(--text);text-align:center;
+  box-shadow:inset 0 0 0 2px rgba(30,22,56,.18);transition:transform .25s cubic-bezier(.2,1.6,.4,1),background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.dest button svg{width:100%;max-width:64px;aspect-ratio:120/100;display:block}
+.dest button:hover{transform:translateY(-2px)}
+.dest button.on{background:var(--gold);box-shadow:inset 0 0 0 2.5px var(--ink),-3px 4px 0 var(--ink);transform:translate(1px,-2px)}
+.dest button:active{transform:translate(-2px,3px);box-shadow:inset 0 0 0 2.5px var(--ink)}
+.dest button:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.dbub{transform-box:fill-box;transform-origin:50% 100%}
+.dbub.pop{animation:dpop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes dpop{0%{transform:scale(.6)}60%{transform:scale(1.08)}}
+.days{display:grid;grid-template-columns:repeat(73,1fr);gap:1.5px;margin-top:12px}
+.days i{aspect-ratio:1/2.4;background:var(--ink);border-radius:1px;transition:background .3s}
+.days i.x{background:#d9cfbd}
+.sw.on .days i.x{background:var(--coral)}
+.dleg{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font:700 11px/1.3 var(--text);letter-spacing:.08em;text-transform:uppercase}
+.dleg i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px;font-style:normal}
+
+/* ---------- konec ---------- */
+.end{background:var(--ink);color:var(--paper);padding:clamp(56px,8vw,96px) 0;position:relative;overflow:hidden}
+.end h2{font-size:clamp(34px,5.6vw,66px);max-width:18ch}
+.end h2 em{font-style:normal;color:var(--gold)}
+.vs{display:grid;grid-template-columns:1fr .62fr 1fr;gap:20px;margin-top:34px;align-items:stretch}
+.vs .sis{color:var(--ink);flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;gap:12px;padding:24px 18px 0;transform:rotate(1deg);overflow:hidden;box-shadow:none;border-radius:26px}
+.vs .sis-t{display:flex;flex-direction:column;align-items:center;gap:6px;order:-1;flex:1}
+.vs .sis-t span{font-size:clamp(15px,1.6vw,19px)}
+.vs .sis-t b{font-size:clamp(40px,4.4vw,60px);color:var(--violet)}
+.vs .sis-t small{font-size:13.5px}
+.vs .sis svg{width:min(120px,60%);margin-bottom:-4px}
+.vs>div{border-radius:26px;padding:26px 26px 0;display:flex;flex-direction:column;overflow:hidden}
+.vs .art{margin:14px -26px 0;margin-top:auto;padding-top:14px}
+.vs .art svg{display:block;width:100%;height:auto;max-height:230px}
+.vs .a{background:var(--gold);color:var(--ink)}
+.vs .b{background:var(--coral);color:var(--paper)}
+.vs .k{font:700 12px/1.3 var(--text);letter-spacing:.12em;text-transform:uppercase}
+.vs .v{font:900 clamp(30px,3.9vw,52px)/1 var(--disp);margin:10px 0 8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs .v small{font-size:.4em}
+.vs p{font-size:15.5px}
+.end .ref{margin-top:44px;background:var(--violet)}
+.end .more{margin-top:34px}
+.more summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font:600 13px/1 var(--text);color:var(--lav);padding:8px 2px;border-bottom:1px dashed rgba(179,162,240,.6)}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--lav);font-weight:700;font-size:14px;line-height:1}
+.more[open] summary::before{content:"−"}
+.method{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:20px;font-size:14.5px;color:#d9d2ea}
+.method h3{font:900 20px/1 var(--disp);text-transform:uppercase;color:var(--paper);margin-bottom:12px}
+.method ul{padding-left:18px}
+.method li{margin:6px 0}
+.method a{color:var(--gold)}
+.others{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:2px dashed rgba(251,246,232,.3)}
+.others .disp{font-size:clamp(22px,2.8vw,30px)}
+.others a.btn{background:var(--paper);color:var(--ink);box-shadow:-5px 6px 0 rgba(0,0,0,.35)}
+.others a.btn b{background:var(--gold);color:var(--ink)}
+.end .foot{color:#a99fc4;padding-bottom:0}
+
+@media (min-width:901px) and (max-height:860px){.stage{aspect-ratio:800/430}.rl{padding:3px 0;font-size:14.5px}}
+@media (max-width:900px){
+  .builder{grid-template-columns:1fr;gap:18px}
+  .stagecol,.stickwrap,.stick{display:contents}
+  .stage{position:sticky;top:70px;z-index:20;order:-1;border-radius:0 0 22px 22px;margin:0 -20px;box-shadow:0 3px 0 var(--ink);aspect-ratio:auto;height:min(42vh,46vw + 64px)}
+  .stage .chip{font-size:10px;padding:5px 8px 6px}
+  .rcpt{order:2;margin-top:10px}
+  .controls{order:1}
+  .vs{grid-template-columns:1fr}
+  .vs .sis svg{width:70px}
+  .vs .v{font-size:clamp(34px,11vw,52px)}
+  .method{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .sw-h{grid-template-columns:44px 1fr 50px;gap:10px;padding:12px}
+  .sw-h .ic{width:44px;height:44px;border-radius:12px}
+  .sw-h .ic svg{width:38px;height:38px}
+  .sw-h .val{grid-column:2;grid-row:2;font-size:15px;margin-top:-4px}
+  .sw-h .tog{grid-column:3;grid-row:1/3;width:50px;height:28px}
+  .tog::after{width:20px;height:20px}
+  .sw.on .tog::after{transform:translateX(22px)}
+  .sw-h .t b{font-size:17px}
+  .sw-b .in{padding:0 14px 16px}
+  .intro p{font-size:16px}
+  .rl{font-size:14px}
+  .stamp{top:14%;left:-9%}
+  .stamp.on{transform:rotate(-10deg) scale(.42)}
+}
+@media (prefers-reduced-motion:reduce){.el,.sw,.tog::after,.sw-b{transition:none}.dchip.bump,.schip.wink,.rl.flash,.cn,.sis.wink{animation:none}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="back" href="../"><b>←</b><span>Vse izkušnje</span></a>
+    <a class="logo" href="../" aria-label="Zakon za bogate — vse izkušnje"><img src="../assets/logo-h.svg" alt=""></a>
+    <div class="share-wrap">
+      <button class="btn share plausible-event-name=Povej+naprej" type="button" data-share><b>↗</b><span>Deli</span></button>
+      <div class="copied right" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="intro-in">
+      <div>
+        <div class="kt"><div class="kt-b">Dame in gospodje</div></div>
+        <h1 class="disp">Spoznajte<br><em>dr. Dvoživko</em></h1>
+        <p>Našli smo osebo, ki bi od interventnega zakona pobrala največ. Dela v javni bolnišnici, je solastnik zasebne klinike, oddaja tri stanovanja in ima popoldanski s.p. Vklopi, kar ima, in poglej, koliko mu prinese zakon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap builder" id="spoznaj">
+  <div class="stagecol">
+   <div class="stickwrap"><div class="stick">
+    <div class="stage" aria-label="Dr. Dvoživka in vse, kar ima">
+      <span class="chip">Oseba je izmišljena <i>·</i> ukrepi so resnični</span>
+      <div class="stamp" id="stamp"></div>
+      <svg id="stage" overflow="visible" viewBox="0 0 800 470" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Zdravnik s cilindrom; okoli njega se pojavijo bolnišnica, klinika, stanovanja, Airbnb in s.p."></svg>
+    </div>
+    <div class="rcpt" id="rcpt">
+      <div class="rh"><b>Doktor Dvoživka</b><span>Račun · interventni zakon (ZIURS)</span></div>
+      <div class="rl off" data-r="boln">Nižji prispevki (kapica)<i class="d"></i><span class="n" id="rBoln">—</span></div>
+      <div class="rl off" data-r="klin"><span id="rKlinT">Dobiček klinike v žep</span><i class="d"></i><span class="n">—</span></div>
+      <div class="rl off" data-r="sp">Nižja dohodnina (popoldanski s.p.)<i class="d"></i><span class="n" id="rSp">—</span></div>
+      <div class="rl off" data-r="sp2">Brez prispevka za dolgotrajno oskrbo<i class="d"></i><span class="n">—</span></div>
+      <div class="rl off" data-r="stan">Nižji davek na najem<i class="d"></i><span class="n" id="rStan">—</span></div>
+      <div class="rl off" data-r="bnb">Airbnb brez omejitev<i class="d"></i><span class="n">—</span></div>
+      <div class="rl off" data-r="pok">Polna pokojnina ob delu (neto)<i class="d"></i><span class="n">—</span></div>
+      <div class="rtot"><span>Dvoživki ostane več na leto</span><b id="tot">0 €</b></div>
+    </div>
+   </div></div>
+  </div>
+
+  <div class="controls">
+    <div class="ctrl-head"><h2>Koristi od ukrepov</h2><button class="allbtn" type="button" id="all">Vklopi vse</button></div>
+
+    <div class="sw" data-k="boln">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="boln"></svg></span><span class="t"><b>Javna bolnišnica</b><small>Redna služba, visoka plača</small></span><span class="val" id="vBoln">+0 €</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Razvojna kapica:</b> prispevki za pokojnino in zdravstvo se obračunajo le do 7.500 € bruto na mesec. Vse nad tem je brez prispevkov — in višja neto plača.</p>
+        <div class="rng"><label for="gross">Bruto plača na mesec <output id="oGross">8.500 €</output></label><input type="range" id="gross" min="3000" max="20000" step="100" value="8500"></div>
+        <div class="res"><span id="tBoln">Več neto na leto</span><b id="xBoln">+1.691 €</b></div>
+        <p style="margin-top:10px">Medicinska sestra v isti bolnišnici zasluži okoli 2.940 € bruto. Od kapice ima <b>0 €</b>.</p>
+        <p class="stat"><b>Koliko je Dvoživk v bolnišnicah?</b> Decembra 2025 je bilo v Sloveniji <b>1.727 starejših zdravnikov</b> s povprečno bruto plačo <b>skoraj 9.000 €</b> — v povprečju krepko nad kapico. V celotnem javnem sektorju je januarja 2026 nad 7.500 € bruto prejelo 3.610 ljudi.</p>
+        <span class="law">ZIURS, 14. in 48. člen</span>
+      </div></div></div>
+    </div>
+
+    <div class="sw" data-k="klin">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="klin"></svg></span><span class="t"><b>Zasebna klinika</b><small>Solastnik, s koncesijo</small></span><span class="val">—</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Dvojna praksa:</b> zdravnik iz javne bolnišnice sme s soglasjem delati pri zasebniku do 8 ur na teden — tudi v svoji kliniki ali prek svojega s.p.</p>
+        <p><b>Prosto razpolaganje z dobičkom:</b> javne bolnišnice lahko z zasebniki spet sklepajo pogodbe, dobiček koncesije, ustvarjen z javnim denarjem, pa se lahko izplača lastnikom.</p>
+        <div class="dest-l">Prestavi dobiček:</div>
+        <div class="dest" role="radiogroup" aria-label="Prestavi dobiček">
+          <button type="button" role="radio" aria-checked="true" data-d="zep" class="on"><svg viewBox="-60 -50 120 100" data-dico="zep"></svg><span>v žep</span></button>
+          <button type="button" role="radio" aria-checked="false" data-d="nep"><svg viewBox="-60 -50 120 100" data-dico="nep"></svg><span>v nepremičnino</span></button>
+          <button type="button" role="radio" aria-checked="false" data-d="jah"><svg viewBox="-60 -50 120 100" data-dico="jah"></svg><span>kupi jahto</span></button>
+          <button type="button" role="radio" aria-checked="false" data-d="cip"><svg viewBox="-60 -50 120 100" data-dico="cip"></svg><span>na Ciper</span></button>
+        </div>
+        <div class="res"><span>Dobiček klinike</span><b id="xKlin">v žep ✓</b></div>
+        <span class="law">ZIURS, 27., 31., 32. in 33. člen</span>
+      </div></div></div>
+    </div>
+
+    <div class="sw" data-k="sp">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="sp"></svg></span><span class="t"><b>Popoldanski s.p.</b><small>Normiranec, zraven redne službe</small></span><span class="val" id="vSp">+4.600 €</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Normirani stroški:</b> zdaj mu država prizna 80 % stroškov le do 12.500 € prihodkov, nad tem 40 %, nad 30.000 € pa nič. Po ZIURS mu prizna 80 % vse do 50.000 € (in 70 % do 70.000 €), čeprav stroškov zares nima. Dohodnina je 20 % od preostanka, višja stopnja 35 % se črta. Prispevka za dolgotrajno oskrbo ne plača več.</p>
+        <div class="rng"><label for="spRev">Prihodki s.p. na leto <output id="oSp">50.000 €</output></label><input type="range" id="spRev" min="5000" max="70000" step="1000" value="50000"></div>
+        <div class="cmp"><div><span>Dohodnina zdaj</span><b id="spNow">6.600 €</b><small id="spNowP">13 % prihodkov</small></div><i>→</i><div><span>Po ZIURS</span><b id="spNew">2.000 €</b><small id="spNewP">4 % prihodkov</small></div></div>
+        <div class="res"><span>Manj dohodnine na leto</span><b id="xSp">+4.600 €</b></div>
+        <span class="law">ZIURS, 3., 9., 22. in 23. člen</span>
+      </div></div></div>
+    </div>
+
+    <div class="sw" data-k="stan">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="stan"></svg></span><span class="t"><b>Dve stanovanji v najem</b><small>Dolgoročno, mladim do 30 let</small></span><span class="val" id="vStan">+0 €</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Davek na najemnine</b> pade s 25 na 15 %, za najem mladim do 30 let pa kar na 5 %. Dvoživka stanovanji oddaja mladim, zato namesto 25 % plača le 5 %. Najemnina ostane enaka, lastniku pa ostane več.</p>
+        <div class="rng"><label for="rent">Najemnina za stanovanje <output id="oRent">1.000 €</output></label><input type="range" id="rent" min="400" max="2000" step="50" value="1000"></div>
+        <div class="res"><span>Manj davka na leto (2 stanovanji)</span><b id="xStan">+2.160 €</b></div>
+        <span class="law">ZIURS, 4. in 46. člen</span>
+      </div></div></div>
+    </div>
+
+    <div class="sw" data-k="bnb">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="bnb"></svg></span><span class="t"><b>Stanovanje na Airbnbju</b><small>V središču Ljubljane</small></span><span class="val">+305 dni</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Brez omejitve:</b> Ljubljana je med občinami, kjer bi bil turistični najem omejen na 60 dni na leto. Zakon to omejitev za leto 2027 odpravi — stanovanje je lahko na Airbnbju vseh 365 dni, spet prek popoldanskega s.p.</p>
+        <div class="days" id="days" aria-hidden="true"></div>
+        <div class="dleg"><span><i style="background:var(--ink)"></i>60 dni po zakonu o gostinstvu</span><span><i style="background:var(--coral)"></i>+305 dni po ZIURS</span></div>
+        <span class="law">ZIURS, 39.–43. člen</span>
+      </div></div></div>
+    </div>
+    <div class="sw" data-k="pok">
+      <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="pok"></svg></span><span class="t"><b>Pokojnina</b><small>Upokojen, pa dela naprej</small></span><span class="val" id="vPok">+0 €</span><span class="tog" aria-hidden="true"></span></button>
+      <div class="sw-b"><div><div class="in">
+        <p><b>Polna pokojnina in plača hkrati:</b> ko Dvoživka izpolni pogoje za starostno pokojnino (62 let in 40 let pokojninske dobe), se lahko upokoji in v bolnišnici dela naprej. Zdaj bi ob delu dobival le 40 % pokojnine, po treh letih 20 %. Po ZIURS dobi <b>vso pokojnino</b> — poleg polne plače.</p>
+        <div class="rng"><label for="pens">Njegova pokojnina (bruto na mesec) <output id="oPens">3.276 €</output></label><input type="range" id="pens" min="1000" max="3276" step="2" value="3276"></div>
+        <div class="cmp"><div><span>Ob delu zdaj (40 %)</span><b id="pNow">1.310 €</b><small>na mesec</small></div><i>→</i><div><span>Po ZIURS (100 %)</span><b id="pNew">3.276 €</b><small>na mesec</small></div></div>
+        <div class="res"><span>Več pokojnine na leto</span><b id="xPok">+23.587 €</b></div>
+        <p style="margin-top:10px" id="pokNet"></p>
+        <p class="stat"><b>Koliko bi to stalo?</b> Polno pokojnino ob delu bi dobilo okoli 22.000 upokojencev, ki že zdaj delajo. Fiskalni svet ocenjuje strošek na <b>257 milijonov € v letu 2027</b>.</p>
+        <span class="law">ZIURS, 19. člen</span>
+      </div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="end" id="konec">
+  <div class="wrap">
+    <div class="kt"><div class="kt-b">Zakon za bogate</div></div>
+    <h2 class="disp" style="margin-top:18px">Ugodnosti za Dvoživko<br><em>plačamo vsi!</em></h2>
+    <div class="vs">
+      <div class="a"><div class="k">Dr. Dvoživka</div><div class="v" id="endTot">+0 €<small> na leto</small></div><p id="endTxt"></p>
+        <div class="art"><svg viewBox="0 0 440 210" preserveAspectRatio="xMidYMax meet" id="endDoc" aria-hidden="true"></svg></div></div>
+      <div class="sis" id="sis">
+      <svg viewBox="-70 -345 140 355" aria-hidden="true" id="sisIco"></svg>
+      <div class="sis-t"><span>Medicinska sestra v isti bolnišnici</span><b>+0 €</b><small>Plača okoli 2.940 € bruto. Kapice ne doseže, klinike, stanovanj in popoldanskega s.p. nima.</small></div>
+      </div>
+      <div class="b"><div class="k">Vsi ostali</div><div class="v">−1,2 mrd €</div><p>Luknja v javni blagajni. Medicinska sestra v isti bolnišnici od zakona ne dobi nič.</p>
+        <div class="art hole" aria-hidden="true"><svg viewBox="0 0 440 210" preserveAspectRatio="xMidYMax meet">
+          <ellipse cx="220" cy="150" rx="212" ry="54" fill="#1E1638"/>
+          <ellipse cx="220" cy="156" rx="184" ry="40" fill="#0d0a14"/>
+          <text x="220" y="163" text-anchor="middle" font-family="Rubik" font-weight="700" font-size="14" letter-spacing="7" fill="#FBF6E8">LUKNJA V PRORAČUNU</text>
+          <g id="coins"></g>
+        </svg></div></div>
+    </div>
+    <div class="ref">
+      <div>
+        <div class="disp">Referendum <em>6. decembra</em></div>
+        <p class="cta">Glasuj <em>PROTI</em> zakonu za bogate.</p>
+      </div>
+      <div class="share-wrap" style="flex:none">
+        <button class="btn share" type="button" data-share style="background:var(--gold);color:var(--ink)"><b style="background:var(--ink);color:var(--gold)">↗</b><span>Deli to stran</span></button>
+        <div class="copied" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="others">
+      <div class="disp">Poišči še Brodnjakovo kapico</div>
+      <a class="btn" href="../kapica/"><b>→</b>Druga izkušnja</a>
+    </div>
+    <details class="more">
+      <summary>Kako smo računali in viri</summary>
+      <div class="method">
+        <div>
+          <h3>Izračun</h3>
+          <ul>
+            <li>Oseba je izmišljena; zneski so primeri, ki jih lahko spreminjaš z drsniki.</li>
+            <li><b>Koliko zdravnikov ima nad 7.500 € bruto:</b> natančnega podatka država ne objavlja. 1.727 starejših zdravnikov s povprečno bruto plačo skoraj 9.000 € (december 2025) navaja Svet24 po Necenzurirano.si; 3.610 prejemnikov nad 7.500 € v javnem sektorju (januar 2026) navaja SP Nomad.</li>
+            <li><b>Kapica:</b> neto plača z obračunom prispevkov delojemalca (22,1 %) do 7.500 € bruto in brez, dohodnina po lestvici 2026 s splošno olajšavo, obvezni zdravstveni prispevek. Enako kot pri Brodnjakovi kapici.</li>
+            <li><b>Najem:</b> 2 × najemnina × 12, normirani stroški 10 %, razlika med stopnjo 25 % in 5 % (najem mladim do 30 let).</li>
+            <li><b>Popoldanski s.p.:</b> zdaj (2026) 80 % normiranih odhodkov do 12.500 € prihodkov, 40 % od 12.500 do 30.000 €, nad tem 0 %; dohodnina 20 % do 33.000 € osnove, nad tem 35 %. Po ZIURS 80 % do 50.000 € in 70 % od 50.000 do 70.000 €, dohodnina 20 %. Prispevek za dolgotrajno oskrbo je del pavšalnih prispevkov (113,01 € na mesec v 2026); ocena prihranka ≈ 6,4 € na mesec.</li>
+            <li><b>Airbnb:</b> Ljubljana je na seznamu občin z velikim tveganjem (sklep 8. 5. 2026), kjer bi zakon o gostinstvu dovolil največ 60 dni kratkotrajnega najema na leto.</li>
+            <li><b>Pokojnina:</b> najvišja starostna pokojnina za 40 let dobe v 2026: 63,5 % od najvišje pokojninske osnove 5.159,12 € ≈ 3.276 € bruto na mesec. Zdaj ob delu 40 % pokojnine (po treh letih 20 %), po ZIURS 100 %. Neto ocena: zdravstveni prispevek 5,96 %, dohodnina 50 % (ob visoki plači), pokojninska olajšava 13,5 %.</li>
+            <li>Besedilo ukrepov je iz predloga zakona; sprejet je bil z uskladitvenim amandmajem koalicije.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Viri</h3>
+          <ul>
+            <li><a href="https://nsi.si/wp-content/uploads/2026/04/100426_Predlog-zakona-o-interventnih-ukrepih-za-razvoj-Slovenije.pdf">Predlog ZIURS (10. 4. 2026)</a></li>
+            <li><a href="https://sl.wikipedia.org/wiki/Interventni_zakon_za_razvoj_Slovenije">Interventni zakon za razvoj Slovenije — Wikipedija</a></li>
+            <li><a href="https://www.gov.si/novice/2025-11-24-novosti-pri-ugotavljanju-davcne-osnove-z-upostevanjem-normiranih-odhodkov-v-letu-2026/">Normiranci v letu 2026 — FURS</a></li>
+            <li><a href="https://lider.si/celotna-pokojnina-za-22-031-upokojencev-ob-delu-in-samodejni-konec-zaposlitve/">Celotna pokojnina za 22.031 upokojencev ob delu — Lider</a></li>
+            <li><a href="https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2026-01-0546/sklep-o-uskladitvi-pokojnin-in-drugih-prejemkov-od-1--januarja-2026">Uskladitev pokojnin in najvišja pokojninska osnova 2026 — Uradni list</a></li>
+            <li><a href="https://svet24.si/novice/slovenija/zdravstvo-fides-place-stavka-rekorder-1886259">Zdravniške plače rastejo, kdo so rekorderji? — Svet24</a></li>
+            <li><a href="https://www.spnomad.si/objave/razvojna-kapica-2026-prispevki-7500-eur">Razvojna kapica 2026 — SP Nomad</a></li>
+            <li><a href="https://javnipodatki.si/place/diplomirana-medicinska-sestra">Plača diplomirane medicinske sestre — javnipodatki.si</a></li>
+            <li><a href="https://www.racunovodstvo.net/zakonodaja/predpis/14411/pravilnik-o-dolocitvi-usklajenih-zneskov-olajsav-enacbe-za-dolocitev-olajsave-in-lestvice-za-odmero-dohodnine-za-leto-2026">Lestvica dohodnine 2026</a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <footer class="foot">Zakon za bogate je satirična kampanja. Dr. Dvoživka je izmišljena oseba; podobnost z resničnimi osebami je naključna, ukrepi pa so resnični.</footer>
+  </div>
+</section>
+
+<script src="../assets/js/druzina.js"></script>
+<script src="../assets/js/ljudje.js"></script>
+<script src="../assets/js/zzb.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('de-DE');
+const eur=n=>fmt(n)+' €';
+
+// ---------- izračuni ----------
+// enako kot pri Brodnjakovi kapici: prispevki delojemalca 23,1 % (vključno z dolgotrajno oskrbo), lestvica 2026
+const CAP=7500, RATE_K=0.231, OZP=39.36, GEN=5551.93;
+const BR=[[0,9721.43,0,.16],[9721.43,28592.44,1555.43,.26],[28592.44,57184.88,6461.89,.33],[57184.88,82346.23,15897.40,.39],[82346.23,Infinity,25710.33,.50]];
+const tax=b=>{if(b<=0)return 0;for(const[lo,hi,f,r]of BR)if(b<=hi)return f+(b-lo)*r};
+function net(g,cap){const A=g*12,base=cap?Math.min(g,cap):g,c=base*12*RATE_K;
+  const add=A<=17766.18?Math.max(0,20832.39-1.17259*A):0;
+  return (A-c-tax(A-c-GEN-add))/12-OZP;}
+const kapica=g=>Math.max(0,(net(g,CAP)-net(g))*12);
+const najem=r=>2*r*12*0.9*(0.25-0.05);   // najem mladim do 30 let: 25 % -> 5 %
+// popoldanski s.p.: normirani odhodki po razredih prihodkov (zdaj 2026 / ZIURS)
+function spNowTax(R){const odh=.8*Math.min(R,12500)+.4*Math.max(0,Math.min(R,30000)-12500),b=R-odh;return .2*Math.min(b,33000)+.35*Math.max(0,b-33000);}
+function spNewTax(R){const odh=.8*Math.min(R,50000)+.7*Math.max(0,Math.min(R,70000)-50000);return .2*(R-odh);}
+const DO=77;   // 1 % od 25 % povprečne plače, ≈ 6,4 € na mesec
+
+// ---------- oder (SVG) ----------
+const STETH=`<path d="M-30 -326 C-56 -300 -60 -250 -36 -226 C-20 -210 6 -214 12 -232 L12 -258" fill="none" stroke="#EDB92E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M30 -326 C50 -306 54 -280 40 -262" fill="none" stroke="#EDB92E" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="12" cy="-262" r="16" fill="#EDB92E" stroke="#FBF6E8" stroke-width="5"/>
+  <rect x="34" y="-214" width="40" height="40" rx="6" fill="#FBF6E8"/><rect x="50" y="-208" width="8" height="28" fill="#E5603A"/><rect x="40" y="-198" width="28" height="8" fill="#E5603A"/>`;
+const HATP=`<path fill="#141118" fill-rule="evenodd" d="M-38 -102 H38 Q44 -102 44 -96 V0 H-44 V-96 Q-44 -102 -38 -102 Z M-44 -22 V-12 H44 V-22 Z M-86 0 H86 Q94 0 94 8 Q94 16 86 16 H-86 Q-94 16 -94 8 Q-94 0 -86 0 Z"/>`;
+const CROSS=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-24" y="-24" width="48" height="48" rx="6" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="-6" y="-17" width="12" height="34" fill="#E5603A"/><rect x="-17" y="-6" width="34" height="12" fill="#E5603A"/></g>`;
+const BOLN=(w=300)=>`<g><rect x="${-w/2}" y="-260" width="${w}" height="260" fill="#4632B5" stroke="#1E1638" stroke-width="7"/>
+  ${[0,1,2].map(r=>[0,1,2,3].map(c=>`<rect x="${-w/2+28+c*(w-56)/3.6}" y="${-230+r*66}" width="${(w-56)/5}" height="40" fill="#FBF6E8"/>`).join('')).join('')}
+  <rect x="-34" y="-64" width="68" height="64" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/>${CROSS(0,-300,1.2)}</g>`;
+const KLIN=(w=230)=>`<g><rect x="${-w/2}" y="-190" width="${w}" height="190" fill="#EDB92E" stroke="#1E1638" stroke-width="7"/>
+  ${[0,1].map(r=>[0,1,2].map(c=>`<rect x="${-w/2+24+c*(w-48)/2.8}" y="${-166+r*62}" width="${(w-48)/4.2}" height="38" fill="#FBF6E8"/>`).join('')).join('')}
+  <rect x="-28" y="-58" width="56" height="58" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/>${CROSS(-68,-222,1)}<g transform="translate(28 -214)"><rect x="-5" y="12" width="6" height="14" fill="#1E1638"/><rect x="45" y="12" width="6" height="14" fill="#1E1638"/><rect x="-62" y="-22" width="124" height="36" rx="5" fill="#E5603A" stroke="#1E1638" stroke-width="5"/><text x="0" y="5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="25" letter-spacing="2" fill="#FBF6E8">PRIVAT</text></g></g>`;
+const CASE=(lbl='s.p.')=>`<g><path d="M-26 -66 V-80 Q-26 -88 -18 -88 H18 Q26 -88 26 -80 V-66" fill="none" stroke="#1E1638" stroke-width="8"/>
+  <rect x="-60" y="-66" width="120" height="70" rx="10" fill="#1E1638"/><text x="0" y="-18" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="30" fill="#EDB92E">${lbl}</text></g>`;
+const SUITCASE=`<g><rect x="-34" y="-96" width="68" height="96" rx="12" fill="#E5603A" stroke="#1E1638" stroke-width="6"/><path d="M-14 -96 V-114 H14 V-96" fill="none" stroke="#1E1638" stroke-width="6"/>
+  <rect x="-20" y="-80" width="8" height="64" fill="#1E1638" opacity=".35"/><rect x="12" y="-80" width="8" height="64" fill="#1E1638" opacity=".35"/></g>`;
+const HOUSE=(f)=>`<g><path d="M-90 0 V-130 L0 -210 L90 -130 V0 Z" fill="${f}" stroke="#1E1638" stroke-width="7" stroke-linejoin="round"/><rect x="40" y="-200" width="24" height="44" fill="${f}" stroke="#1E1638" stroke-width="6"/>
+  <rect x="-22" y="-74" width="44" height="74" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="-66" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/><rect x="32" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="5"/></g>`;
+const SIGN=(t,col)=>`<g><rect x="-4" y="-60" width="8" height="60" fill="#1E1638"/><g transform="translate(0 -70) rotate(-6)"><rect x="-58" y="-20" width="116" height="40" rx="5" fill="${col}" stroke="#1E1638" stroke-width="5"/><text x="0" y="9" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="24" fill="#1E1638">${t}</text></g></g>`;
+const CHIP=(t,bg,fg,w)=>`<rect x="${-w/2}" y="-40" width="${w}" height="40" rx="9" fill="${bg}" stroke="#1E1638" stroke-width="4"/><path d="M-9 0 L0 12 L9 0" fill="${bg}" stroke="#1E1638" stroke-width="4" stroke-linejoin="round"/><rect x="-9" y="-6" width="18" height="6" fill="${bg}"/><text x="0" y="-12" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="22" fill="${fg}">${t}</text>`;
+
+// kuverta s pokojnino (ZPIZ)
+const ENV=`<g transform="rotate(-8)"><rect x="-40" y="-26" width="80" height="52" rx="5" fill="#FBF6E8" stroke="#1E1638" stroke-width="4"/><path d="M-40 -24 L0 4 L40 -24" fill="none" stroke="#1E1638" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="-30" y="8" width="60" height="13" rx="3" fill="#EDB92E" stroke="#1E1638" stroke-width="2.5"/><text x="0" y="18.5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="11" fill="#1E1638">100 %</text></g>`;
+// kam gre dobiček klinike (ikone, vznožje približno y = 40)
+const DICO={
+  zep:`<path d="M-38 -34 H38 L34 22 Q0 44 -34 22 Z" fill="#2B2350" stroke="#1E1638" stroke-width="4" stroke-linejoin="round"/><path d="M-30 -24 H30 L27 16 Q0 34 -27 16 Z" fill="none" stroke="#B3A2F0" stroke-width="2.5" stroke-dasharray="5 4"/>
+    ${[[-16,-36],[2,-42],[18,-34]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="15" ry="5" fill="#F2C64A" stroke="#1E1638" stroke-width="3"/>`).join('')}<path d="M-26 -38 C-20 -48 8 -54 16 -44" fill="none" stroke="#1E1638" stroke-width="0"/>`,
+  nep:`<g transform="translate(0 36) scale(.36)"><path d="M-90 0 V-130 L0 -210 L90 -130 V0 Z" fill="#B3A2F0" stroke="#1E1638" stroke-width="10" stroke-linejoin="round"/><rect x="-22" y="-74" width="44" height="74" fill="#FBF6E8" stroke="#1E1638" stroke-width="7"/><rect x="-66" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="7"/><rect x="32" y="-118" width="34" height="34" fill="#FBF6E8" stroke="#1E1638" stroke-width="7"/><g transform="translate(-4 -200) rotate(-8) scale(.7)">${HATP}</g></g>
+    <g transform="translate(36 -6)"><circle r="14" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><text y="5.5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="16" fill="#1E1638">€</text></g>`,
+  jah:`<path d="M-52 22 Q-20 14 0 22 T52 22 V40 H-52 Z" fill="#B3A2F0" stroke="#1E1638" stroke-width="3"/>
+    <path d="M-48 8 H50 L38 26 H-38 Z" fill="#FBF6E8" stroke="#1E1638" stroke-width="4" stroke-linejoin="round"/><rect x="-22" y="-4" width="40" height="12" fill="#1E1638"/><rect x="-16" y="-1" width="8" height="5" fill="#B3A2F0"/><rect x="-4" y="-1" width="8" height="5" fill="#B3A2F0"/><rect x="8" y="-1" width="8" height="5" fill="#B3A2F0"/>
+    <path d="M0 -4 V-46" stroke="#1E1638" stroke-width="4"/><path d="M4 -44 L32 -8 H4 Z" fill="#E5603A" stroke="#1E1638" stroke-width="3" stroke-linejoin="round"/><path d="M-4 -38 L-26 -8 H-4 Z" fill="#EDB92E" stroke="#1E1638" stroke-width="3" stroke-linejoin="round"/>`,
+  cip:`<circle cx="30" cy="-28" r="13" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><path d="M-56 30 Q-28 22 0 30 T56 30 V40 H-56 Z" fill="#B3A2F0" stroke="#1E1638" stroke-width="3"/>
+    <path d="M-40 30 Q-8 6 30 30 Z" fill="#F2C64A" stroke="#1E1638" stroke-width="3.5" stroke-linejoin="round"/><path d="M-6 26 Q-10 -6 -2 -26" fill="none" stroke="#1E1638" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-2 -26 Q-26 -36 -40 -20 Q-20 -26 -2 -26 Q-14 -44 -30 -44 Q-12 -38 -2 -26 Q10 -46 28 -40 Q8 -36 -2 -26 Q20 -30 30 -12 Q12 -24 -2 -26 Z" fill="#4632B5" stroke="#1E1638" stroke-width="2.5" stroke-linejoin="round"/>
+    <g transform="translate(-30 -2)"><rect x="-13" y="-8" width="26" height="16" rx="2" fill="#FBF6E8" stroke="#1E1638" stroke-width="2.5"/><text y="4.5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="10" fill="#1E1638">€</text></g>`,
+};
+const DEST={zep:{l:'v žep',r:'Dobiček klinike v žep'},nep:{l:'v nepremičnino',r:'Dobiček klinike v nepremičnino'},jah:{l:'kupi jahto',r:'Dobiček klinike za jahto'},cip:{l:'na Ciper',r:'Dobiček klinike na Ciper'}};
+let dest='zep';
+// tok cekinov iz klinike v izbrani cilj (oblaček desno zgoraj)
+function drawFlow(pop){
+  const path='M640 262 C650 170 690 160 712 178';
+  const coins=[0,1,2,3].map(i=>`<g><circle r="9" fill="#F2C64A" stroke="#1E1638" stroke-width="2.5"/><text y="3.6" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="10" fill="#1E1638">€</text><animateMotion dur="1.6s" begin="${(i*0.4).toFixed(1)}s" repeatCount="indefinite" path="${path}"/><animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="${(i*0.4).toFixed(1)}s" repeatCount="indefinite"/></g>`).join('');
+  $('flow').innerHTML=`<path d="${path}" fill="none" stroke="#1E1638" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" opacity=".55"/>${coins}
+    <g transform="translate(722 128)"><g class="dbub${pop?' pop':''}"><rect x="-66" y="-62" width="132" height="112" rx="16" fill="#FBF6E8" stroke="#1E1638" stroke-width="4"/><g transform="translate(0 -8) scale(.92)">${DICO[dest]}</g>
+      <rect x="-62" y="28" width="124" height="20" rx="4" fill="#1E1638"/><text x="0" y="43" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="13" letter-spacing="1" fill="#EDB92E">${DEST[dest].l.toUpperCase()}</text></g></g>`;
+}
+const G=440; // tla
+let rays='';for(let i=0;i<24;i+=2){const a=(180+i*7.5)*Math.PI/180,b=(180+(i+1)*7.5)*Math.PI/180;rays+=`M0 0 L${(Math.cos(a)*1400).toFixed(0)} ${(Math.sin(a)*1400).toFixed(0)} L${(Math.cos(b)*1400).toFixed(0)} ${(Math.sin(b)*1400).toFixed(0)}Z`;}
+const slot=(k,x,y,s,inner,extra='')=>`<g transform="translate(${x} ${y}) scale(${s})"><g class="el" data-el="${k}" ${extra}>${inner}</g></g>`;
+$('stage').innerHTML=`
+  <rect x="-600" y="-200" width="2000" height="700" fill="#F7E4DB"/>
+  <g transform="translate(400 ${G})"><path d="${rays}" fill="#F0D3C6"/></g>
+  ${slot('boln',122,G,.8,BOLN(300))}
+  ${slot('klin',655,G,.9,KLIN(230))}
+  <g transform="translate(574 ${G}) scale(1.0)" id="pile"></g>
+  ${slot('stan',52,G,.4,HOUSE('#B3A2F0'))}
+  ${slot('stan',150,G,.34,HOUSE('#B3A2F0'))}
+  ${slot('stan',222,G,.62,SIGN('NAJEM','#EDB92E'),'style="transition-delay:.12s"')}
+  ${slot('bnb',728,G,.42,HOUSE('#E5603A'))}
+  ${slot('bnb',776,G,.42,SUITCASE,'style="transition-delay:.1s"')}
+  <g transform="translate(400 ${G}) scale(.68)">${father(pal('sil','#F7E4DB'))}${STETH}</g>
+  ${slot('sp',356,G-36,.52,CASE('s.p.'))}
+  ${slot('pok',506,G-196,.78,ENV)}
+  <g class="el" data-el="klin" id="flow"></g>
+  <g transform="translate(400 ${G-356})"><g class="dchip" id="dchip"><g id="dchipIn"></g></g></g>
+  <rect x="-600" y="${G}" width="2000" height="200" fill="#1E1638"/>`;
+// ikone v stikalih
+const ICO={
+  boln:`<g transform="translate(0 46) scale(.27)">${BOLN()}</g>`,
+  klin:`<g transform="translate(0 44) scale(.36)">${KLIN()}</g>`,
+  stan:`<g transform="translate(-22 44) scale(.3)">${HOUSE('#B3A2F0')}</g><g transform="translate(26 44) scale(.26)">${HOUSE('#B3A2F0')}</g>`,
+  bnb:`<g transform="translate(-14 44) scale(.32)">${HOUSE('#E5603A')}</g><g transform="translate(32 46) scale(.42)">${SUITCASE}</g>`,
+  sp:`<g transform="translate(0 36) scale(.7)">${CASE()}</g>`,
+  pok:`<g transform="translate(0 4) scale(1.1)">${ENV}</g>`,
+};
+document.querySelectorAll('[data-ico]').forEach(s=>s.innerHTML=ICO[s.dataset.ico]);
+$('sisIco').innerHTML=sestra('#4632B5','#B3A2F0');
+// koledar 365 dni (73 × 5)
+$('days').innerHTML=Array.from({length:365},(_,i)=>`<i class="${(i%73)*5+Math.floor(i/73)<60?'':'x'}"></i>`).join('');
+// cekini v luknji
+$('coins').innerHTML=[[120,0],[300,.5],[200,1],[350,1.5],[90,2.1],[250,2.6]].map(([x,d])=>`<g><g transform="translate(${x} 0)"><circle r="12" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><text y="5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="14" fill="#1E1638">€</text>
+  <animateTransform attributeName="transform" type="translate" values="${x} 10;${x+(220-x)*.35} 150" dur="1.6s" begin="${d}s" repeatCount="indefinite"/></g><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="1.6s" begin="${d}s" repeatCount="indefinite"/></g>`).join('');
+$('stamp').innerHTML=zig('PLAČAMO VSI','#E5603A',230);
+
+// ---------- kupček denarja: stolpci kovancev (1 kovanec ≈ 300 €), bankovci in pokončen cekin ----------
+const PX=[-84,-50,-16,18,52,86], PC=[4,8,12,14,9,5], PORD=[3,2,4,1,5,0], PCAP=PC.reduce((a,b)=>a+b,0);
+let pileN=0;
+const coin=(x,y,cls,d)=>`<g class="${cls}" style="animation-delay:${d}s"><path d="M${x-20} ${y} v7 a20 6.5 0 0 0 40 0 v-7 Z" fill="#D9A21F" stroke="#1E1638" stroke-width="2.6"/>
+  <path d="M${x-12} ${y+6} v5 M${x-4} ${y+7} v5 M${x+4} ${y+7} v5 M${x+12} ${y+6} v5" stroke="#9C7212" stroke-width="1.6"/>
+  <ellipse cx="${x}" cy="${y}" rx="20" ry="6.5" fill="#F2C64A" stroke="#1E1638" stroke-width="2.6"/></g>`;
+const face=(x,y)=>`<ellipse cx="${x}" cy="${y}" rx="13" ry="4" fill="none" stroke="#C8901A" stroke-width="1.6"/><text x="${x}" y="${y+2.6}" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="10" fill="#9C7212" transform="translate(0 ${y*0.45}) scale(1 .55)">€</text>`;
+function drawPile(N){
+  const h=PC.map(()=>0);
+  for(let i=0;i<N;i++){let best=-1,br=9;for(const j of PORD){const r=h[j]/PC[j];if(h[j]<PC[j]&&r<br-1e-9){br=r;best=j;}}h[best]++;}
+  // vrstni red risanja: zunanji stolpci najprej, srednji jih prekrijejo
+  let out='',idx=0;const seq=[0,5,1,4,2,3];
+  // bankovci zadaj (od 20 kovancev naprej)
+  if(N>=20)out+=`<g class="${pileN<20?'cn':''}"><g transform="translate(-40 -2) rotate(-4)">${[0,1,2].map(k=>`<rect x="-46" y="${-16-k*7}" width="92" height="16" rx="2" fill="#DCE6D3" stroke="#1E1638" stroke-width="2.6"/>`).join('')}<rect x="-8" y="-33" width="16" height="17" fill="#E5603A" stroke="#1E1638" stroke-width="2.4"/><circle cx="-30" cy="-25" r="5" fill="none" stroke="#7E9A70" stroke-width="2"/><circle cx="30" cy="-25" r="5" fill="none" stroke="#7E9A70" stroke-width="2"/></g></g>`;
+  for(const j of seq){
+    for(let k=0;k<h[j];k++){
+      const jit=((j*7+k*13)%5-2)*1.1, y=-7-k*8.2, isNew=idx>=pileN;
+      out+=coin(PX[j]+jit,y,isNew?'cn':'',isNew?((idx-pileN)*0.035).toFixed(3):0);
+      if(k===h[j]-1)out+=face(PX[j]+jit,y);
+      idx++;
+    }
+  }
+  // pokončen cekin spredaj (od 10 kovancev naprej)
+  if(N>=10)out+=`<g class="${pileN<10?'cn':''}"><g transform="translate(-112 0) rotate(-12)"><circle cx="0" cy="-26" r="25" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><circle cx="0" cy="-26" r="18" fill="none" stroke="#9C7212" stroke-width="2"/><text x="0" y="-17" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="26" fill="#1E1638">€</text></g></g>`;
+  $('pile').innerHTML=out; pileN=N;
+}
+$('endDoc').innerHTML=`<g transform="translate(150 210) scale(1.3)">${[[-50,4],[-16,8],[18,11],[52,6]].map(([x,n])=>Array.from({length:n},(_,k)=>coin(x+((x+k*13)%5-2),-7-k*8.2,'',0)).join('')+face(x+((x+(n-1)*13)%5-2),-7-(n-1)*8.2)).join('')}</g><g transform="translate(330 212) scale(.4)">${father(pal('sil','#EDB92E'))}${STETH}</g>`;
+
+drawFlow(false);
+document.querySelectorAll('[data-dico]').forEach(e=>e.innerHTML=DICO[e.dataset.dico]);
+document.querySelectorAll('.dest button').forEach(b=>b.addEventListener('click',()=>{
+  dest=b.dataset.d;
+  document.querySelectorAll('.dest button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-checked',x===b);});
+  $('xKlin').textContent=DEST[dest].l+' ✓'; drawFlow(true); render();
+  if(window.plausible)plausible('Dvozivka dobicek',{props:{cilj:dest}});
+}));
+// neto od dodatne pokojnine: zdravstveni prispevek upokojencev 5,96 %, dohodnina po najvišji stopnji 50 %, pokojninska olajšava 13,5 % dohodnine
+const PNET=(1-0.0596)*(1-0.5*(1-0.135));
+
+// ---------- stanje ----------
+const ON={boln:false,klin:false,sp:false,stan:false,bnb:false,pok:false};
+const sws=[...document.querySelectorAll('.sw')];
+function setP(inp){inp.style.setProperty('--p',((inp.value-inp.min)/(inp.max-inp.min)*100)+'%');}
+['gross','rent','spRev','pens'].forEach(id=>{const i=$(id);setP(i);i.addEventListener('input',()=>{setP(i);render();});});
+let last=-1;
+function render(){
+  const g=+$('gross').value, r=+$('rent').value, R=+$('spRev').value, P=+$('pens').value;
+  const pg=P*0.6*12, pn=pg*PNET;
+  $('oPens').textContent=eur(P); $('pNow').textContent=eur(P*.4); $('pNew').textContent=eur(P);
+  $('xPok').textContent='+'+eur(pg)+' bruto'; $('vPok').textContent='+'+eur(pn);
+  $('pokNet').innerHTML=`Ker ima zraven visoko plačo, gre od tega veliko v dohodnino: neto mu ostane približno <b>${eur(pn)}</b> na leto.`;
+  const k=kapica(g), n=najem(r), sn=spNowTax(R), sz=spNewTax(R), sd=sn-sz;
+  $('oGross').textContent=eur(g); $('oRent').textContent=eur(r); $('oSp').textContent=eur(R);
+  $('xBoln').textContent=(k>0?'+':'')+eur(k); $('vBoln').textContent='+'+eur(k);
+  $('tBoln').textContent=g<=CAP?'Pod kapico — tako kot sestra':'Več neto na leto';
+  $('xStan').textContent='+'+eur(n); $('vStan').textContent='+'+eur(n);
+  $('xSp').textContent='+'+eur(sd); $('vSp').textContent='+'+eur(sd);
+  $('spNow').textContent=eur(sn); $('spNew').textContent=eur(sz);
+  $('spNowP').textContent=Math.round(sn/R*100)+' % prihodkov'; $('spNewP').textContent=Math.round(sz/R*100)+' % prihodkov';
+  const total=(ON.boln?k:0)+(ON.stan?n:0)+(ON.sp?sd+DO:0)+(ON.pok?pn:0);
+  // račun
+  const L=(key,on,val)=>{const el=document.querySelector(`.rl[data-r="${key}"]`);el.classList.toggle('off',!on);el.querySelector('.n').textContent=on?val:'—';};
+  L('boln',ON.boln,'+'+eur(k)); L('klin',ON.klin,'✓'); $('rKlinT').textContent=DEST[dest].r; L('sp',ON.sp,'+'+eur(sd)); L('sp2',ON.sp,'+'+eur(DO));
+  L('stan',ON.stan,'+'+eur(n)); L('bnb',ON.bnb,'+305 dni'); L('pok',ON.pok,'+'+eur(pn));
+  $('tot').innerHTML='+'+eur(total);
+  $('endTot').innerHTML='+'+eur(total)+'<small> na leto</small>';
+  const extra=[ON.klin&&'klinika',ON.sp&&'s.p.',ON.bnb&&'Airbnb',ON.pok&&'polna pokojnina'].filter(Boolean);
+  $('endTxt').textContent=total||extra.length?('Manj davkov in prispevkov, več pokojnine'+(extra.length?' — in še '+extra.join(', ').replace(/, ([^,]*)$/,' in $1')+' z novimi ugodnostmi.':'.')):'Vklopi stikala zgoraj in spoznaj Dvoživko.';
+  // oder
+  document.querySelectorAll('.el').forEach(e=>e.classList.toggle('on',ON[e.dataset.el]));
+  drawPile(Math.min(PCAP,Math.round(total/450)));
+  const t='+'+eur(total)+' / leto', w=Math.max(120,t.length*14+26);
+  $('dchipIn').innerHTML=CHIP(t,'#EDB92E','#1E1638',w);
+  if(total!==last&&last>=0){const d=$('dchip');d.classList.remove('bump');void d.getBBox();d.classList.add('bump');}
+  last=total;
+  const all=Object.values(ON).every(Boolean);
+  $('stamp').classList.toggle('on',all);
+  $('all').textContent=all?'Izklopi vse':'Vklopi vse';
+}
+function setOn(k,v,flash){
+  if(ON[k]===v)return; ON[k]=v;
+  const sw=document.querySelector(`.sw[data-k="${k}"]`);
+  sw.classList.toggle('on',v); sw.querySelector('.sw-h').setAttribute('aria-expanded',v);
+  if(v&&flash){document.querySelectorAll(`.rl[data-r^="${k}"]`).forEach(el=>{el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');});}
+  if(v&&k==='boln'){const s=$('sis');s.classList.remove('wink');void s.offsetWidth;s.classList.add('wink');}
+}
+sws.forEach(sw=>sw.querySelector('.sw-h').addEventListener('click',()=>{
+  const k=sw.dataset.k; setOn(k,!ON[k],true); render();
+  if(ON[k]&&window.plausible)plausible('Dvozivka stikalo',{props:{stikalo:k}});
+}));
+$('all').addEventListener('click',()=>{
+  const all=Object.values(ON).every(Boolean);
+  Object.keys(ON).forEach((k,i)=>setTimeout(()=>{setOn(k,!all,true);render();},all?0:i*160));
+});
+render();
+// na namizju naj bo sestra enako velika kot Dvoživka v sosednji kartici
+function sizeNurse(){
+  const sv=$('sisIco'), doc=$('endDoc');
+  if(innerWidth<=900){sv.style.height='';sv.style.width='';return;}
+  const docPx=doc.getBoundingClientRect().height*(202/210);   // višina zdravnika (s cilindrom) v kartici
+  sv.style.width='auto'; sv.style.height=(docPx*355/324).toFixed(1)+'px';
+}
+sizeNurse(); addEventListener('resize',sizeNurse); addEventListener('load',sizeNurse);
+})();
+</script>
+</body>
+</html>
