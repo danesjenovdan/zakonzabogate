@@ -91,9 +91,6 @@ body{background:var(--pink)}
 .sis-t span{font:900 17px/1.1 var(--disp);text-transform:uppercase}
 .sis-t b{font:900 clamp(30px,3.4vw,40px)/1 var(--disp);white-space:nowrap}
 .sis-t small{grid-column:1/-1;font-size:13.5px;line-height:1.3;color:#2b2350;margin-top:4px}
-.stamp{position:absolute;left:-2%;top:12%;z-index:3;transform:rotate(-12deg) scale(1.4);opacity:0;pointer-events:none;transition:opacity .2s,transform .4s cubic-bezier(.2,1.6,.4,1)}
-.stamp.on{opacity:.95;transform:rotate(-10deg) scale(.6)}
-.stamp svg{display:block}
 
 /* stikala */
 .ctrl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
@@ -222,8 +219,6 @@ input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2
   .sw-b .in{padding:0 14px 16px}
   .intro p{font-size:16px}
   .rl{font-size:14px}
-  .stamp{top:14%;left:-9%}
-  .stamp.on{transform:rotate(-10deg) scale(.42)}
 }
 @media (prefers-reduced-motion:reduce){.el,.sw,.tog::after,.sw-b{transition:none}.dchip.bump,.schip.wink,.rl.flash,.cn,.sis.wink{animation:none}}
 </style>
@@ -259,7 +254,6 @@ input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2
    <div class="stickwrap"><div class="stick">
     <div class="stage" aria-label="Dr. Dvoživka in vse, kar ima">
       <span class="chip">Oseba je izmišljena <i>·</i> ukrepi so resnični</span>
-      <div class="stamp" id="stamp"></div>
       <svg id="stage" overflow="visible" viewBox="0 0 800 470" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Zdravnik s cilindrom; okoli njega se pojavijo bolnišnica, klinika, stanovanja, Airbnb in s.p."></svg>
     </div>
     <div class="rcpt" id="rcpt">
@@ -531,7 +525,6 @@ $('days').innerHTML=Array.from({length:365},(_,i)=>`<i class="${(i%73)*5+Math.fl
 // cekini v luknji
 $('coins').innerHTML=[[120,0],[300,.5],[200,1],[350,1.5],[90,2.1],[250,2.6]].map(([x,d])=>`<g><g transform="translate(${x} 0)"><circle r="12" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><text y="5" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="14" fill="#1E1638">€</text>
   <animateTransform attributeName="transform" type="translate" values="${x} 10;${x+(220-x)*.35} 150" dur="1.6s" begin="${d}s" repeatCount="indefinite"/></g><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="1.6s" begin="${d}s" repeatCount="indefinite"/></g>`).join('');
-$('stamp').innerHTML=zig('PLAČAMO VSI','#E5603A',230);
 
 // ---------- kupček denarja: stolpci kovancev (1 kovanec ≈ 300 €), bankovci in pokončen cekin ----------
 const PX=[-84,-50,-16,18,52,86], PC=[4,8,12,14,9,5], PORD=[3,2,4,1,5,0], PCAP=PC.reduce((a,b)=>a+b,0);
@@ -611,7 +604,6 @@ function render(){
   if(total!==last&&last>=0){const d=$('dchip');d.classList.remove('bump');void d.getBBox();d.classList.add('bump');}
   last=total;
   const all=Object.values(ON).every(Boolean);
-  $('stamp').classList.toggle('on',all);
   $('all').textContent=all?'Izklopite vse':'Vklopite vse';
 }
 function setOn(k,v,flash){
