@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>OG slike strani — Zakon za bogate</title>
-<!-- Predloga za OG slike (1200 × 630): ?p=zakon (vstopna stran) | ?p=dvozivka -->
+<!-- Predloga za OG slike (1200 × 630): ?p=zakon (vstopna stran) | ?p=dvozivka&v=a|b|c -->
 <link href="assets/css/fonts.css" rel="stylesheet">
 <style>
 :root{--cream:#F3EAD3;--paper:#FBF6E8;--ink:#1E1638;--violet:#4632B5;--lav:#B3A2F0;--gold:#EDB92E;--coral:#E5603A;--pink:#F2D9CF}
@@ -47,6 +47,34 @@ svg.art{position:absolute;right:0;top:0;width:620px;height:630px}
 .dvozivka .rcp span{font-size:18px;color:#6b6180;max-width:180px;line-height:1.15}
 .chip{position:absolute;right:28px;top:24px;z-index:4;background:var(--ink);color:var(--paper);border-radius:99px;padding:10px 18px 9px;font:700 16px/1 'Rubik';letter-spacing:.1em;text-transform:uppercase}
 .chip i{font-style:normal;color:var(--gold)}
+
+/* Dvoživka B: račun */
+.dvb{background:var(--pink);color:var(--ink)}
+.dvb .left{top:56px;width:600px}
+.dvb h1{font-size:62px}
+.dvb h1 em{color:var(--violet);font-style:normal}
+.dvb .chip{left:60px;right:auto;top:auto;bottom:104px}
+.rc{position:absolute;left:648px;top:50px;width:500px;background:var(--paper);border-radius:8px;padding:24px 30px 22px;transform:rotate(-2deg);box-shadow:0 0 0 4px var(--ink),-12px 14px 0 var(--ink);z-index:3}
+.rc .h{text-align:center;border-bottom:3px dashed var(--ink);padding-bottom:12px;margin-bottom:8px}
+.rc .h b{display:block;font:900 38px/1 'Archivo';text-transform:uppercase}
+.rc .h span{display:block;font:700 14px/1.3 'Rubik';letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin-top:6px}
+.rc .l{display:flex;align-items:baseline;gap:8px;font:500 19px/1.2 'Rubik';padding:5px 0}
+.rc .l i{flex:1;border-bottom:2.5px dotted rgba(30,22,56,.45);transform:translateY(-5px)}
+.rc .l b{font-weight:700;white-space:nowrap}
+.rc .t{display:flex;align-items:flex-end;justify-content:space-between;margin-top:10px;padding-top:12px;border-top:5px double var(--ink)}
+.rc .t span{font:700 15px/1.2 'Rubik';letter-spacing:.1em;text-transform:uppercase;max-width:200px}
+.rc .t b{font:900 50px/1 'Archivo';white-space:nowrap}
+/* Dvoživka C: Dvoživka proti sestri */
+.dvc{background:var(--pink);color:var(--ink)}
+.dvc .top{position:absolute;left:60px;top:38px;right:60px;z-index:3;display:flex;align-items:center;gap:26px}
+.dvc h1{font-size:58px;margin:0;white-space:nowrap}
+.dvc .sub2{position:absolute;left:60px;top:116px;z-index:3;background:var(--ink);color:var(--paper);border-radius:99px;padding:9px 16px 8px;font:700 15px/1 'Rubik';letter-spacing:.1em;text-transform:uppercase}
+.dvc .sub2 i{font-style:normal;color:var(--gold)}
+.dvc .vote{position:absolute;right:46px;top:330px;z-index:3;text-align:right;font:900 34px/1.05 'Archivo';text-transform:uppercase}
+.dvc .vote em{font-style:normal;display:inline-block;margin-top:8px;background:var(--coral);color:var(--paper);padding:6px 14px 3px;transform:rotate(-3deg)}
+.dvc h1 em{color:var(--violet);font-style:normal}
+.dvc .lbl{position:absolute;bottom:18px;z-index:4;font:800 20px/1 'Rubik';letter-spacing:.08em;text-transform:uppercase;color:var(--paper);transform:translateX(-50%);white-space:nowrap}
+.dvc .chip{right:auto;left:50%;transform:translateX(-50%);top:auto;bottom:70px;font-size:14px}
 </style>
 </head>
 <body>
@@ -65,7 +93,43 @@ const KLIN=`<g><rect x="-115" y="-190" width="230" height="190" fill="#EDB92E" s
 const PILE=()=>{const PX=[-84,-50,-16,18,52,86],H=[3,6,10,12,8,4];let o='';for(const j of [0,5,1,4,2,3])for(let k=0;k<H[j];k++){const x=PX[j]+((j*7+k*13)%5-2)*1.1,y=-7-k*8.2;o+=`<path d="M${x-20} ${y} v7 a20 6.5 0 0 0 40 0 v-7 Z" fill="#D9A21F" stroke="#1E1638" stroke-width="2.6"/><path d="M${x-12} ${y+6} v5 M${x-4} ${y+7} v5 M${x+4} ${y+7} v5 M${x+12} ${y+6} v5" stroke="#9C7212" stroke-width="1.6"/><ellipse cx="${x}" cy="${y}" rx="20" ry="6.5" fill="#F2C64A" stroke="#1E1638" stroke-width="2.6"/>`;if(k===H[j]-1)o+=`<ellipse cx="${x}" cy="${y}" rx="13" ry="4" fill="none" stroke="#C8901A" stroke-width="1.6"/>`;}return o+`<g transform="translate(-112 0) rotate(-12)"><circle cx="0" cy="-26" r="25" fill="#EDB92E" stroke="#1E1638" stroke-width="3"/><circle cx="0" cy="-26" r="18" fill="none" stroke="#9C7212" stroke-width="2"/><text x="0" y="-17" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="26" fill="#1E1638">€</text></g>`;};
 const rays=(n,r)=>{let d='';for(let i=0;i<n;i+=2){const a=(i*360/n)*Math.PI/180,b=((i+1)*360/n)*Math.PI/180;d+=`M0 0 L${(Math.cos(a)*r).toFixed(0)} ${(Math.sin(a)*r).toFixed(0)} L${(Math.cos(b)*r).toFixed(0)} ${(Math.sin(b)*r).toFixed(0)}Z`;}return d;};
 
-if(p==='dvozivka'){
+const v=new URLSearchParams(location.search).get('v')||'a';
+const STK=(x,n)=>Array.from({length:n},(_,k)=>`<path d="M${x-20} ${-7-k*8.2} v7 a20 6.5 0 0 0 40 0 v-7 Z" fill="#D9A21F" stroke="#1E1638" stroke-width="2.6"/><ellipse cx="${x}" cy="${-7-k*8.2}" rx="20" ry="6.5" fill="#F2C64A" stroke="#1E1638" stroke-width="2.6"/>`).join('');
+const CHIPS=(t,bg,fg,w,fs=30)=>`<rect x="${-w/2}" y="-56" width="${w}" height="56" rx="12" fill="${bg}" stroke="#1E1638" stroke-width="5"/><path d="M-12 0 L0 16 L12 0" fill="${bg}" stroke="#1E1638" stroke-width="5" stroke-linejoin="round"/><rect x="-12" y="-8" width="24" height="8" fill="${bg}"/><text x="0" y="-17" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="${fs}" fill="${fg}">${t}</text>`;
+if(p==='dvozivka'&&v==='b'){
+  c.className='c dvb';
+  c.innerHTML=`<div class="grain"></div>
+  <svg class="art" viewBox="0 0 620 630" style="right:auto;left:300px;width:620px"><g transform="translate(330 640)"><path d="${rays(48,900)}" fill="#ECCBBE"/></g>
+    <g transform="translate(300 640) scale(.86)">${father(pal('sil','#F2D9CF'))}${STETH}</g></svg>
+  <div class="left">
+    <div class="kt"><div class="kt-b">Dame in gospodje</div></div>
+    <h1>Spoznajte<br><em>dr. Dvoživko</em></h1>
+  </div>
+  <span class="chip">Oseba je izmišljena <i>·</i> ukrepi so resnični</span>
+  <div class="rc"><div class="h"><b>Doktor Dvoživka</b><span>Račun · interventni zakon</span></div>
+    ${[['Nižji prispevki (kapica)','+1.691 €'],['Dobiček klinike v žep','✓'],['Nižja dohodnina (s.p.)','+4.600 €'],['Nižji davek na najem','+4.320 €'],['Airbnb brez omejitev','+305 dni'],['Polna pokojnina ob delu','+12.588 €']].map(([a,b])=>`<div class="l">${a}<i></i><b>${b}</b></div>`).join('')}
+    <div class="t"><span>Dvoživki ostane več na leto</span><b>+23.276 €</b></div></div>
+  <div class="foot">6. decembra glasuj <em>PROTI</em></div>`;
+} else if(p==='dvozivka'&&v==='c'){
+  c.className='c dvc';
+  c.innerHTML=`<div class="grain"></div>
+  <svg viewBox="0 0 1200 630" style="position:absolute;inset:0;width:1200px;height:630px">
+    <g transform="translate(600 560)"><path d="${rays(48,1400)}" fill="#ECCBBE"/></g>
+    <g transform="translate(160 560) scale(1.15)">${STK(-46,6)}${STK(-12,10)}${STK(22,13)}${STK(56,8)}${STK(90,4)}</g>
+    <g transform="translate(420 562) scale(.66)">${father(pal('sil','#F2D9CF'))}${STETH}</g>
+    <g transform="translate(420 222)">${CHIPS('+23.276 € na leto','#EDB92E','#1E1638',300)}</g>
+    <g transform="translate(840 562) scale(.98)">${sestra('#4632B5','#F2D9CF')}</g>
+    <g transform="translate(840 222)">${CHIPS('+0 €','#FBF6E8','#1E1638',130,34)}</g>
+    <g transform="translate(1060 470) scale(.62)" opacity=".9"><path d="M-60 0 Q-70 -90 0 -96 Q70 -90 60 0 Z" fill="none"/></g>
+    <rect x="0" y="560" width="1200" height="70" fill="#1E1638"/>
+  </svg>
+  <div class="top"><h1>Spoznajte <em>dr. Dvoživko</em></h1></div>
+  <span class="sub2">Oseba je izmišljena <i>·</i> ukrepi so resnični</span>
+  <div class="vote">6. decembra<br>glasuj<br><em>PROTI</em></div>
+  <div class="lbl" style="left:420px">Dr. Dvoživka</div>
+  <div class="lbl" style="left:840px">Medicinska sestra</div>
+  <div class="lbl" style="left:630px;color:#EDB92E">vs.</div>`;
+} else if(p==='dvozivka'){
   c.innerHTML=`<div class="grain"></div>
   <svg class="art" viewBox="0 0 620 630">
     <g transform="translate(330 560)"><path d="${rays(48,900)}" fill="#ECCBBE"/></g>
