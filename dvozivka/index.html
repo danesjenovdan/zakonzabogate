@@ -248,7 +248,7 @@ input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2
       <div>
         <div class="kt"><div class="kt-b">Dame in gospodje</div></div>
         <h1 class="disp">Spoznajte<br><em>dr. Dvoživko</em></h1>
-        <p>Našli smo osebo, ki bi od interventnega zakona pobrala največ. Dela v javni bolnišnici, je solastnik zasebne klinike, oddaja tri stanovanja in ima popoldanski s.p. Vklopi, kar ima, in poglej, koliko mu prinese zakon.</p>
+        <p>Našli smo osebo, ki bi od interventnega zakona pobrala največ. Dela v javni bolnišnici, je solastnik zasebne klinike, oddaja tri stanovanja in ima popoldanski s.p. Vklopite, kar ima, in poglejte, koliko mu prinese zakon.</p>
       </div>
     </div>
   </div>
@@ -277,7 +277,7 @@ input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2
   </div>
 
   <div class="controls">
-    <div class="ctrl-head"><h2>Koristi od ukrepov</h2><button class="allbtn" type="button" id="all">Vklopi vse</button></div>
+    <div class="ctrl-head"><h2>Koristi od ukrepov</h2><button class="allbtn" type="button" id="all">Vklopite vse</button></div>
 
     <div class="sw" data-k="boln">
       <button class="sw-h" type="button" aria-expanded="false"><span class="ic"><svg viewBox="-60 -60 120 120" data-ico="boln"></svg></span><span class="t"><b>Javna bolnišnica</b><small>Redna služba, visoka plača</small></span><span class="val" id="vBoln">+0 €</span><span class="tog" aria-hidden="true"></span></button>
@@ -392,9 +392,9 @@ input[type=range]:focus-visible{outline:3px solid var(--violet);outline-offset:2
         <div>
           <h3>Izračun</h3>
           <ul>
-            <li>Oseba je izmišljena; zneski so primeri, ki jih lahko spreminjaš z drsniki.</li>
+            <li>Oseba je izmišljena; zneski so primeri, ki jih lahko spreminjate z drsniki.</li>
             <li><b>Koliko zdravnikov ima nad 7.500 € bruto:</b> natančnega podatka država ne objavlja. 1.727 starejših zdravnikov s povprečno bruto plačo skoraj 9.000 € (december 2025) navaja Svet24 po Necenzurirano.si; 3.610 prejemnikov nad 7.500 € v javnem sektorju (januar 2026) navaja SP Nomad.</li>
-            <li><b>Kapica:</b> neto plača z obračunom prispevkov delojemalca (22,1 %) do 7.500 € bruto in brez, dohodnina po lestvici 2026 s splošno olajšavo, obvezni zdravstveni prispevek. Enako kot pri Brodnjakovi kapici.</li>
+            <li><b>Kapica:</b> neto plača z obračunom prispevkov delojemalca (23,1 %, vključno z 1 % za dolgotrajno oskrbo) do 7.500 € bruto in brez, dohodnina po lestvici 2026 s splošno olajšavo, obvezni zdravstveni prispevek. Enako kot pri Brodnjakovi kapici.</li>
             <li><b>Najem:</b> 2 × najemnina × 12, normirani stroški 10 %, razlika med stopnjo 25 % in 5 % (najem mladim do 30 let).</li>
             <li><b>Popoldanski s.p.:</b> zdaj (2026) 80 % normiranih odhodkov do 12.500 € prihodkov, 40 % od 12.500 do 30.000 €, nad tem 0 %; dohodnina 20 % do 33.000 € osnove, nad tem 35 %. Po ZIURS 80 % do 50.000 € in 70 % od 50.000 do 70.000 €, dohodnina 20 %. Prispevek za dolgotrajno oskrbo je del pavšalnih prispevkov (113,01 € na mesec v 2026); ocena prihranka ≈ 6,4 € na mesec.</li>
             <li><b>Airbnb:</b> Ljubljana je na seznamu občin z velikim tveganjem (sklep 8. 5. 2026), kjer bi zakon o gostinstvu dovolil največ 60 dni kratkotrajnega najema na leto.</li>
@@ -599,8 +599,10 @@ function render(){
   L('stan',ON.stan,'+'+eur(n)); L('bnb',ON.bnb,'+305 dni'); L('pok',ON.pok,'+'+eur(pn));
   $('tot').innerHTML='+'+eur(total);
   $('endTot').innerHTML='+'+eur(total)+'<small> na leto</small>';
-  const extra=[ON.klin&&'klinika',ON.sp&&'s.p.',ON.bnb&&'Airbnb',ON.pok&&'polna pokojnina'].filter(Boolean);
-  $('endTxt').textContent=total||extra.length?('Manj davkov in prispevkov, več pokojnine'+(extra.length?' — in še '+extra.join(', ').replace(/, ([^,]*)$/,' in $1')+' z novimi ugodnostmi.':'.')):'Vklopi stikala zgoraj in spoznaj Dvoživko.';
+  const extra=[ON.klin&&DEST[dest].r.replace(/^D/,'d'),ON.bnb&&'Airbnb brez omejitev'].filter(Boolean);
+  const base=[(ON.boln||ON.sp||ON.stan)&&'Manj davkov in prispevkov',ON.pok&&'polna pokojnina ob plači'].filter(Boolean).join(', ');
+  const txt=base?base+(extra.length?' — povrhu pa še '+extra.join(' in ')+'.':'.'):(extra.length?extra.join(' in ').replace(/^./,c=>c.toUpperCase())+'.':'');
+  $('endTxt').textContent=txt||'Vklopite stikala zgoraj in spoznajte Dvoživko.';
   // oder
   document.querySelectorAll('.el').forEach(e=>e.classList.toggle('on',ON[e.dataset.el]));
   drawPile(Math.min(PCAP,Math.round(total/450)));
@@ -610,7 +612,7 @@ function render(){
   last=total;
   const all=Object.values(ON).every(Boolean);
   $('stamp').classList.toggle('on',all);
-  $('all').textContent=all?'Izklopi vse':'Vklopi vse';
+  $('all').textContent=all?'Izklopite vse':'Vklopite vse';
 }
 function setOn(k,v,flash){
   if(ON[k]===v)return; ON[k]=v;
